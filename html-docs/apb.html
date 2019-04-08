@@ -1,0 +1,176 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Appendix&nbsp;B.&nbsp;Building</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="index.html" title="The eSvn User Manual">
+      <link rel="previous" href="apa.html" title="Appendix&nbsp;A.&nbsp;Tools">
+      <link rel="next" href="apbs02.html" title="Building a Binary Package">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Appendix&nbsp;B.&nbsp;Building</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="apa.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="apbs02.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="appendix" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="appen-building"></a>Appendix&nbsp;B.&nbsp;Building
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <div class="toc">
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="apb.html#d4e3146">Prerequisites</a></span></dt>
+               <dt><span class="sect1"><a href="apbs02.html">Building a Binary Package</a></span></dt>
+               <dt><span class="sect1"><a href="apbs03.html">Building from Binary Package with Source RPM</a></span></dt>
+               <dt><span class="sect1"><a href="apbs04.html">Building from Source Binary package without Source RPM</a></span></dt>
+               <dt><span class="sect1"><a href="apbs05.html">Using the eSvn Makefile</a></span></dt>
+               <dt><span class="sect1"><a href="apbs06.html">Building the eSvn Documentation</a></span></dt>
+            </dl>
+         </div>
+         <p>Since not all computer operating systems are configured in the same standard way and their
+            environments differ, there is a need to build packages that are specifically build to
+                    accommodate the needs of the various target systems. Many Linux distributions use the Red
+                    Hat Package Manager as the tool of choice managing packages. This quote explains what RPM is:
+         </p>
+         <p>
+                    
+         </p>
+         <div class="blockquote">
+            <table border="0" width="100%" cellspacing="0" cellpadding="0" class="blockquote" summary="Block quote">
+               <tr>
+                  <td width="10%" valign="top">&nbsp;</td>
+                  <td width="80%" valign="top">
+                     <p>The RPM Package Manager (RPM) is a powerful command line driven package management
+                                        system capable of installing, uninstalling, verifying, querying, and updating
+                                        computer software packages. Each software package consists of an archive of files
+                                        along with information about the package like its version, a description, and the
+                                        like. There is also a related API ("Application Program
+                                        Interface"), permitting advanced developers to bypass 'shelling
+                                        out' to a command line, and to manage such transactions from within a
+                                        native coding language.
+                     </p>
+                  </td>
+                  <td width="10%" valign="top">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td colspan="2" align="right" valign="top">--<span class="attribution">
+                                        <a href="http://www.rpm.org" target="_top">rpm.org</a>
+                                    </span></td>
+                  <td width="10%" valign="top">&nbsp;</td>
+               </tr>
+            </table>
+         </div>
+         <p>
+                
+         </p>
+         <p>While RPM is a standard tool for managing software packages it is not necessarily true
+                    that all software packages made with RPM can be installed on all Linux distributions. The
+                    reason being is that very often the various 'distro' have arranged their
+                    file and folder systems in ways that are different to greater or lesser degrees, depending
+                    on which two you compare. As a result it is recommended that a software is installed with a
+                    RPM that is specifically configured for the target operating system and its environment.
+         </p>
+         <p>The tool used to build RPM packages is called <span><b class="application">rpmbuild</b></span>. It is a command line tool, which is a part of the
+                    Red Hat Package Manager (RPM), that enables building of the following software package types:
+         </p>
+         <div class="variablelist">
+            <dl>
+               <dt><span class="term">
+                                     <span class="bold"><b>binary</b></span>
+                                 </span></dt>
+               <dd>
+                  <p>Contains software to be installed</p>
+               </dd>
+               <dt><span class="term">
+                                     <span class="bold"><b>source</b></span>
+                                 </span></dt>
+               <dd>
+                  <p>Contains the source code and recipe necessary to produce binary packages</p>
+               </dd>
+            </dl>
+         </div>
+         <p>A package consists of an archive of files and meta-data used to install and erase the
+                    archive files. The meta-data includes helper scripts, file attributes, and descriptive
+                    information about the package. So a package holds together all the information required to
+                    install and uninstall a piece of software.
+         </p>
+         <p>This appendix covers only the most basic information needed for package builders. It
+                    assumes experience with building and testing packages, especially resolving problems to
+                    configure for the target system. If you wish to build packages for a particular system using
+                    RPM and need more information about RPM a good resource to read is "<a href="http://rpm-devel.colug.net/max-rpm/index.html" target="_top">Maximum RPM</a>" by
+                    Edward C. Bailey, Paul Nasrat, Matthias Saou, Ville Skytt&auml;.
+         </p>
+         <p>In combination with this book we give a pretty good overview of how you can build packages
+                    for <span><b class="application">eSvn</b></span>. However, before you decide to go through all this work you may first want to
+                    check at the <span><b class="application">eSvn</b></span> <a href="http://esvn.umputun.com" target="_top">Web Site</a> to see if
+                    somebody has already built a package for your system.
+         </p>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d4e3146"></a>Prerequisites
+                     </h2>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>To build <span><b class="application">eSvn</b></span> the following packages and their dependencies must be installed
+                           and available on the build machine:
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>qt3-devel</p>
+                  </li>
+                  <li>
+                     <p>GNU Make</p>
+                  </li>
+                  <li>
+                     <p>RPM</p>
+                  </li>
+                  <li>
+                     <p>A copy of the <span><b class="application">eSvn</b></span> sources.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="apa.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="index.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="apbs02.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Appendix&nbsp;A.&nbsp;Tools&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Building a Binary Package</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

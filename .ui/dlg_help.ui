@@ -1,0 +1,203 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_help</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_help</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>684</width>
+            <height>615</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Help</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>false</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>1</number>
+        </property>
+        <property name="spacing">
+            <number>1</number>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout130</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>bt_home</cstring>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>NoBackground</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>folder_home_2.png</iconset>
+                    </property>
+                    <property name="usesTextLabel">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textLabel">
+                        <string>Home</string>
+                    </property>
+                    <property name="autoRaise">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textPosition">
+                        <enum>BesideIcon</enum>
+                    </property>
+                </widget>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>bt_back</cstring>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>NoBackground</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>arrow_left_16x16.xpm</iconset>
+                    </property>
+                    <property name="usesTextLabel">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textLabel">
+                        <string>Back</string>
+                    </property>
+                    <property name="autoRaise">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textPosition">
+                        <enum>BesideIcon</enum>
+                    </property>
+                </widget>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>bt_forward</cstring>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>NoBackground</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>arrow_right_16x16.xpm</iconset>
+                    </property>
+                    <property name="usesTextLabel">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textLabel">
+                        <string>Forward</string>
+                    </property>
+                    <property name="autoRaise">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textPosition">
+                        <enum>BesideIcon</enum>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer26</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>260</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QToolButton">
+                    <property name="name">
+                        <cstring>bt_close</cstring>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>NoBackground</enum>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="iconSet">
+                        <iconset>cancel.png</iconset>
+                    </property>
+                    <property name="usesTextLabel">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textLabel">
+                        <string>Close</string>
+                    </property>
+                    <property name="autoRaise">
+                        <bool>true</bool>
+                    </property>
+                    <property name="textPosition">
+                        <enum>BesideIcon</enum>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QTextBrowser" row="1" column="0">
+            <property name="name">
+                <cstring>tx_help</cstring>
+            </property>
+            <property name="source">
+                <string></string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bt_home</sender>
+        <signal>clicked()</signal>
+        <receiver>tx_help</receiver>
+        <slot>home()</slot>
+    </connection>
+    <connection>
+        <sender>bt_back</sender>
+        <signal>clicked()</signal>
+        <receiver>tx_help</receiver>
+        <slot>backward()</slot>
+    </connection>
+    <connection>
+        <sender>bt_forward</sender>
+        <signal>clicked()</signal>
+        <receiver>tx_help</receiver>
+        <slot>forward()</slot>
+    </connection>
+    <connection>
+        <sender>bt_close</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_help</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<pixmapinproject/>
+<layoutdefaults spacing="1" margin="1"/>
+</UI>

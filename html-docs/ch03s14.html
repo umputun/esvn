@@ -1,0 +1,68 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Deleting</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s13.html" title="Recursive Addition">
+      <link rel="next" href="ch03s15.html" title="Copying Local Files">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Deleting</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s13.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s15.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-delete"></a>Deleting
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To remove files and directories from version control use the Delete option
+                    (
+            <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Delete</span> (<span><b class="shortcut"><span class="keysym">Alt+D</span></b></span>)
+            ). The selected item is scheduled for deletion from the repository in
+                    the next commit operation.
+         </p>
+         <p>Files and folders that have not been committed, are immediately removed from the working
+            copy. Paths that are, or contain, unversioned or modified items will not be removed.
+                    Following the Delete&nbsp;operation the item status is changed to "removed".
+                    Prior to the next commit operation it is still possible to undo the Delete operation by
+                    using the Revert option (see <a href="ch03s20.html" title="Reverting">the section called &#8220;Reverting&#8221;</a>).
+         </p>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s13.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s15.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Recursive Addition&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Copying Local Files</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

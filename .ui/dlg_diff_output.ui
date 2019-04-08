@@ -1,0 +1,49 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_diff</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_diff</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>609</width>
+            <height>374</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Diff</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTextBrowser" row="0" column="0">
+            <property name="name">
+                <cstring>tx_diff</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="lineWidth">
+                <number>1</number>
+            </property>
+            <property name="textFormat">
+                <enum>RichText</enum>
+            </property>
+            <property name="wrapPolicy">
+                <enum>Anywhere</enum>
+            </property>
+            <property name="tabStopWidth">
+                <number>32</number>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<pixmapinproject/>
+<layoutdefaults spacing="2" margin="2"/>
+</UI>

@@ -1,0 +1,68 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Cleaning up</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s20.html" title="Reverting">
+      <link rel="next" href="ch03s22.html" title="Resolving Conflicts">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Cleaning up</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s20.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s22.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-cleanup"></a>Cleaning up
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>When <span><b class="application">subversion</b></span> modifies your working copy (or any information within the <b class="filename"><tt>.svn</tt></b>), it tries to do so as safely as possible. Before changing
+            anything, it writes its intentions to a log file, executes the commands in the log file,
+                    then removes the log file (this is similar in design to a journaled file system). If a
+                    <span><b class="application">subversion</b></span> operation is interrupted (if the process is killed, or if the machine crashes, for
+                    example), the log files remain on disk. By re-executing the log files, <span><b class="application">subversion</b></span> can
+                    complete the previously started operation, and your working copy can get itself back into a
+                    consistent state.
+         </p>
+         <p> In <span><b class="application">eSvn</b></span> use the Cleanup option to recursively clean up the working copy, removing
+                    locks, resuming unfinished operations, etc. The operation is performed on the item selected
+                    in the Folder or the File View
+         </p>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s20.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s22.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Reverting&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Resolving Conflicts</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

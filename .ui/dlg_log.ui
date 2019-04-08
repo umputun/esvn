@@ -1,0 +1,503 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_log</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_log</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>690</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Log</string>
+    </property>
+    <property name="icon">
+        <pixmap>LogTree16x16.xpm</pixmap>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QSplitter" row="0" column="0">
+            <property name="name">
+                <cstring>splitter6</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="childrenCollapsible">
+                <bool>true</bool>
+            </property>
+            <widget class="QListView">
+                <column>
+                    <property name="text">
+                        <string>Revision</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Date</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Author</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>list_log</cstring>
+                </property>
+                <property name="frameShape">
+                    <enum>StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Sunken</enum>
+                </property>
+                <property name="lineWidth">
+                    <number>1</number>
+                </property>
+                <property name="resizePolicy">
+                    <enum>AutoOneFit</enum>
+                </property>
+                <property name="selectionMode">
+                    <enum>Single</enum>
+                </property>
+                <property name="allColumnsShowFocus">
+                    <bool>true</bool>
+                </property>
+                <property name="resizeMode">
+                    <enum>AllColumns</enum>
+                </property>
+            </widget>
+            <widget class="QTextBrowser">
+                <property name="name">
+                    <cstring>msg_box</cstring>
+                </property>
+                <property name="paletteForegroundColor">
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="frameShape">
+                    <enum>LineEditPanel</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Sunken</enum>
+                </property>
+                <property name="lineWidth">
+                    <number>1</number>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0">
+            <property name="name">
+                <cstring>layout46</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>Horizontal Spacing2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>119</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_view</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;View</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+V</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_update</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Update</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+U</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_diff</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Diff</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+D</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_select</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Select</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+S</string>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer23</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Minimum</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QGroupBox" row="1" column="0">
+            <property name="name">
+                <cstring>gr_filters</cstring>
+            </property>
+            <property name="title">
+                <string>Filters</string>
+            </property>
+            <property name="alignment">
+                <set>AlignTop</set>
+            </property>
+            <property name="flat">
+                <bool>false</bool>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="spacing">
+                    <number>0</number>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout6</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>textLabel1</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Message</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <property name="name">
+                                        <cstring>cb_msg</cstring>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>170</width>
+                                            <height>0</height>
+                                        </size>
+                                    </property>
+                                    <property name="editable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="insertionPolicy">
+                                        <enum>AtTop</enum>
+                                    </property>
+                                    <property name="autoCompletion">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="duplicatesEnabled">
+                                        <bool>false</bool>
+                                    </property>
+                                </widget>
+                                <widget class="QToolButton">
+                                    <property name="name">
+                                        <cstring>bt_clear_msg</cstring>
+                                    </property>
+                                    <property name="maximumSize">
+                                        <size>
+                                            <width>32767</width>
+                                            <height>24</height>
+                                        </size>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="iconSet">
+                                        <iconset>clear_left.png</iconset>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout3</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>textLabel2</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Author</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <property name="name">
+                                        <cstring>cb_author</cstring>
+                                    </property>
+                                    <property name="editable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="sizeLimit">
+                                        <number>10</number>
+                                    </property>
+                                    <property name="insertionPolicy">
+                                        <enum>AtTop</enum>
+                                    </property>
+                                    <property name="autoCompletion">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="duplicatesEnabled">
+                                        <bool>false</bool>
+                                    </property>
+                                </widget>
+                                <widget class="QToolButton">
+                                    <property name="name">
+                                        <cstring>bt_clear_author</cstring>
+                                    </property>
+                                    <property name="maximumSize">
+                                        <size>
+                                            <width>32767</width>
+                                            <height>24</height>
+                                        </size>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="iconSet">
+                                        <iconset>clear_left.png</iconset>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>ch_stop</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Stop on copy</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer4</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>16</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>bt_apply</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Apply</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+A</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bt_select</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>list_log</sender>
+        <signal>selectionChanged(QListViewItem*)</signal>
+        <receiver>dlg_log</receiver>
+        <slot>list_log_selectionChanged(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>bt_view</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>bt_view_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_update</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>bt_update_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_diff</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>bt_diff_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>bt_clear_msg</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>bt_clear_msg_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_clear_author</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>bt_clear_author_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_apply</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_log</receiver>
+        <slot>bt_apply_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>list_log</sender>
+        <signal>mouseButtonPressed(int,QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>dlg_log</receiver>
+        <slot>list_log_mouseButtonPressed(int,QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>cb_msg</tabstop>
+    <tabstop>cb_author</tabstop>
+    <tabstop>list_log</tabstop>
+    <tabstop>msg_box</tabstop>
+    <tabstop>bt_view</tabstop>
+    <tabstop>bt_update</tabstop>
+    <tabstop>bt_diff</tabstop>
+    <tabstop>bt_select</tabstop>
+    <tabstop>buttonCancel</tabstop>
+    <tabstop>ch_stop</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">dlg_log.ui.h</include>
+</includes>
+<slots>
+    <slot>list_log_selectionChanged( QListViewItem * item )</slot>
+    <slot>bt_view_clicked()</slot>
+    <slot>bt_update_clicked()</slot>
+    <slot>bt_diff_clicked()</slot>
+    <slot>bt_chpath_clicked()</slot>
+    <slot>bt_clear_msg_clicked()</slot>
+    <slot>bt_clear_author_clicked()</slot>
+    <slot>bt_apply_clicked()</slot>
+    <slot>list_log_mouseButtonPressed( int, QListViewItem *, const QPoint &amp;, int )</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

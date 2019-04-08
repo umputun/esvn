@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+	<!ENTITY % global_entities SYSTEM "../common/global.ent">
+	%global_entities;
+]>
+<article>
+  <title>Frequently Asked Questions</title>
+  <qandaset defaultlabel="qanda">
+    <qandaentry>
+      <question>
+        <para>What is &esvn;?</para>
+      </question>
+      <answer>
+        <para>&esvn; is a Graphical User Interface (<acronym>GUI</acronym>) to the &svn;
+          revision management system.</para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>What is &svn;?</para>
+      </question>
+      <answer>
+        <para>Rather than explain it all over again here is a quote from a free book <ulink
+            url="http://svnbook.red-bean.com/">Version Control with Subversion</ulink>. <blockquote>
+            <attribution>Version Control with Subversion</attribution>
+            <para>&quot;Subversion is a free/open-source version control system. That is,
+              Subversion manages files and directories over time. A tree of files is placed into a
+              central repository. The repository is much like an ordinary file server, except that
+              it remembers every change ever made to your files and directories. This allows you to
+              recover older versions of your data, or examine the history of how your data changed.
+              In this regard, many people think of a version control system as a sort of
+              &quot;time machine&quot;.</para>
+            <para>Subversion can access its repository across networks, which allows it to be used
+              by people on different computers. At some level, the ability for various people to
+              modify and manage the same set of data from their respective locations fosters
+              collaboration. Progress can occur more quickly without a single conduit through which
+              all modifications must occur. And because the work is versioned, you need not fear
+              that quality is the trade-off for losing that conduit—if some incorrect change is made
+              to the data, just undo that change.</para>
+            <para>Some version control systems are also software configuration management (SCM)
+              systems. These systems are specifically tailored to manage trees of source code, and
+              have many features that are specific to software development—such as natively
+              understanding programming languages, or supplying tools for building software.
+              Subversion, however, is not one of these systems. It is a general system that can be
+              used to manage any collection of files. For you, those files might be source code—for
+              others, anything from grocery shopping lists to digital video mixdowns and beyond.&quot;</para>
+          </blockquote>
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>Can I run &esvn; on <trademark>Windows</trademark>?</para>
+      </question>
+      <answer>
+        <para>Yes. A <application class="software">Win32</application> version of &esvn; is
+          available as a binary build.</para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>I want to contribute. What is the tool-chain used in development?</para>
+      </question>
+      <answer>
+        <para>The following tool chain is used in the development of &esvn;:</para>
+        <itemizedlist spacing="compact">
+          <listitem>
+            <para>GCC - 3.3.3</para>
+          </listitem>
+          <listitem>
+            <para>QT - 3.3</para>
+          </listitem>
+          <listitem>
+            <para>Visual SlickEdit, KDevelop3</para>
+          </listitem>
+          <listitem>
+            <para>Debug - gdb (kdbg), ddd</para>
+          </listitem>
+        </itemizedlist>
+        <para>The following tool chain is used in the development of &esvn; documentation:</para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <ulink url="http://www.docbook.org">Docbook XML</ulink>
+            </para>
+          </listitem>
+          <listitem>
+            <para>Editor - Any XML Editor can be used.</para>
+          </listitem>
+          <listitem>
+            <para>Parser - Xerces-J</para>
+          </listitem>
+          <listitem>
+            <para>XSLT Processor - Saxon or Xalan</para>
+          </listitem>
+          <listitem>
+            <para>FO Processor - FOP</para>
+          </listitem>
+        </itemizedlist>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>What dependencies does &esvn; have?</para>
+      </question>
+      <answer>
+        <para>&esvn; is dependent on the following: &varlist-requirements; </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>What external diff tools can I use with &esvn;?</para>
+      </question>
+      <answer>
+        <para>Following is a list of diff applications that can be used.
+          &varlist-external-diff-tools; </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>Command line &svn; prompts for user and password, &esvn; doesn't and I can't get access to my repository. How do I 
+          solve this?</para>
+      </question>
+      <answer>
+        <para>Use the &file-options; dialog to specify a user-name and password.</para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>Can I &apos;bookmark&apos; repositories like a
+          web browser bookmarks pages, and associate a unique user-name and password with each
+          bookmark?</para>
+      </question>
+      <answer>
+        <para>Yes and no. Instead of &apos;bookmarks&apos; &esvn; uses the other concept -
+          &apos;workspaces&apos;. Authentication details are stored together with each workspace so you don't need to save this information for each repository. For more details see the
+          &esvn; documentation.</para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</article>

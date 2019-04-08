@@ -1,0 +1,112 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Frequently Asked Questions</title><meta name="generator" content="DocBook XSL Stylesheets V1.65.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e1"></a>Frequently Asked Questions</h2></div></div><div></div><hr></div><div class="qandaset"><dl><dt>Q: <a href="#d0e5">What is eSvn?</a></dt><dt>Q: <a href="#d0e23">What is subversion?</a></dt><dt>Q: <a href="#d0e46">Can I run eSvn on Windows?</a></dt><dt>Q: <a href="#d0e65">I want to contribute. What is the tool-chain used in development?</a></dt><dt>Q: <a href="#d0e112">What dependencies does eSvn have?</a></dt><dt>Q: <a href="#d0e170">What external diff tools can I use with eSvn?</a></dt><dt>Q: <a href="#d0e292">Command line subversion prompts for user and password, eSvn doesn't and I can't get access to my repository. How do I 
+          solve this?</a></dt><dt>Q: <a href="#d0e314">Can I 'bookmark' repositories like a
+          web browser bookmarks pages, and associate a unique user-name and password with each
+          bookmark?</a></dt></dl><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="d0e5"></a><a name="d0e6"></a><b>Q:</b></td><td align="left" valign="top"><p>What is <span class="application">eSvn</span>?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p><span class="application">eSvn</span> is a Graphical User Interface (<span class="acronym">GUI</span>) to the <span class="application">subversion</span>
+          revision management system.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="d0e23"></a><a name="d0e24"></a><b>Q:</b></td><td align="left" valign="top"><p>What is <span class="application">subversion</span>?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p>Rather than explain it all over again here is a quote from a free book <a href="http://svnbook.red-bean.com/" target="_top">Version Control with Subversion</a>. </p><div class="blockquote"><table border="0" width="100%" cellspacing="0" cellpadding="0" class="blockquote" summary="Block quote"><tr><td width="10%" valign="top">&nbsp;</td><td width="80%" valign="top"><p>"Subversion is a free/open-source version control system. That is,
+              Subversion manages files and directories over time. A tree of files is placed into a
+              central repository. The repository is much like an ordinary file server, except that
+              it remembers every change ever made to your files and directories. This allows you to
+              recover older versions of your data, or examine the history of how your data changed.
+              In this regard, many people think of a version control system as a sort of
+              "time machine".</p><p>Subversion can access its repository across networks, which allows it to be used
+              by people on different computers. At some level, the ability for various people to
+              modify and manage the same set of data from their respective locations fosters
+              collaboration. Progress can occur more quickly without a single conduit through which
+              all modifications must occur. And because the work is versioned, you need not fear
+              that quality is the trade-off for losing that conduit&#8212;if some incorrect change is made
+              to the data, just undo that change.</p><p>Some version control systems are also software configuration management (SCM)
+              systems. These systems are specifically tailored to manage trees of source code, and
+              have many features that are specific to software development&#8212;such as natively
+              understanding programming languages, or supplying tools for building software.
+              Subversion, however, is not one of these systems. It is a general system that can be
+              used to manage any collection of files. For you, those files might be source code&#8212;for
+              others, anything from grocery shopping lists to digital video mixdowns and beyond."</p></td><td width="10%" valign="top">&nbsp;</td></tr><tr><td colspan="2" align="right" valign="top">--<span class="attribution">Version Control with Subversion</span></td><td width="10%" valign="top">&nbsp;</td></tr></table></div><p>
+        </p></td></tr><tr class="question"><td align="left" valign="top"><a name="d0e46"></a><a name="d0e47"></a><b>Q:</b></td><td align="left" valign="top"><p>Can I run <span class="application">eSvn</span> on <span class="trademark">Windows</span>&#8482;?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p>Yes. A <span class="application">Win32</span> version of <span class="application">eSvn</span> is
+          available as a binary build.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="d0e65"></a><a name="d0e66"></a><b>Q:</b></td><td align="left" valign="top"><p>I want to contribute. What is the tool-chain used in development?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p>The following tool chain is used in the development of <span class="application">eSvn</span>:</p><div class="itemizedlist"><ul type="disc" compact><li><p>GCC - 3.3.3</p></li><li><p>QT - 3.3</p></li><li><p>Visual SlickEdit, KDevelop3</p></li><li><p>Debug - gdb (kdbg), ddd</p></li></ul></div><p>The following tool chain is used in the development of <span class="application">eSvn</span> documentation:</p><div class="itemizedlist"><ul type="disc"><li><p>
+              <a href="http://www.docbook.org" target="_top">Docbook XML</a>
+            </p></li><li><p>Editor - Any XML Editor can be used.</p></li><li><p>Parser - Xerces-J</p></li><li><p>XSLT Processor - Saxon or Xalan</p></li><li><p>FO Processor - FOP</p></li></ul></div></td></tr><tr class="question"><td align="left" valign="top"><a name="d0e112"></a><a name="d0e113"></a><b>Q:</b></td><td align="left" valign="top"><p>What dependencies does <span class="application">eSvn</span> have?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p><span class="application">eSvn</span> is dependent on the following: 
+
+</p><div class="variablelist"><dl><dt><span class="term">
+			<span class="bold"><b>Qt3</b></span>
+		</span></dt><dd><p>Qt is a program library for developing applications with graphical user interfaces. It
+				allows you to rapidly develop professional programs. The Qt library is available not only
+				for Linux but for a great number of Unixes and even for Windows. Thus it is possible to
+				write programs that may be easily ported to those platforms.</p></dd><dt><span class="term">
+			<span class="bold"><b>qt3-devel</b></span>
+		</span></dt><dd><p>You need this package If you want to compile programs with Qt 3. It contains the
+				"Qt Cross platform Development Kit 2". Under <tt class="filename">/usr/lib/qt3</tt> you will find include files, documentation,
+				precompiled examples, and a tutorial for getting started with Qt. You need a license for
+				using Qt with a non-GPL application. A license can be acquired at
+				<tt class="email">&lt;<a href="mailto:sales@trolltech.com">sales@trolltech.com</a>&gt;</tt>. Authors: -------- Troll Tech AS, Norway</p></dd><dt><span class="term">
+			<span class="bold"><b>subversion</b></span>
+		</span></dt><dd><p>Subversion does the same thing <span class="acronym">CVS</span> does (<span class="application">Concurrent Versioning System</span>) but has major enhancements
+				compared to CVS ( see <a href="http://subversion.tigris.org" target="_top">http://subversion.tigris.org</a>).</p></dd></dl></div><p>
+ </p></td></tr><tr class="question"><td align="left" valign="top"><a name="d0e170"></a><a name="d0e171"></a><b>Q:</b></td><td align="left" valign="top"><p>What external diff tools can I use with <span class="application">eSvn</span>?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p>Following is a list of diff applications that can be used.
+          
+
+</p><div class="variablelist"><dl><dt><span class="term">
+			<span class="bold"><b>
+				<span class="application">kdiff3</span>
+			</b></span>
+		</span></dt><dd><p>KDiff3 is a program that compares or merges two or three text input files or
+				directories, showing the differences line by line and character by character. KDiff3
+				provides an automatic merge-facility and an integrated editor for comfortable solving of
+				merge-conflicts. The program also supports KIO on KDE (allows accessing ftp, sftp, fish, smb
+				etc.), and has an intuitive graphical user interface. More information and downloads are
+				available from the <a href="http://kdiff3.sourceforge.net/" target="_top">KDiff3 Web Site</a>.</p></dd><dt><span class="term">
+			<span class="bold"><b>
+				<span class="application">Kompare</span>
+			</b></span>
+		</span></dt><dd><p>Kompare is a KDE frontend to the Open Source diff application. Kompare is shipped as
+				part of the KDE SDK. More information is available from the <a href="http://www.kde.org/" target="_top">KDE Web Site</a>.</p></dd><dt><span class="term">
+			<span class="bold"><b>
+				<span class="application">xxdiff</span>
+			</b></span>
+		</span></dt><dd><p>xxdiff is a graphical file and directories comparator and merge tool. xxdiff is useful
+				for comparing two files, three files, or two directories (shallow and recursive). It
+				provides horizontal diffs highlighting and files can be merged interactively with
+				visualization and saving of the resulting output. xxdiff has features to assist in
+				performing merge reviews/policing and can unmerge CVS conflicts in automatically merged file
+				and display them as two files, to help resolve conflicts. xxdiff uses external diff programs
+				to compute differences: works with GNU diff, SGI diff and ClearCase's cleardiff, and any
+				other similar diff tools. More information and downloads can be found at the <a href="http://xxdiff.sourceforge.net/" target="_top">xxdiff Web Site</a>. </p></dd><dt><span class="term">
+			<span class="bold"><b>
+				<span class="application">TkDiff</span>
+			</b></span>
+		</span></dt><dd><p>TkDiff is a graphical front end to the diff program. It provides a side-by-side view of
+				the differences between two files, along with several innovative features such as diff
+				bookmarks and a graphical map of differences for quick navigation. More information and
+				download can be found on the <a href="http://tkdiff.sourceforge.net/" target="_top">TkDiff Web Site</a>.</p></dd><dt><span class="term">
+			<span class="bold"><b>
+				<span class="application">GTKdiff</span>
+			</b></span>
+		</span></dt><dd><p>GTKdiff is a graphical diff tool. It has diff3 and merge features. It's written with
+				GTK+. After gtkdiff-0.8.0, it requires <a href="http://www.gnome.org/" target="_top">GNOME</a>.
+				More information and download can be found the <a href="http://home.catv.ne.jp/pp/ginoue/software/gtkdiff/index-e.html" target="_top">GTKdiff Web Site</a>.</p></dd><dt><span class="term">
+			<span class="bold"><b>
+				<span class="application">Meld</span>
+			</b></span>
+		</span></dt><dd><p>Meld is a visual diff and merge tool. It integrates especially well with CVS. The diff
+				viewer lets you edit files in place (diffs update dynamically), and a middle column shows
+				detailed changes and allows merges. The margins show location of changes for easy
+				navigation, and it also features a tabbed interface that allows you to open many diffs at
+				once. More information and download can be found the <a href="http://meld.sourceforge.net/" target="_top">Meld Web Site</a>.</p></dd><dt><span class="term">
+			<span class="bold"><b>
+				<span class="application">ExamDiff</span>
+			</b></span>
+		</span></dt><dd><p>ExamDiff Pro is a powerful yet intuitive and easy to use visual file and directory
+				comparison tool for Windows. It features unique functionality that distinguishes ExamDiff
+				Pro from other comparison programs. If you used WinDiff or UNIX diff before, you will find
+				that ExamDiff Pro offers much more efficient and user-friendly way to compare files and
+				folders. More information and download can be found the <a href="http://www.prestosoft.com/" target="_top">PrestoSoft</a> the developers of ExamDiff.</p></dd></dl></div><p>
+ </p></td></tr><tr class="question"><td align="left" valign="top"><a name="d0e292"></a><a name="d0e293"></a><b>Q:</b></td><td align="left" valign="top"><p>Command line <span class="application">subversion</span> prompts for user and password, <span class="application">eSvn</span> doesn't and I can't get access to my repository. How do I 
+          solve this?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p>Use the 
+<span class="guimenu">
+		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Options</span>
+ dialog to specify a user-name and password.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="d0e314"></a><a name="d0e315"></a><b>Q:</b></td><td align="left" valign="top"><p>Can I 'bookmark' repositories like a
+          web browser bookmarks pages, and associate a unique user-name and password with each
+          bookmark?</p></td></tr><tr class="answer"><td align="left" valign="top"><b>A:</b></td><td align="left" valign="top"><p>Yes and no. Instead of 'bookmarks' <span class="application">eSvn</span> uses the other concept -
+          'workspaces'. Authentication details are stored together with each workspace so you don't need to save this information for each repository. For more details see the
+          <span class="application">eSvn</span> documentation.</p></td></tr></tbody></table></div></div></body></html>

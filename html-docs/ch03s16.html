@@ -1,0 +1,168 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Copying Remote Files</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s15.html" title="Copying Local Files">
+      <link rel="next" href="ch03s17.html" title="Moving Items">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Copying Remote Files</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s15.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s17.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-copy-remote"></a>Copying Remote Files
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To duplicate an item in the remote repository, remembering history, use the Copy
+                    (remote) option (
+            <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Copy (remote)</span> (<span><b class="shortcut"><span class="keysym">Ctrl+Q</span></b></span>)
+            ). Items can be copied from a source in the remote
+            repository to a destination in the remote repository or they can be copied from the working
+            copy to the remote repository. When copying between paths in the repository a complete
+                    server-side copy is performed. This is useful when branching and tagging. When a working
+                    copy item is copied to a remote repository the duplicated item is immediately committed. The
+                    <tt class="interfacename">Copy</tt> dialog provides the following fields: 
+         </p>
+         <div class="variablelist">
+            <dl>
+               <dt><span class="term">
+                                 <span class="bold"><b>Source</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The item path to be duplicated. The path may be a local path or remote
+                                   <span class="acronym">URL</span>. Use the <span><b class="guibutton">U</b></span> button to display the
+                                     <tt class="interfacename">URL wizard</tt>.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Destination</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The path to where the source will be copied. The path may only specify a local
+                                   path. Use the <span><b class="guibutton">U</b></span> button to display the <tt class="interfacename">URL wizard</tt>.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Revision</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Select the radio button and enter a value equal to a revision number.
+                                   <tt class="varname">KEYWORDS</tt> are supported: 
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">HEAD</span></dt>
+                        <dd>
+                           <p>The latest revision in the repository.</p>
+                        </dd>
+                        <dt><span class="term">BASE</span></dt>
+                        <dd>
+                           <p>The "pristine" revision of an item in a working copy.</p>
+                        </dd>
+                        <dt><span class="term">COMMITTED</span></dt>
+                        <dd>
+                           <p>The last revision in which an item changed before (or at) BASE.</p>
+                        </dd>
+                        <dt><span class="term">PREV</span></dt>
+                        <dd>
+                           <p>The revision just before the last revision in which an item changed. (Technically,
+                              					<span><b class="command">COMMITTED - 1</b></span>.)
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Date</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Select the radio button and enter a value equal to a revision date or time.
+                                   Specify date or time using any of the following syntax:
+                  </p>
+                  <div class="itemizedlist">
+                     <ul type="disc" compact>
+                        <li>
+                           <p>2004-02-17</p>
+                        </li>
+                        <li>
+                           <p>15:30</p>
+                        </li>
+                        <li>
+                           <p>15:30:00.200000</p>
+                        </li>
+                        <li>
+                           <p>2004-02-17 15:30</p>
+                        </li>
+                        <li>
+                           <p>2004-02-17 15:30 +0230</p>
+                        </li>
+                        <li>
+                           <p>2004-02-17T15:30</p>
+                        </li>
+                        <li>
+                           <p>2004-02-17T15:30Z</p>
+                        </li>
+                        <li>
+                           <p>2004-02-17T15:30-04:00</p>
+                        </li>
+                        <li>
+                           <p>20040217T1530</p>
+                        </li>
+                        <li>
+                           <p>20040217T1530Z</p>
+                        </li>
+                        <li>
+                           <p>20040217T1530-0500</p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Message</b></span>
+                               </span></dt>
+               <dd>
+                  <p>A field with which to provide a free text message.</p>
+               </dd>
+            </dl>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s15.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s17.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Copying Local Files&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Moving Items</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

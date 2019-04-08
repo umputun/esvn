@@ -1,0 +1,342 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_repository</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_repository</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>682</width>
+            <height>437</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Repository Browser</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout16</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="1" column="0">
+                    <property name="name">
+                        <cstring>layout34</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="text">
+                                <string>URL</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>le_url</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>bt_browse</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Browse</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+B</string>
+                            </property>
+                            <property name="default">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QSplitter" row="0" column="0">
+                    <property name="name">
+                        <cstring>spl_dir_list</cstring>
+                    </property>
+                    <property name="lineWidth">
+                        <number>1</number>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <widget class="QListView">
+                        <column>
+                            <property name="text">
+                                <string>Directories</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>lv_dirs</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                            <number>1</number>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="resizePolicy">
+                            <enum>AutoOneFit</enum>
+                        </property>
+                        <property name="rootIsDecorated">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizeMode">
+                            <enum>LastColumn</enum>
+                        </property>
+                    </widget>
+                    <widget class="QListView">
+                        <column>
+                            <property name="text">
+                                <string>File name</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Revision</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Last updated</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Size</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Author</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>lv_files</cstring>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                            <number>1</number>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="midLineWidth">
+                            <number>0</number>
+                        </property>
+                        <property name="resizePolicy">
+                            <enum>Manual</enum>
+                        </property>
+                        <property name="vScrollBarMode">
+                            <enum>Auto</enum>
+                        </property>
+                        <property name="hScrollBarMode">
+                            <enum>AlwaysOff</enum>
+                        </property>
+                        <property name="allColumnsShowFocus">
+                            <bool>true</bool>
+                        </property>
+                        <property name="showSortIndicator">
+                            <bool>true</bool>
+                        </property>
+                        <property name="itemMargin">
+                            <number>2</number>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QLayoutWidget" row="2" column="0">
+                    <property name="name">
+                        <cstring>layout36</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <spacer>
+                            <property name="name">
+                                <cstring>Horizontal Spacing2</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>90</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>bt_checkout</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Checkout</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+C</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>bt_view</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;View</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+V</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonOk</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Close</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+C</string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                            <property name="default">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_repository</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>bt_view</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_repository</receiver>
+        <slot>bt_view_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_checkout</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_repository</receiver>
+        <slot>bt_checkout_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_browse</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_repository</receiver>
+        <slot>bt_browse_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>lv_dirs</sender>
+        <signal>expanded(QListViewItem*)</signal>
+        <receiver>dlg_repository</receiver>
+        <slot>lv_dirs_expanded(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>lv_dirs</sender>
+        <signal>collapsed(QListViewItem*)</signal>
+        <receiver>dlg_repository</receiver>
+        <slot>lv_dirs_collapsed(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>lv_dirs</sender>
+        <signal>selectionChanged(QListViewItem*)</signal>
+        <receiver>dlg_repository</receiver>
+        <slot>lv_dirs_selectionChanged(QListViewItem*)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>le_url</tabstop>
+    <tabstop>bt_browse</tabstop>
+    <tabstop>bt_checkout</tabstop>
+    <tabstop>bt_view</tabstop>
+    <tabstop>buttonOk</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">dlg_repository.ui.h</include>
+</includes>
+<slots>
+    <slot>bt_browse_clicked()</slot>
+    <slot>lv_dirs_selectionChanged( QListViewItem * )</slot>
+    <slot>lv_dirs_expanded( QListViewItem * item )</slot>
+    <slot>lv_dirs_collapsed( QListViewItem * item )</slot>
+    <slot>bt_view_clicked()</slot>
+    <slot>bt_checkout_clicked()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

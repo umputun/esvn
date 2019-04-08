@@ -1,0 +1,66 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Building from Binary Package with Source RPM</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="apb.html" title="Appendix&nbsp;B.&nbsp;Building">
+      <link rel="previous" href="apbs02.html" title="Building a Binary Package">
+      <link rel="next" href="apbs04.html" title="Building from Source Binary package without Source RPM">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Building from Binary Package with Source RPM</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="apbs02.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Appendix&nbsp;B.&nbsp;Building</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="apbs04.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="d4e3166"></a>Building from Binary Package with Source RPM
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To build <span><b class="application">eSvn</b></span> from sources with <b class="filename"><tt>rpms</tt></b>
+                        use the following.
+         </p>
+         <div class="procedure">
+            <p class="title"><b>Procedure&nbsp;B.1.&nbsp;Building from RPM with RPMS</b></p>
+            <ol type="1">
+               <li><span><b class="command">rpm -Uvh src.rpm</b></span></li>
+               <li><span><b class="command">rbmbuild -bb /usr/src/packages/SRPMS/esvn.spec</b></span></li>
+            </ol>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="apbs02.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="apb.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="apbs04.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Building a Binary Package&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Building from Source Binary package without Source RPM</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

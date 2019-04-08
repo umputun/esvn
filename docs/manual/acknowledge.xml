@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+	<!ENTITY % global_entities SYSTEM "../common/global.ent">
+	%global_entities;
+]>-->
+<appendix id="appen-acknowledgments">
+  <title>Acknowledgments</title>
+  <para>Thanks goes to everyone who has contributed in development, testing and feedback of
+    &esvn;. Thanks to the people behind <emphasis role="bold">Trolltech</emphasis> for a very
+    powerful toolkit. Thanks to <emphasis>Jasmin Blanchette</emphasis> and <emphasis>Mark
+    Summerfield</emphasis> for a perfect book &quot;C++ GUI programming with QT3&quot;.</para>
+  <para>Many thanks to <emphasis>Ben Collins-Sussman</emphasis>, <emphasis>Brian W.
+    Fitzpatrick</emphasis>, <emphasis>C. Michael Pilato</emphasis> for their great Free/Open Source
+    &svn; book &quot;<ulink url="http://svnbook.red-bean.com/">Version Control with
+    Subversion</ulink>&quot;. Thanks to the <ulink url="http://www.tigris.org/">Tigris</ulink>
+    developer community for developing &svn;.</para>
+  <para>A special thanks to the following:</para>
+  <itemizedlist spacing="compact">
+    <title>Authors</title>
+    <listitem>
+      <para>
+        <author>
+          <firstname>Eugene</firstname>
+          <surname>Bort</surname>
+        </author> - Lead Developer <email>esvn@umputun.com</email>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <author>
+          <firstname>Sean</firstname>
+          <surname>Wheller</surname>
+        </author> - Technical Author <email>sean@inwords.co.za</email>
+      </para>
+    </listitem>
+  </itemizedlist>
+  <itemizedlist>
+    <title>Contributors</title>
+    <listitem>
+      <para>
+        <author>
+          <firstname>Michael</firstname>
+          <surname>Lang</surname>
+        </author> - Packager </para>
+    </listitem>
+    <listitem>
+      <para>
+        <author>
+          <firstname>Alexander</firstname>
+          <surname>Darovsky</surname>
+        </author> - Developer </para>
+    </listitem>
+    <listitem>
+      <para>
+        <author>
+          <firstname>Andrej</firstname>
+          <surname>Zverev</surname>
+        </author> - Developer </para>
+    </listitem>
+    <listitem>
+      <para>
+        <author>
+          <firstname>Renato</firstname>
+          <surname>Ramonda</surname>
+        </author> - Developer </para>
+    </listitem>
+  </itemizedlist>
+</appendix>

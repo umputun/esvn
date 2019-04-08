@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<guimenu>
+		<accel>F</accel>ile</guimenu>
+	<guimenuitem>Export ...</guimenuitem>
+</menuchoice>

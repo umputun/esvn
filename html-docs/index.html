@@ -1,0 +1,280 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>The eSvn User Manual</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="next" href="pr01.html" title="Preface">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">The eSvn User Manual</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left">&nbsp;</td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="pr01.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="book" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="d4e1"></a>The <span><b class="application">eSvn</b></span> User Manual
+                  </h1>
+               </div>
+               <div>
+                  <div class="authorgroup">
+                     <div class="author">
+                        <h3 class="author"><span class="firstname">Sean</span> <span class="surname">Wheller</span></h3>
+                     </div>
+                  </div>
+               </div>
+               <div><a href="ln-d4e10.html">Legal Notice</a></div>
+               <div>
+                  <div class="revhistory">
+                     <table border="1" width="100%" summary="Revision history">
+                        <tr>
+                           <th align="left" valign="top" colspan="2"><b>Revision History</b></th>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.1</td>
+                           <td align="left">11/08/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Initial document creation in accordance with version 0.5.8</p>
+                                      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.2</td>
+                           <td align="left">28/08/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Version 0.5.9. [+] upgrading procedure, build procedures, toolbars. [*] update Main,
+                                             View and Quick Diff captures.
+                              </p>
+                                      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.2.1</td>
+                           <td align="left">29/08/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Version 0.5.9. [*] fixes to grammar.</p>
+                                      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.2.2</td>
+                           <td align="left">30/08/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Version 0.6.0. [+] help options Web Site, Check for updates [+] Versions update [*]
+                                             add filters to log [+] Browser to options [-] option help index.
+                              </p>
+                                      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.2.3</td>
+                           <td align="left">06/09/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Version 0.6.1. [+] B option diff setup dlg [+] Auto refresh Options - other dlg [+]
+                                             Add Diff-3 (conflict) section [*] description of quick diff logic.
+                              </p>
+                                      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.2.4</td>
+                           <td align="left">14/09/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Version 0.6.3 [+] Show changed items option to Query menu [+] Show changed
+                                             items section [*] Update main and query captures [+] Open option to Options, General
+                                             form [+] Add File Mapping to Options
+                              </p>
+                                      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.2.5</td>
+                           <td align="left">10/11/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Version 0.6.4 [+] Added log levels (Regular and Verbose)</p>
+                                      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Revision 0.2.6</td>
+                           <td align="left">09/12/2004</td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="2">
+                                        
+                              <p>Version 0.6.6 [+] Build instructions</p>
+                                      
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div></div>
+            <hr>
+         </div>
+         <div class="toc">
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="preface"><a href="pr01.html">Preface</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect1"><a href="pr01.html#esvn-contributing">Contributing</a></span></dt>
+                     <dt><span class="sect1"><a href="pr01s02.html">Installation</a></span></dt>
+                     <dd>
+                        <dl>
+                           <dt><span class="sect2"><a href="pr01s02.html#esvn-inst-req">Requirements</a></span></dt>
+                           <dt><span class="sect2"><a href="pr01s02.html#esvn-inst-inst">Installing</a></span></dt>
+                           <dt><span class="sect2"><a href="pr01s02.html#esvn-upgrading">Upgrading</a></span></dt>
+                           <dt><span class="sect2"><a href="pr01s02.html#esvn-inst-uninst">Uninstalling</a></span></dt>
+                        </dl>
+                     </dd>
+                     <dt><span class="sect1"><a href="pr01s03.html">Checking for new versions</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="chapter"><a href="ch01.html">1. Overview</a></span></dt>
+               <dt><span class="chapter"><a href="ch02.html">2. Getting Started</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect1"><a href="ch02.html#esvn-starting">Starting eSvn</a></span></dt>
+                     <dt><span class="sect1"><a href="ch02s02.html">Main Interface</a></span></dt>
+                     <dd>
+                        <dl>
+                           <dt><span class="sect2"><a href="ch02s02.html#esvn-main-menus">Main Menus</a></span></dt>
+                           <dt><span class="sect2"><a href="ch02s02.html#esvn-toolbar">Toolbar</a></span></dt>
+                           <dt><span class="sect2"><a href="ch02s02.html#esvn-tree-view">Tree View</a></span></dt>
+                           <dt><span class="sect2"><a href="ch02s02.html#esvn-file-view">File View</a></span></dt>
+                           <dt><span class="sect2"><a href="ch02s02.html#esvn-log-view">Log View</a></span></dt>
+                           <dt><span class="sect2"><a href="ch02s02.html#esvn-command-prompt">Command Prompt</a></span></dt>
+                        </dl>
+                     </dd>
+                     <dt><span class="sect1"><a href="ch02s03.html">Exiting eSvn</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="chapter"><a href="ch03.html">3. Using eSvn</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect1"><a href="ch03.html#esvn-open-workspace">Opening a Working Directory</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s02.html">Managing Workspaces</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s03.html">Checking Out a Working Copy</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s04.html">Browsing Remote Repositories</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s05.html">Importing a File System</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s06.html">Exporting a Folder System</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s07.html">Configuring Options</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s08.html">Refresh Operations</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s09.html">Updating Local Copy</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s10.html">Updating the Revision</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s11.html">Committing to the Repository</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s12.html">Adding to the Repository</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s13.html">Recursive Addition</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s14.html">Deleting</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s15.html">Copying Local Files</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s16.html">Copying Remote Files</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s17.html">Moving Items</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s18.html">Merging</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s19.html">Switching a Working Copy</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s20.html">Reverting</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s21.html">Cleaning up</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s22.html">Resolving Conflicts</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s23.html">Editing</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s24.html">Log</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s25.html">Info</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s26.html">Status</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s27.html">Properties</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s28.html">Diff</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s29.html">Quick Diff</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s30.html">Diff-3 (conflict)</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s31.html">Blame</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s32.html">Show changed items</a></span></dt>
+                     <dt><span class="sect1"><a href="ch03s33.html">View (cat)</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="appendix"><a href="apa.html">A. Tools</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect1"><a href="apa.html#d4e3062">External Diff Tools</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="appendix"><a href="apb.html">B. Building</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect1"><a href="apb.html#d4e3146">Prerequisites</a></span></dt>
+                     <dt><span class="sect1"><a href="apbs02.html">Building a Binary Package</a></span></dt>
+                     <dt><span class="sect1"><a href="apbs03.html">Building from Binary Package with Source RPM</a></span></dt>
+                     <dt><span class="sect1"><a href="apbs04.html">Building from Source Binary package without Source RPM</a></span></dt>
+                     <dt><span class="sect1"><a href="apbs05.html">Using the eSvn Makefile</a></span></dt>
+                     <dt><span class="sect1"><a href="apbs06.html">Building the eSvn Documentation</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="appendix"><a href="apc.html">C. Acknowledgments</a></span></dt>
+            </dl>
+         </div>
+         <div class="list-of-figures">
+            <p><b>List of Figures</b></p>
+            <dl>
+               <dt>2.1. <a href="ch02.html#fig-startup">The First Time Startup Dialog</a></dt>
+               <dt>2.2. <a href="ch02s02.html#esvn-fig-mainint">Main Interface</a></dt>
+               <dt>3.1. <a href="ch03s02.html#fig-workspaces">Two WC Workspace</a></dt>
+               <dt>3.2. <a href="ch03s28.html#fig-diff">Diff</a></dt>
+               <dt>3.3. <a href="ch03s29.html#fig-quick-diff">Quick diff</a></dt>
+            </dl>
+         </div>
+         <div class="list-of-tables">
+            <p><b>List of Tables</b></p>
+            <dl>
+               <dt>2.1. <a href="ch02s02.html#d4e986">Tree View Status Icons</a></dt>
+               <dt>2.2. <a href="ch02s02.html#esvn-tbl-file-view-status-icons">File View Status Icons</a></dt>
+            </dl>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left">&nbsp;</td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="pr01.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">&nbsp;</td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right" valign="top">&nbsp;Preface</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

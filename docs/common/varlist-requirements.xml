@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE variablelist PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+	<!ENTITY % xinclude SYSTEM "/home/sean/apps/oxygen/docbook/dtd/xinclude.mod">
+	%xinclude;
+	<!ENTITY % global_entities SYSTEM "../common/global.ent">
+	%global_entities;
+]>-->
+<variablelist>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">Qt3</emphasis>
+		</term>
+		<listitem>
+			<para>Qt is a program library for developing applications with graphical user interfaces. It
+				allows you to rapidly develop professional programs. The Qt library is available not only
+				for Linux but for a great number of Unixes and even for Windows. Thus it is possible to
+				write programs that may be easily ported to those platforms.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">qt3-devel</emphasis>
+		</term>
+		<listitem>
+			<para>You need this package If you want to compile programs with Qt 3. It contains the
+				&quot;Qt Cross platform Development Kit 2&quot;. Under <filename
+				class="directory">/usr/lib/qt3</filename> you will find include files, documentation,
+				precompiled examples, and a tutorial for getting started with Qt. You need a license for
+				using Qt with a non-GPL application. A license can be acquired at
+				<email>sales@trolltech.com</email>. Authors: -------- Troll Tech AS, Norway</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">subversion</emphasis>
+		</term>
+		<listitem>
+			<para>Subversion does the same thing <acronym>CVS</acronym> does (<application
+					class="software">Concurrent Versioning System</application>) but has major enhancements
+				compared to CVS ( see <ulink url="http://subversion.tigris.org">http://subversion.tigris.org</ulink>).</para>
+		</listitem>
+	</varlistentry>
+</variablelist>

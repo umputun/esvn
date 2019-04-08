@@ -1,0 +1,157 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Building the eSvn Documentation</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="apb.html" title="Appendix&nbsp;B.&nbsp;Building">
+      <link rel="previous" href="apbs05.html" title="Using the eSvn Makefile">
+      <link rel="next" href="apc.html" title="Appendix&nbsp;C.&nbsp;Acknowledgments">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Building the eSvn Documentation</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="apbs05.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Appendix&nbsp;B.&nbsp;Building</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="apc.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="d4e3214"></a>Building the <span><b class="application">eSvn</b></span> Documentation
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>It is possible to build the <span><b class="application">eSvn</b></span> documentation in HTML and PDF without building
+                        the <span><b class="application">eSvn</b></span> program.
+         </p>
+         <div class="procedure">
+            <p class="title"><b>Procedure&nbsp;B.4.&nbsp;Building the <span><b class="application">eSvn</b></span> Documentation</b></p>
+            <ol type="1">
+               <li>
+                  <p>Do <span><b class="command">svn update</b></span>.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">cd dist</b></span>
+                                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">make clean</b></span>
+                                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">make doc</b></span>
+                                     
+                  </p>
+               </li>
+            </ol>
+         </div>
+         <div class="procedure">
+            <p class="title"><b>Procedure&nbsp;B.5.&nbsp;Building the <span><b class="application">eSvn</b></span> HTML Documentation</b></p>
+            <ol type="1">
+               <li>
+                  <p>Do <span><b class="command">svn update</b></span>.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">cd dist</b></span>
+                                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">make clean</b></span>
+                                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">make HTML</b></span>
+                                     
+                  </p>
+               </li>
+            </ol>
+         </div>
+         <div class="procedure">
+            <p class="title"><b>Procedure&nbsp;B.6.&nbsp;Building the <span><b class="application">eSvn</b></span> PDF Documentation</b></p>
+            <ol type="1">
+               <li>
+                  <p>Do <span><b class="command">svn update</b></span>.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">cd dist</b></span>
+                                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">make clean</b></span>
+                                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                         <span><b class="command">make fo</b></span>
+                                     
+                  </p>
+               </li>
+            </ol>
+         </div>
+         <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+               <tr>
+                  <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="common/admon/note.png"></td>
+                  <th align="left"></th>
+               </tr>
+               <tr>
+                  <td colspan="2" align="left" valign="top">
+                     <p>In order to transform the documentation to PDF, the HTML target must have been run
+                                        at least once. If you have run the HTML target at least once but added images to the
+                                        source, then the HTML target must be run again. It is not necessary to tun the HTML
+                                        target is documentation changes did not include the addition of images.
+                     </p>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="apbs05.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="apb.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="apc.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Using the eSvn Makefile&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Appendix&nbsp;C.&nbsp;Acknowledgments</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

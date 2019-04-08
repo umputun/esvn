@@ -1,0 +1,3009 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>frm_main</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>frm_main</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>756</width>
+            <height>525</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string> eSvn</string>
+    </property>
+    <property name="icon">
+        <pixmap>esvn-48.png</pixmap>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QSplitter" row="0" column="0">
+            <property name="name">
+                <cstring>spl_dir_list</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <widget class="QListView">
+                <column>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="clickable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>false</bool>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>list_dirs</cstring>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="cursor">
+                    <cursor>0</cursor>
+                </property>
+                <property name="frameShape">
+                    <enum>NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Plain</enum>
+                </property>
+                <property name="lineWidth">
+                    <number>0</number>
+                </property>
+                <property name="midLineWidth">
+                    <number>0</number>
+                </property>
+                <property name="itemMargin">
+                    <number>2</number>
+                </property>
+                <property name="rootIsDecorated">
+                    <bool>true</bool>
+                </property>
+                <property name="resizeMode">
+                    <enum>LastColumn</enum>
+                </property>
+                <property name="treeStepSize">
+                    <number>15</number>
+                </property>
+            </widget>
+            <widget class="QSplitter">
+                <property name="name">
+                    <cstring>spl_list_out</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <widget class="QListView">
+                    <column>
+                        <property name="text">
+                            <string>File name</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Status</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Revision</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Last rev.</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Last updated</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Modified (local)</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Author</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Tag/Branch</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>list_files</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="lineWidth">
+                        <number>0</number>
+                    </property>
+                    <property name="resizePolicy">
+                        <enum>Manual</enum>
+                    </property>
+                    <property name="vScrollBarMode">
+                        <enum>AlwaysOn</enum>
+                    </property>
+                    <property name="hScrollBarMode">
+                        <enum>AlwaysOff</enum>
+                    </property>
+                    <property name="selectionMode">
+                        <enum>Extended</enum>
+                    </property>
+                    <property name="allColumnsShowFocus">
+                        <bool>true</bool>
+                    </property>
+                    <property name="showSortIndicator">
+                        <bool>true</bool>
+                    </property>
+                    <property name="itemMargin">
+                        <number>1</number>
+                    </property>
+                    <property name="resizeMode">
+                        <enum>NoColumn</enum>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout43</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QTextBrowser">
+                            <property name="name">
+                                <cstring>textBrowser</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Sunken</enum>
+                            </property>
+                            <property name="lineWidth">
+                                <number>2</number>
+                            </property>
+                            <property name="hScrollBarMode">
+                                <enum>AlwaysOff</enum>
+                            </property>
+                            <property name="wrapPolicy">
+                                <enum>AtWordOrDocumentBoundary</enum>
+                            </property>
+                        </widget>
+                        <widget class="Cmd_LineEdit">
+                            <property name="name">
+                                <cstring>cmd_LineEdit</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>MenuBar</cstring>
+    </property>
+    <property name="frameShape">
+        <enum>MenuBarPanel</enum>
+    </property>
+    <property name="frameShadow">
+        <enum>Sunken</enum>
+    </property>
+    <property name="defaultUp">
+        <bool>false</bool>
+    </property>
+    <item text="&amp;File" name="fileMenu">
+        <action name="fileOpen_workspaceAction"/>
+        <action name="fileWorkspaceAction"/>
+        <separator/>
+        <action name="fileCheckoutAction"/>
+        <action name="fileBrowse_Repository_Action"/>
+        <separator/>
+        <action name="fileImport_Action"/>
+        <action name="fileExport_Action"/>
+        <separator/>
+        <action name="fileOptions_Action"/>
+        <separator/>
+        <action name="fileExitAction"/>
+    </item>
+    <item text="View" name="View">
+        <action name="viewRefresh_localAction"/>
+        <action name="viewRefresh_workspaceAction"/>
+        <action name="viewRefresh_onlineAction_2_2"/>
+        <separator/>
+        <action name="viewSwitchFlatView"/>
+        <action name="viewRefresh_onlineAction"/>
+        <action name="viewSwitchFlatViewChanged"/>
+        <action name="viewHide_unknownAction"/>
+        <action name="viewHide_known_fileAction"/>
+        <separator/>
+        <action name="viewClear_output_logAction"/>
+        <separator/>
+        <action name="viewToolbarsAction"/>
+        <item text="Toolbars" name="popupMenu_25" accel="">
+            <action name="viewToolbarsFileAction"/>
+            <action name="viewToolbarsViewAction"/>
+            <action name="viewToolbarsModifyAction"/>
+            <action name="viewToolbarsQueryAction"/>
+        </item>
+    </item>
+    <item text="Modify" name="Modify">
+        <action name="modifyUpdateAction"/>
+        <action name="modifyUpdate_revision_Action"/>
+        <action name="modifyCommitAction"/>
+        <separator/>
+        <action name="modifyAddAction"/>
+        <action name="modifyAdd_recursiveAction"/>
+        <action name="modifyDeleteAction"/>
+        <separator/>
+        <action name="modifyCopyAction"/>
+        <action name="modifyCopy_remote_Action"/>
+        <action name="modifyMoveAction"/>
+        <action name="modifyMake_directory_Action"/>
+        <separator/>
+        <action name="modifyMegreAction"/>
+        <action name="modifySwitchAction"/>
+        <separator/>
+        <action name="modifyRevertAction"/>
+        <action name="modifyRevert_recursiveAction"/>
+        <action name="modifyCleanupAction"/>
+        <action name="modifyResolveAction"/>
+        <separator/>
+        <action name="modifyEditAction"/>
+    </item>
+    <item text="Query" name="Query">
+        <action name="queryLogAction"/>
+        <action name="queryInfoAction"/>
+        <action name="queryStatusAction"/>
+        <action name="queryProperties"/>
+        <separator/>
+        <action name="queryDiffAction"/>
+        <action name="queryQuick_DiffAction"/>
+        <action name="query3_Way_DiffAction"/>
+        <separator/>
+        <action name="fileShow_changed_filedirectoriesAction"/>
+        <separator/>
+        <action name="queryBlameAction"/>
+        <action name="queryViewAction"/>
+    </item>
+    <separator/>
+    <item text="&amp;Help" name="Help">
+        <action name="helpIndexAction"/>
+        <separator/>
+        <action name="helpWebsiteAction"/>
+        <action name="helpCheck_for_updatesAction"/>
+        <separator/>
+        <action name="helpAboutAction"/>
+    </item>
+</menubar>
+<toolbars>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tlb_file</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="label">
+            <string>File</string>
+        </property>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_open</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>folder_green_open.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Open working directory ...</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_workspace</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>bookmark.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Workspace</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_checkout</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>checkout_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Check out</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_repository</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>blockdevice.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Browse repository</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_import</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>arrow_up_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Import</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_export</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>arrow_down_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Export</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_options</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>configure.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Options</string>
+            </property>
+        </widget>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tlb_query</cstring>
+        </property>
+        <property name="label">
+            <string>Query</string>
+        </property>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_log</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>LogTree16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Log</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_info</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>cvs_annotate_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Info</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_status</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>module_status_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Status</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_propetry</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>kdar.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Properties</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_diff</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>services.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Diff</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_quickdiff</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>ktip.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Quick diff</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_3diff</cstring>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>157</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>D3</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Three way diff</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>ltbt_blame</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>view_text.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Blame</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_changed</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>headline.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Show changed items</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_view</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>rebuild.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>View</string>
+            </property>
+        </widget>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tlb_view</cstring>
+        </property>
+        <property name="label">
+            <string>View</string>
+        </property>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_refreshlocal</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>reload.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Refresh local</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_refreshws</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>refresh_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Refresh workspace</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_refreshonline</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>run.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Refresh online</string>
+            </property>
+        </widget>
+        <action name="viewSwitchFlatView"/>
+        <action name="viewSwitchFlatViewChanged"/>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_cleanout</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>clear_left.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Clear output log</string>
+            </property>
+        </widget>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tlb_modify</cstring>
+        </property>
+        <property name="label">
+            <string>Modify</string>
+        </property>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_update</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>update_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Update</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_update_recursive</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>update_recursive_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Recursive update</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_commit</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>commit_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Commit</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_add</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>module_add_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Add</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_add_recursive</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>module_add_recursive_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Add recursive</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_delete</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>Delete16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Delete</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_copy_local</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>editcopy.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Copy local</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_copy_remote</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>editcopy-recursive.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Copy remote</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_move</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>arrow_right_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Move</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_mkdir</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>folder_green.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Make directory</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_merge</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>merge_16x16.xpm</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Merge</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_switch</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>backimage.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Switch</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_revert</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>revert.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Revert</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_revert_recursive</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>revert-recursive.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Revert recursive</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_cleanup</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>clear_left.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Cleanup</string>
+            </property>
+        </widget>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_resolved</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>apply.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Resolved</string>
+            </property>
+        </widget>
+        <separator/>
+        <widget class="QToolButton">
+            <property name="name">
+                <cstring>tlbt_edit</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="iconSet">
+                <iconset>edit.png</iconset>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Edit</string>
+            </property>
+        </widget>
+    </toolbar>
+</toolbars>
+<customwidgets>
+    <customwidget>
+        <class>Cmd_LineEdit</class>
+        <header location="global">src/cmd_lineedit.h</header>
+        <sizehint>
+            <width>-1</width>
+            <height>-1</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image0</pixmap>
+        <signal>returnPressed()</signal>
+    </customwidget>
+</customwidgets>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileNewAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Add project to workspace</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Add project to workspace</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileCheckoutAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>checkout_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>&amp;Checkout ...</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Checkout ...</string>
+        </property>
+        <property name="toolTip">
+            <string>Check out a working copy from a repository.</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Save</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Import</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAsAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Save As</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Export</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>filePrintAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Print</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Create</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+P</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>quit_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Exit</string>
+        </property>
+        <property name="menuText">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editUndoAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Undo</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Undo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Z</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editRedoAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Redo</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Redo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Y</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editCutAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Cut</string>
+        </property>
+        <property name="menuText">
+            <string>Cu&amp;t</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+X</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editCopyAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Copy</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Copy</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+C</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editPasteAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Paste</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Paste</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+V</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editFindAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Find</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Find...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+F</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpWebsiteAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>Web site</string>
+        </property>
+        <property name="menuText">
+            <string>Web site</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpIndexAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>&amp;Contents...</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Contents...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpAboutAction</cstring>
+        </property>
+        <property name="text">
+            <string>About</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;About</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyUpdateAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>update_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Update</string>
+        </property>
+        <property name="menuText">
+            <string>Update</string>
+        </property>
+        <property name="toolTip">
+            <string>Update your working copy.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+U</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyCommitAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>commit_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Commit ..</string>
+        </property>
+        <property name="menuText">
+            <string>Commit ..</string>
+        </property>
+        <property name="toolTip">
+            <string> Send changes from your working copy to the repository.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+C</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyAddAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>module_add_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Add</string>
+        </property>
+        <property name="menuText">
+            <string>Add</string>
+        </property>
+        <property name="toolTip">
+            <string>Add files and directories to your working copy and schedule them for addition to the repository</string>
+        </property>
+        <property name="whatsThis">
+            <string>Add files and directories to your working copy and schedule them for addition to the repository. They will be uploaded and added to the repository on your next commit. If you add something and change your mind before committing, you can unschedule the addition using svn revert.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+A</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyAdd_recursiveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>module_add_recursive_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Add recursive</string>
+        </property>
+        <property name="menuText">
+            <string>Add recursive</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+A</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyDeleteAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>Delete16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Delete</string>
+        </property>
+        <property name="menuText">
+            <string>Delete</string>
+        </property>
+        <property name="toolTip">
+            <string>Delete an item from a working copy or the repository.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+D</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyMegreAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>merge_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Merge ...</string>
+        </property>
+        <property name="menuText">
+            <string>Merge ...</string>
+        </property>
+        <property name="toolTip">
+            <string> Apply the differences between two sources to a working copy path.
+</string>
+        </property>
+        <property name="accel">
+            <string>Alt+M</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifySwitchAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>backimage.png</iconset>
+        </property>
+        <property name="text">
+            <string>Switch ...</string>
+        </property>
+        <property name="menuText">
+            <string>Switch ...</string>
+        </property>
+        <property name="toolTip">
+            <string>Update working copy to a different URL.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyRevertAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>revert.png</iconset>
+        </property>
+        <property name="text">
+            <string>Revert</string>
+        </property>
+        <property name="menuText">
+            <string>Revert</string>
+        </property>
+        <property name="toolTip">
+            <string> Undo all local edits.
+</string>
+        </property>
+        <property name="accel">
+            <string>Alt+R</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyResolveAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>ok.png</iconset>
+        </property>
+        <property name="text">
+            <string>Resolved</string>
+        </property>
+        <property name="menuText">
+            <string>Resolved</string>
+        </property>
+        <property name="toolTip">
+            <string>Remove “conflicted” state on working copy files or directories.
+</string>
+        </property>
+        <property name="accel">
+            <string>Alt+E</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyCopyAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>editcopy.png</iconset>
+        </property>
+        <property name="text">
+            <string>Copy (local) ...</string>
+        </property>
+        <property name="menuText">
+            <string>Copy (local) ...</string>
+        </property>
+        <property name="toolTip">
+            <string>Copy a file or directory in a working copy.
+</string>
+        </property>
+        <property name="accel">
+            <string>Alt+Q</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyMoveAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>arrow_right_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Move ...</string>
+        </property>
+        <property name="menuText">
+            <string>Move ...</string>
+        </property>
+        <property name="toolTip">
+            <string> Move a file or directory.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+V</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyRenameAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Rename</string>
+        </property>
+        <property name="menuText">
+            <string>Rename</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+R</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyCreateAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Create directory</string>
+        </property>
+        <property name="menuText">
+            <string>Create directory</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+C</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryLogAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>LogTree16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Log ...</string>
+        </property>
+        <property name="menuText">
+            <string>Log ...</string>
+        </property>
+        <property name="toolTip">
+            <string>Log</string>
+        </property>
+        <property name="accel">
+            <string>Alt+L</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryInfoAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>cvs_annotate_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Info...</string>
+        </property>
+        <property name="menuText">
+            <string>Info...</string>
+        </property>
+        <property name="toolTip">
+            <string>Print information about selected item</string>
+        </property>
+        <property name="accel">
+            <string>Alt+I</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryDiffAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>services.png</iconset>
+        </property>
+        <property name="text">
+            <string>Diff ...</string>
+        </property>
+        <property name="menuText">
+            <string>Diff ...</string>
+        </property>
+        <property name="toolTip">
+            <string> Display the differences between two paths.</string>
+        </property>
+        <property name="statusTip">
+            <string>Display the differences between two paths by user external program</string>
+        </property>
+        <property name="accel">
+            <string>F9</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryStatusAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>module_status_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Status</string>
+        </property>
+        <property name="toolTip">
+            <string>Print the status of working copy files and directories.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewRefresh_localAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>reload.png</iconset>
+        </property>
+        <property name="text">
+            <string>Refresh local</string>
+        </property>
+        <property name="menuText">
+            <string>Refresh local</string>
+        </property>
+        <property name="toolTip">
+            <string>Refresh list of files</string>
+        </property>
+        <property name="accel">
+            <string>F5</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewRefresh_onlineAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>run.png</iconset>
+        </property>
+        <property name="text">
+            <string>Refresh online</string>
+        </property>
+        <property name="menuText">
+            <string>Refresh online</string>
+        </property>
+        <property name="visible">
+            <bool>false</bool>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryProperties</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>kdar.png</iconset>
+        </property>
+        <property name="text">
+            <string>Properties ...</string>
+        </property>
+        <property name="accel">
+            <string>Alt+P</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>Action_3</cstring>
+        </property>
+        <property name="text">
+            <string>Cleanup</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>mn_NewWorkspace</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>New workspace</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileRecentlyOpened</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>Recently opened</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileOptions_Action</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>configure.png</iconset>
+        </property>
+        <property name="text">
+            <string>Options ...</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewShow_allAction</cstring>
+        </property>
+        <property name="text">
+            <string>Show all</string>
+        </property>
+        <property name="menuText">
+            <string>Show all</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewHide_unknownAction</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="on">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>Hide unknown files</string>
+        </property>
+        <property name="menuText">
+            <string>Hide unknown files</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+H</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>menutestAction</cstring>
+        </property>
+        <property name="text">
+            <string>test</string>
+        </property>
+        <property name="menuText">
+            <string>test</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>menutest2Action</cstring>
+        </property>
+        <property name="text">
+            <string>test2</string>
+        </property>
+        <property name="menuText">
+            <string>test2</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>Action_4</cstring>
+        </property>
+        <property name="text">
+            <string>Unnamed</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileOpen_workspaceAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>folder_green_open.png</iconset>
+        </property>
+        <property name="text">
+            <string>Open working directory ...</string>
+        </property>
+        <property name="menuText">
+            <string>Open working directory ...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+O</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>Action</cstring>
+        </property>
+        <property name="text">
+            <string>Edit</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryViewAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>rebuild.png</iconset>
+        </property>
+        <property name="text">
+            <string>View (cat)</string>
+        </property>
+        <property name="menuText">
+            <string>View (cat)</string>
+        </property>
+        <property name="toolTip">
+            <string>Output the contents of the specified files or URLs.
+</string>
+        </property>
+        <property name="accel">
+            <string>F3</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyEditAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>edit.png</iconset>
+        </property>
+        <property name="text">
+            <string>Edit</string>
+        </property>
+        <property name="menuText">
+            <string>Edit</string>
+        </property>
+        <property name="accel">
+            <string>F4</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyUpdate_revision_Action</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>update_recursive_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Update revision ...</string>
+        </property>
+        <property name="menuText">
+            <string>Update revision ...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+U</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyCleanupAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>clear_left.png</iconset>
+        </property>
+        <property name="text">
+            <string>Cleanup</string>
+        </property>
+        <property name="menuText">
+            <string>Cleanup</string>
+        </property>
+        <property name="toolTip">
+            <string>Recursively clean up the working copy.</string>
+        </property>
+        <property name="accel">
+            <string>Alt+Z</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewRefresh_workspaceAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>refresh_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Refresh workspace</string>
+        </property>
+        <property name="menuText">
+            <string>Refresh workspace</string>
+        </property>
+        <property name="accel">
+            <string>Shift+F5</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyCopy_remote_Action</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>editcopy-recursive.png</iconset>
+        </property>
+        <property name="text">
+            <string>Copy (remote) ...</string>
+        </property>
+        <property name="menuText">
+            <string>Copy (remote) ...</string>
+        </property>
+        <property name="toolTip">
+            <string>Copy a file or directory in the repository.
+</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Q</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryDiff_external_Action</cstring>
+        </property>
+        <property name="text">
+            <string>Diff (external) ...</string>
+        </property>
+        <property name="menuText">
+            <string>Diff (external) ...</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewClear_output_logAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>clear_left.png</iconset>
+        </property>
+        <property name="text">
+            <string>Clear output log</string>
+        </property>
+        <property name="menuText">
+            <string>Clear output log</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryQuick_DiffAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>ktip.png</iconset>
+        </property>
+        <property name="text">
+            <string>Quick Diff</string>
+        </property>
+        <property name="menuText">
+            <string>Quick Diff</string>
+        </property>
+        <property name="toolTip">
+            <string>Display the differences between two paths.
+</string>
+        </property>
+        <property name="accel">
+            <string>Shift+F9</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>_6111Action</cstring>
+        </property>
+        <property name="text">
+            <string>1</string>
+        </property>
+        <property name="menuText">
+            <string>1</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>_6222Action</cstring>
+        </property>
+        <property name="text">
+            <string>2</string>
+        </property>
+        <property name="menuText">
+            <string>2</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>_63Action</cstring>
+        </property>
+        <property name="text">
+            <string>3</string>
+        </property>
+        <property name="menuText">
+            <string>3</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>_64Action</cstring>
+        </property>
+        <property name="text">
+            <string>4</string>
+        </property>
+        <property name="menuText">
+            <string>4</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>_65Action</cstring>
+        </property>
+        <property name="text">
+            <string>5</string>
+        </property>
+        <property name="menuText">
+            <string>5</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>query3_Way_DiffAction</cstring>
+        </property>
+        <property name="text">
+            <string>Diff-3 (conflict)</string>
+        </property>
+        <property name="menuText">
+            <string>Diff-3 (conflict)</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Shift+F9</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>queryBlameAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>view_text.png</iconset>
+        </property>
+        <property name="text">
+            <string>Blame</string>
+        </property>
+        <property name="menuText">
+            <string>Blame</string>
+        </property>
+        <property name="toolTip">
+            <string>Show author and revision information in-line for the specified files or URLs</string>
+        </property>
+        <property name="accel">
+            <string>Alt+B</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileImport_Action</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>arrow_up_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Import ...</string>
+        </property>
+        <property name="menuText">
+            <string>Import ...</string>
+        </property>
+        <property name="toolTip">
+            <string>Recursively commit a copy of PATH to URL.</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExport_Action</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>arrow_down_16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Export ...</string>
+        </property>
+        <property name="menuText">
+            <string>Export ...</string>
+        </property>
+        <property name="toolTip">
+            <string>Export a clean directory tree.</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileBrowse_Repository_Action</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>blockdevice.png</iconset>
+        </property>
+        <property name="text">
+            <string>Browse Repository ...</string>
+        </property>
+        <property name="menuText">
+            <string>Browse Repository ...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+B</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewHide_known_fileAction</cstring>
+        </property>
+        <property name="text">
+            <string>Hide known file</string>
+        </property>
+        <property name="menuText">
+            <string>Hide known file</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+H</string>
+        </property>
+        <property name="visible">
+            <bool>false</bool>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyMake_directory_Action</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>folder_green.png</iconset>
+        </property>
+        <property name="text">
+            <string>Make directory ...</string>
+        </property>
+        <property name="menuText">
+            <string>Make directory ...</string>
+        </property>
+        <property name="toolTip">
+            <string> Create a new directory under version control.
+</string>
+        </property>
+        <property name="accel">
+            <string>Alt+G</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>separatorasadAction</cstring>
+        </property>
+        <property name="text">
+            <string>asad</string>
+        </property>
+        <property name="menuText">
+            <string>asad</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewRefresh_onlineAction_2_2</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>run.png</iconset>
+        </property>
+        <property name="text">
+            <string>Refresh online</string>
+        </property>
+        <property name="menuText">
+            <string>Refresh online</string>
+        </property>
+        <property name="accel">
+            <string>F2</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileWorkspaceAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>bookmark.png</iconset>
+        </property>
+        <property name="text">
+            <string>Workspace ...</string>
+        </property>
+        <property name="menuText">
+            <string>Workspace ...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+W</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>modifyRevert_recursiveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>revert-recursive.png</iconset>
+        </property>
+        <property name="text">
+            <string>Revert recursive</string>
+        </property>
+        <property name="menuText">
+            <string>Revert recursive</string>
+        </property>
+        <property name="whatsThis">
+            <string> Undo all local edits.
+</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+R</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewToolbarsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Toolbars</string>
+        </property>
+        <property name="menuText">
+            <string>Toolbars</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewToolbarsFileAction</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>File</string>
+        </property>
+        <property name="menuText">
+            <string>File</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewToolbarsViewAction</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>View</string>
+        </property>
+        <property name="menuText">
+            <string>View</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewToolbarsModifyAction</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>Modify</string>
+        </property>
+        <property name="menuText">
+            <string>Modify</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewToolbarsQueryAction</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>Query</string>
+        </property>
+        <property name="menuText">
+            <string>Query</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpCheck_for_updatesAction</cstring>
+        </property>
+        <property name="text">
+            <string>Check for updates</string>
+        </property>
+        <property name="menuText">
+            <string>Check for updates</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>Action_2</cstring>
+        </property>
+        <property name="text">
+            <string>Unnamed</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpnew_itemAction</cstring>
+        </property>
+        <property name="text">
+            <string>new item</string>
+        </property>
+        <property name="menuText">
+            <string>new item</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileShow_changed_filedirectoriesAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>headline.png</iconset>
+        </property>
+        <property name="text">
+            <string>Show changed items ...</string>
+        </property>
+        <property name="menuText">
+            <string>Show changed items ...</string>
+        </property>
+        <property name="accel">
+            <string>Alt+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewSwitchFlatView</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>flat_view.png</iconset>
+        </property>
+        <property name="text">
+            <string>Flat view</string>
+            <comment>Display full file tree in single view</comment>
+        </property>
+        <property name="accel">
+            <string>Ctrl+F</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewSwitchFlatViewChanged</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>FileModified16x16.xpm</iconset>
+        </property>
+        <property name="text">
+            <string>Show changed only</string>
+        </property>
+        <property name="toolTip">
+            <string>Show changed only</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+</actions>
+<images>
+    <image name="image0">
+        <data format="XBM.GZ" length="79">789c534e494dcbcc4b554829cdcdad8c2fcf4c29c95030e0524611cd48cd4ccf28010a1797249664262b2467241641a592324b8aa363156c15aab914146aadb90067111b1f</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>mn_NewWorkspace</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>mn_NewWorkspace_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileExitAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyUpdateAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyUpdateAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyCommitAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCommitAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryStatusAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryStatusAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryInfoAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryInfoAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryLogAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryLogAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyEditAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyEditAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>viewRefresh_localAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewRefresh_localAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyUpdate_revision_Action</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyUpdate_revision_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>viewHide_unknownAction</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewHide_unknownAction_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>modifyCleanupAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCleanupAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyRevertAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyRevertAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileOpen_workspaceAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileOpen_workspaceAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyAddAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyAddAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>viewRefresh_workspaceAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewRefresh_workspaceAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyAdd_recursiveAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyAdd_recursiveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyDeleteAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyDeleteAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyCopyAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCopy_current_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifySwitchAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifySwitchAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyMegreAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyMegreAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>viewClear_output_logAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewClear_output_logAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryDiffAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryDiffAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryViewAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryViewAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>helpAboutAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>helpAboutAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileOptions_Action</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileOptions_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryQuick_DiffAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryQuick_DiffAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyCopy_remote_Action</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCopy_remote_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileCheckoutAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileCheckoutAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyResolveAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyResolveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyMoveAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyMoveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>query3_Way_DiffAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>query3_Way_DiffAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryBlameAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryBlameAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>queryProperties</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryProperties_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileBrowse_Repository_Action</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileBrowse_Repository_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileImport_Action</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileImport_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileExport_Action</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileExport_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyMake_directory_Action</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyMake_directory_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>list_files</sender>
+        <signal>contextMenuRequested(QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_files_contextMenuRequested(QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+    <connection>
+        <sender>list_files</sender>
+        <signal>selectionChanged(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_files_selectionChanged(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>list_files</sender>
+        <signal>currentChanged(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_files_currentChanged(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>list_files</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_files_clicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>list_files</sender>
+        <signal>doubleClicked(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_files_doubleClicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>viewRefresh_onlineAction_2_2</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewRefresh_onlineAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileWorkspaceAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileWorkspaceAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>modifyRevert_recursiveAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyRevert_recursiveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>cmd_LineEdit</sender>
+        <signal>returnPressed()</signal>
+        <receiver>frm_main</receiver>
+        <slot>le_cmd_returnPressed()</slot>
+    </connection>
+    <connection>
+        <sender>helpIndexAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>helpIndexAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>viewToolbarsFileAction</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewToolbarsFileAction_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>viewToolbarsViewAction</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewToolbarsViewAction_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>viewToolbarsModifyAction</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewToolbarsModifyAction_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>viewToolbarsQueryAction</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewToolbarsQueryAction_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_checkout</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileCheckoutAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_export</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileExport_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_import</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileImport_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_open</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileOpen_workspaceAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_options</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileOptions_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_repository</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileBrowse_Repository_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_workspace</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileWorkspaceAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_refreshlocal</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewRefresh_localAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_refreshonline</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewRefresh_onlineAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_refreshws</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewRefresh_workspaceAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_cleanout</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewClear_output_logAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_3diff</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>query3_Way_DiffAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_add</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyAddAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_add_recursive</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyAdd_recursiveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_cleanup</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCleanupAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_commit</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCommitAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_copy_local</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCopy_current_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_copy_remote</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyCopy_remote_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_delete</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyDeleteAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_diff</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryDiffAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_edit</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyEditAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_info</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryInfoAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_log</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryLogAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_merge</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyMegreAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_mkdir</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyMake_directory_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_move</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyMoveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_propetry</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryProperties_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_quickdiff</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryQuick_DiffAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_resolved</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyResolveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_revert</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyRevertAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_revert_recursive</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyRevert_recursiveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_status</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryStatusAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_switch</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifySwitchAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_update</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyUpdateAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_update_recursive</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>modifyUpdate_revision_Action_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_view</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>queryViewAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>helpWebsiteAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>helpWebsiteAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>helpCheck_for_updatesAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>helpCheck_for_updatesAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>fileShow_changed_filedirectoriesAction</sender>
+        <signal>activated()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileShow_changed_filedirectoriesAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>tlbt_changed</sender>
+        <signal>clicked()</signal>
+        <receiver>frm_main</receiver>
+        <slot>fileShow_changed_filedirectoriesAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>viewSwitchFlatView</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewSwitchFlatView_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>viewSwitchFlatViewChanged</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>frm_main</receiver>
+        <slot>viewSwitchFlatViewChanged_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>list_dirs</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_dirs_clicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>list_dirs</sender>
+        <signal>doubleClicked(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_dirs_doubleClicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>list_dirs</sender>
+        <signal>collapsed(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_dirs_collapsed(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>list_dirs</sender>
+        <signal>expanded(QListViewItem*)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_dirs_expanded(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>list_dirs</sender>
+        <signal>contextMenuRequested(QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_dirs_contextMenuRequested(QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+    <connection>
+        <sender>list_dirs</sender>
+        <signal>mouseButtonPressed(int,QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_dirs_mouseButtonPressed(int,QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+    <connection>
+        <sender>list_dirs</sender>
+        <signal>rightButtonPressed(QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_dirs_rightButtonPressed(QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+    <connection>
+        <sender>list_files</sender>
+        <signal>mouseButtonClicked(int,QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>frm_main</receiver>
+        <slot>list_files_mouseButtonClicked(int,QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">frm_main.ui.h</include>
+</includes>
+<slots>
+    <slot>mn_NewWorkspace_activated()</slot>
+    <slot>list_dirs_clicked( QListViewItem * )</slot>
+    <slot>list_dirs_doubleClicked( QListViewItem * )</slot>
+    <slot>list_dirs_collapsed( QListViewItem * item )</slot>
+    <slot>list_dirs_expanded( QListViewItem * item )</slot>
+    <slot>list_dirs_selectionChanged( QListViewItem * )</slot>
+    <slot>fileExitAction_activated()</slot>
+    <slot>list_dirs_contextMenuRequested( QListViewItem *, const QPoint &amp;, int )</slot>
+    <slot>list_files_contextMenuRequested( QListViewItem *, const QPoint &amp;, int )</slot>
+    <slot>modifyUpdateAction_activated()</slot>
+    <slot>modifyCommitAction_activated()</slot>
+    <slot>queryStatusAction_activated()</slot>
+    <slot>queryInfoAction_activated()</slot>
+    <slot>queryLogAction_activated()</slot>
+    <slot>list_files_selectionChanged( QListViewItem * )</slot>
+    <slot>list_files_currentChanged( QListViewItem * item )</slot>
+    <slot>list_files_clicked( QListViewItem * item )</slot>
+    <slot>modifyEditAction_activated()</slot>
+    <slot>viewRefresh_localAction_activated()</slot>
+    <slot>onRefreshTimer()</slot>
+    <slot>modifyUpdate_revision_Action_activated()</slot>
+    <slot>list_dirs_dropped( QDropEvent * )</slot>
+    <slot>viewHide_unknownAction_toggled( bool )</slot>
+    <slot>modifyCleanupAction_activated()</slot>
+    <slot>modifyRevertAction_activated()</slot>
+    <slot>fileOpen_workspaceAction_activated()</slot>
+    <slot>modifyAddAction_activated()</slot>
+    <slot>viewRefresh_workspaceAction_activated()</slot>
+    <slot>modifyAdd_recursiveAction_activated()</slot>
+    <slot>modifyDeleteAction_activated()</slot>
+    <slot>modifyCopyAction_activated()</slot>
+    <slot>modifyCopy_current_Action_activated()</slot>
+    <slot>modifySwitchAction_activated()</slot>
+    <slot>modifyMegreAction_activated()</slot>
+    <slot>le_cmd_returnPressed()</slot>
+    <slot>viewClear_output_logAction_activated()</slot>
+    <slot>queryDiffAction_activated()</slot>
+    <slot>queryViewAction_activated()</slot>
+    <slot>helpAboutAction_activated()</slot>
+    <slot>fileOptions_Action_activated()</slot>
+    <slot>queryQuick_DiffAction_activated()</slot>
+    <slot>modifyCopy_remote_Action_activated()</slot>
+    <slot>fileOpenAction_activated()</slot>
+    <slot>fileCheckoutAction_activated()</slot>
+    <slot>list_files_doubleClicked( QListViewItem * )</slot>
+    <slot>modifyResolveAction_activated()</slot>
+    <slot>modifyMoveAction_activated()</slot>
+    <slot>list_dirs_mouseButtonPressed( int, QListViewItem * item, const QPoint &amp;, int )</slot>
+    <slot>list_dirs_rightButtonPressed( QListViewItem * item, const QPoint &amp;, int )</slot>
+    <slot>query3_Way_DiffAction_activated()</slot>
+    <slot>queryBlameAction_activated()</slot>
+    <slot>queryProperties_activated()</slot>
+    <slot>fileBrowse_Repository_Action_activated()</slot>
+    <slot>fileImport_Action_activated()</slot>
+    <slot>fileExport_Action_activated()</slot>
+    <slot>modifyMake_directory_Action_activated()</slot>
+    <slot>viewRefresh_onlineAction_activated()</slot>
+    <slot>fileWorkspaceAction_activated()</slot>
+    <slot>modifyRevert_recursiveAction_activated()</slot>
+    <slot>helpIndexAction_activated()</slot>
+    <slot>viewToolbarsFileAction_toggled( bool show )</slot>
+    <slot>viewToolbarsViewAction_toggled( bool show )</slot>
+    <slot>viewToolbarsModifyAction_toggled( bool show )</slot>
+    <slot>viewToolbarsQueryAction_toggled( bool show )</slot>
+    <slot>helpWebsiteAction_activated()</slot>
+    <slot>helpCheck_for_updatesAction_activated()</slot>
+    <slot>fileShow_changed_filedirectoriesAction_activated()</slot>
+    <slot>viewSwitchFlatView_toggled( bool )</slot>
+    <slot>viewSwitchFlatViewChanged_toggled( bool )</slot>
+    <slot>list_files_mouseButtonClicked( int, QListViewItem * item, const QPoint &amp;, int )</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="1" margin="1"/>
+</UI>

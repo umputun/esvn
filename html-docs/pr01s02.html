@@ -1,0 +1,465 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Installation</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="pr01.html" title="Preface">
+      <link rel="previous" href="pr01.html" title="Preface">
+      <link rel="next" href="pr01s03.html" title="Checking for new versions">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Installation</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="pr01.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Preface</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="pr01s03.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-installation"></a>Installation
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>Prior to proceeding with this section please ensure that you have downloaded your chosen
+            installation package and that your system meets the requirements.
+         </p>
+         <p><span><b class="application">eSvn</b></span> is available in source and packaged versions from the <span><b class="application">eSvn</b></span> <a href="http://esvn.umputun.com/" target="_top">Web Site</a>. If you have downloaded the
+                    <span class="acronym">RPM</span> see <a href="pr01s02.html#esvn-inst-inst-rpm" title="RPM">the section called &#8220;RPM&#8221;</a>, otherwise see <a href="pr01s02.html#esvn-inst-inst-tarball" title="Tarball">the section called &#8220;Tarball&#8221;</a> for installation instructions.
+         </p>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-inst-req"></a>Requirements
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p><span><b class="application">eSvn</b></span> requires:
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">
+                        			<span class="bold"><b>Qt3</b></span>
+                        		</span></dt>
+                  <dd>
+                     <p>Qt is a program library for developing applications with graphical user interfaces. It
+                        				allows you to rapidly develop professional programs. The Qt library is available not only
+                        				for Linux but for a great number of Unixes and even for Windows. Thus it is possible to
+                        				write programs that may be easily ported to those platforms.
+                     </p>
+                  </dd>
+                  <dt><span class="term">
+                        			<span class="bold"><b>qt3-devel</b></span>
+                        		</span></dt>
+                  <dd>
+                     <p>You need this package If you want to compile programs with Qt 3. It contains the
+                        				"Qt Cross platform Development Kit 2". Under <b class="filename"><tt>/usr/lib/qt3</tt></b> you will find include files, documentation,
+                        				precompiled examples, and a tutorial for getting started with Qt. You need a license for
+                        				using Qt with a non-GPL application. A license can be acquired at
+                        				<tt class="email">&lt;<a href="mailto:sales@trolltech.com">sales@trolltech.com</a>&gt;</tt>. Authors: -------- Troll Tech AS, Norway
+                     </p>
+                  </dd>
+                  <dt><span class="term">
+                        			<span class="bold"><b>subversion</b></span>
+                        		</span></dt>
+                  <dd>
+                     <p>Subversion does the same thing <span class="acronym">CVS</span> does (<span><b class="application">Concurrent Versioning System</b></span>) but has major enhancements
+                        				compared to CVS ( see <a href="http://subversion.tigris.org" target="_top">http://subversion.tigris.org</a>).
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-inst-inst"></a>Installing
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>Before proceeding with the following installation instructions, please ensure that
+                         your system meets the requirements for <span><b class="application">eSvn</b></span> (see <a href="pr01s02.html#esvn-inst-req">Requirements</a>).
+            </p>
+            <div class="sect3" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a name="esvn-inst-inst-tarball"></a>Tarball
+                        </h4>
+                     </div>
+                  </div>
+                  <div></div>
+               </div>
+               <p>If you downloaded the tarball, follow this procedure to install.</p>
+               <div class="procedure">
+                  <p class="title"><b>Procedure&nbsp;1.&nbsp;Installing <span><b class="application">eSvn</b></span> from tarball</b></p>
+                  <ol type="1">
+                     <li>
+                        <p>
+                                           <span class="action">Open</span> a <span><b class="application">Shell</b></span> session.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Change to the directory where the <span><b class="application">eSvn</b></span> installation archive is located
+                                             (<span><b class="command">cd path/to/installation/archive</b></span>).
+                        </p>
+                     </li>
+                     <li>
+                        <p>Unpack the archive using the command <span><b class="command">tar -zxf <span><b class="application">eSvn</b></span>.tar.gz</b></span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Change to the resulting <b class="filename"><tt><span><b class="application">eSvn</b></span></tt></b>
+                                           directory <span><b class="command">cd <span><b class="application">eSvn</b></span></b></span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Enter the following command <span><b class="command">make</b></span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Login as root.</p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Type</span>
+                                           <span><b class="command">make install</b></span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Logoff</span> root <span><b class="command">exit</b></span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Type</span>
+                                           <span><b class="command"><span><b class="application">eSvn</b></span></b></span> to start <span><b class="application">eSvn</b></span>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Caution">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="common/admon/caution.png"></td>
+                        <th align="left"></th>
+                     </tr>
+                     <tr>
+                        <td colspan="2" align="left" valign="top">
+                           <p>Do not delete the folder or files from the tarball source just in case you wish to
+                                            uninstall <span><b class="application">eSvn</b></span>.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="sect3" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a name="esvn-inst-inst-rpm"></a>RPM
+                        </h4>
+                     </div>
+                  </div>
+                  <div></div>
+               </div>
+               <p>If you downloaded the <span class="acronym">RPM</span> version of the distribution then
+                              <span><b class="application">eSvn</b></span> can be installed using <span><b class="application">RPM</b></span>.
+               </p>
+               <div class="procedure">
+                  <p class="title"><b>Procedure&nbsp;2.&nbsp;Installing <span><b class="application">eSvn</b></span> from rpm</b></p>
+                  <ol type="1">
+                     <li>
+                        <p>
+                                           <span class="action">Open</span> a <span><b class="application">Shell</b></span> session.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">login</span> as root <span><b class="command">su</b></span>, then enter the root password.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Change to the directory where the <span><b class="application">eSvn</b></span> installation archive is located
+                                             (<span><b class="command">cd path/to/installation/archive</b></span>).
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Type</span>
+                                           <span><b class="command">rpm -ivh [package]</b></span>. This will install <span><b class="application">eSvn</b></span> in full verbose
+                                           mode so you can see what's happening and where files are put.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Logoff</span> root <span><b class="command">exit</b></span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Type</span>
+                                           <span><b class="command"><span><b class="application">eSvn</b></span></b></span> to start <span><b class="application">eSvn</b></span>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="common/admon/tip.png"></td>
+                        <th align="left"></th>
+                     </tr>
+                     <tr>
+                        <td colspan="2" align="left" valign="top">
+                           <p>If you are running <span><b class="application">KDE</b></span> or have
+                                            <span><b class="application">KPackage</b></span> installed, <span class="action">run</span>
+                                            <span><b class="application">KPackage</b></span> then <span class="action">drag-drop</span> the
+                                            <span class="acronym">RPM</span> onto <span><b class="application">KPackage</b></span>. This method is
+                                            recommended for new users who are not sure about how to check dependencies etc.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-upgrading"></a>Upgrading
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>From time-to-time new versions of <span><b class="application">eSvn</b></span> are released with new features,
+                         functionality and fixes to bugs. When this happens you will want to upgrade. If you
+                         installed <span><b class="application">eSvn</b></span> from a RPM see <a href="pr01s02.html#esvn-rpm-upgrade">RPM Upgrade</a>. If you installed from a tarball see <a href="pr01s02.html#esvn-title-tar-upgrade">Tarball Upgrade</a>.
+            </p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="common/admon/tip.png"></td>
+                     <th align="left"></th>
+                  </tr>
+                  <tr>
+                     <td colspan="2" align="left" valign="top">
+                        <p>Select 
+                           <span class="guimenu">
+                              		<span class="accel">H</span>elp</span>-&gt;<span class="guimenuitem">Check for updates</span>
+                            to check the <span><b class="application">eSvn</b></span> web site for new versions
+                                       (see <a href="pr01s03.html" title="Checking for new versions">the section called &#8220;Checking for new versions&#8221;</a>).
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="sect3" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a name="esvn-rpm-upgrade"></a>RPM Upgrade
+                        </h4>
+                     </div>
+                  </div>
+                  <div></div>
+               </div>
+               <p>To upgrade a RPM installation of <span><b class="application">eSvn</b></span> follow the procedure below.
+               </p>
+               <div class="procedure">
+                  <p class="title"><b>Procedure&nbsp;3.&nbsp;RPM Upgrade</b></p>
+                  <ol type="1">
+                     <li>
+                        <p>Download the latest RPM package.</p>
+                     </li>
+                     <li>
+                        <p>Start a <span><b class="application">Shell</b></span> session.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Change to the folder where the RPM package is located (<span><b class="command">cd path/to/package/</b></span>).
+                        </p>
+                     </li>
+                     <li>
+                        <p>Login as root (<span><b class="command">su</b></span> and <span><b class="command">
+                                                   <i class="replaceable"><tt>password</tt></i>
+                                                 </b></span>).
+                        </p>
+                     </li>
+                     <li>
+                        <p>Enter the following command <span><b class="command">rpm -Uvh [package]</b></span>. This will
+                                           upgrade the existing installation and show progress of the operation.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Logoff Super User session (<span><b class="command">exit</b></span>).
+                        </p>
+                        <p>To start <span><b class="application">eSvn</b></span> see <a href="ch02.html#esvn-starting" title="Starting eSvn">the section called &#8220;Starting eSvn&#8221;</a>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect3" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a name="esvn-tar-upgrade"></a>Tarball Upgrade
+                        </h4>
+                     </div>
+                  </div>
+                  <div></div>
+               </div>
+               <p>TBD</p>
+            </div>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-inst-uninst"></a>Uninstalling
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>You may wish to uninstall <span><b class="application">eSvn</b></span>. The method used depends on how you performed the
+                         installation. If you installed using tarball see <a href="pr01s02.html#esvn-uninst-tarball" title="uninstall tarball installation">the section called &#8220;uninstall tarball installation&#8221;</a>. If
+                         you used <span class="acronym">RPM</span> see <a href="pr01s02.html#esvn-uninst-rpm" title="Uninstall RPM installation">the section called &#8220;Uninstall RPM installation&#8221;</a>.
+            </p>
+            <div class="sect3" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a name="esvn-uninst-tarball"></a>uninstall tarball installation
+                        </h4>
+                     </div>
+                  </div>
+                  <div></div>
+               </div>
+               <p>To uninstall <span><b class="application">eSvn</b></span> when the installation was performed from a tarball, proceed
+                              as follows:
+               </p>
+               <div class="procedure">
+                  <p class="title"><b>Procedure&nbsp;4.&nbsp;Uninstall tarball installation</b></p>
+                  <ol type="1">
+                     <li>
+                        <p>
+                                           <span class="action">Open</span> a <span><b class="application">Shell</b></span> session.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">login</span> as root <span><b class="command">su</b></span>, then enter the root password.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Change to the directory where you did <span><b class="command">make</b></span> in the tarball
+                                             (<span><b class="command">cd path/to/installation/make/folder</b></span>).
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Type</span>
+                                           <span><b class="command">make uninstall</b></span>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="common/admon/note.png"></td>
+                        <th align="left"></th>
+                     </tr>
+                     <tr>
+                        <td colspan="2" align="left" valign="top">
+                           <p>The folder containing the extracted archive can be removed if no longer required.</p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="sect3" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a name="esvn-uninst-rpm"></a>Uninstall RPM installation
+                        </h4>
+                     </div>
+                  </div>
+                  <div></div>
+               </div>
+               <p>To uninstall <span><b class="application">eSvn</b></span> when the installation was performed from a RPM, proceed as follows:
+               </p>
+               <div class="procedure">
+                  <p class="title"><b>Procedure&nbsp;5.&nbsp;Uninstall RPM installation</b></p>
+                  <ol type="1">
+                     <li>
+                        <p>
+                                           <span class="action">Open</span> a <span><b class="application">Shell</b></span> session.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">login</span> as root <span><b class="command">su</b></span>, then enter the root password.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Type</span>
+                                           <span><b class="command">rpm -e esvn</b></span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                                           <span class="action">Logoff</span> root <span><b class="command">exit</b></span>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="pr01.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="pr01.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="pr01s03.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Preface&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Checking for new versions</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

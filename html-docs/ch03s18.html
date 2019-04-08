@@ -1,0 +1,243 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Merging</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s17.html" title="Moving Items">
+      <link rel="next" href="ch03s19.html" title="Switching a Working Copy">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Merging</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s17.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s19.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-merge"></a>Merging
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To apply the differences between two sources use the Merge option (
+            <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Merge</span> (<span><b class="shortcut"><span class="keysym">Alt+M</span></b></span>)
+            ).
+                    The <tt class="interfacename">Merge</tt> dialog provides two modes:
+         </p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>
+                                 <span class="emphasis"><em>Mode 1</em></span> - the difference between two revisions can be merged to a
+                     third working copy (File) or to a remote repository (URL). The first and second revision
+                     sources can reside either on a working copy (2 Files) or a remote repository (2 URLs).
+                                 The merged copy is output to a working copy (File) or remote repository (URL). If
+                                 revision is omitted the default is HEAD.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <span class="emphasis"><em>Mode 2</em></span> - the difference between two remote repository (URL)
+                                 versions can be merged into one. The output is merged to the URL unless a working copy
+                                 path is specified.
+                  </p>
+               </li>
+            </ul>
+         </div>
+         <p>In all instances the URL/File path at revision is specified using the syntax <span><b class="command">[<i class="replaceable"><tt>URL/File</tt></i>]@[<i class="replaceable"><tt>REVISION</tt></i>]</b></span>
+                  
+         </p>
+         <p>For example: <span><b class="command">svn://esvn.umputun.com/esvn/trunk/ChangeLog@PREV</b></span>
+                  
+         </p>
+         <p>If the path is omitted for mode 1 or 2, a default value of '.' is
+                    assumed, unless the sources have identical basenames that match a file within
+                    '.': in which case, the differences will be applied to that file. The
+                    following is therefore true when the <tt class="varname">URL/File</tt> path is a omitted (where N
+                    = Revision 1, M = Revision 2, WC = Working Copy, URL = Remote Repository):
+         </p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>If N = WC &amp; M = WC | WC</p>
+               </li>
+               <li>
+                  <p>If N = WC &amp; M = URL | WC</p>
+               </li>
+               <li>
+                  <p>If N = URL &amp; M = WC | WC</p>
+               </li>
+               <li>
+                  <p>If N = URL &amp; M = URL | URL</p>
+               </li>
+            </ul>
+         </div>
+         <p>The <tt class="interfacename">Merge</tt> dialog provides the following field for mode 1
+                    and mode 2 respectively:
+         </p>
+         <div class="variablelist">
+            <p class="title"><b>Mode 1</b></p>
+            <dl>
+               <dt><span class="term">
+                                 <span class="bold"><b>Revision 1</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The source for first revision. Can be local path (File) or remote repository
+                                   (URL). 
+                     
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">HEAD</span></dt>
+                        <dd>
+                           <p>The latest revision in the repository.</p>
+                        </dd>
+                        <dt><span class="term">BASE</span></dt>
+                        <dd>
+                           <p>The "pristine" revision of an item in a working copy.</p>
+                        </dd>
+                        <dt><span class="term">COMMITTED</span></dt>
+                        <dd>
+                           <p>The last revision in which an item changed before (or at) BASE.</p>
+                        </dd>
+                        <dt><span class="term">PREV</span></dt>
+                        <dd>
+                           <p>The revision just before the last revision in which an item changed. (Technically,
+                              					<span><b class="command">COMMITTED - 1</b></span>.)
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <p>
+                     
+                  </p>
+                  <p>Use the <span><b class="guibutton">R</b></span> to select a revision using the
+                                   <tt class="interfacename">Log</tt> dialog. Use <span><b class="guibutton">H</b></span> or
+                                   <span><b class="guibutton">P</b></span> to select <tt class="envar">HEAD</tt> or <tt class="envar">PREV</tt> respectively.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Revision 2</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The source for second revision. Can be local path (File) or remote repository
+                                   (URL). 
+                     
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">HEAD</span></dt>
+                        <dd>
+                           <p>The latest revision in the repository.</p>
+                        </dd>
+                        <dt><span class="term">BASE</span></dt>
+                        <dd>
+                           <p>The "pristine" revision of an item in a working copy.</p>
+                        </dd>
+                        <dt><span class="term">COMMITTED</span></dt>
+                        <dd>
+                           <p>The last revision in which an item changed before (or at) BASE.</p>
+                        </dd>
+                        <dt><span class="term">PREV</span></dt>
+                        <dd>
+                           <p>The revision just before the last revision in which an item changed. (Technically,
+                              					<span><b class="command">COMMITTED - 1</b></span>.)
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <p>
+                     
+                  </p>
+                  <p>Use the <span><b class="guibutton">R</b></span> to select a revision using the
+                                   <tt class="interfacename">Log</tt> dialog. Use <span><b class="guibutton">H</b></span> or
+                                   <span><b class="guibutton">P</b></span> to select <tt class="envar">HEAD</tt> or <tt class="envar">PREV</tt> respectively.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>URL/File</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The destination to the differences between revision 1 and 2 will be merged. Can be
+                                   working copy (File) or remote repository (URL).
+                  </p>
+               </dd>
+            </dl>
+         </div>
+         <div class="variablelist">
+            <p class="title"><b>Mode 2</b></p>
+            <dl>
+               <dt><span class="term">
+                                 <span class="bold"><b>URL 1</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The URL source for the first revision. Use <span><b class="guibutton">U</b></span> to display the
+                                     <tt class="interfacename">URL wizard</tt>.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>URL 2</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The URL source for the second revision. Use <span><b class="guibutton">U</b></span> to display
+                                   the <tt class="interfacename">URL wizard</tt>.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>WCPATH</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Path to working copy where output will be made as apposed to the default which is
+                                   to a remote repository. Use <span><b class="guibutton">...</b></span> to display the common
+                                   <tt class="interfacename">Open</tt> dialog used to change and specify the local path.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Non-recursive</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Operate on single directory only.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Dry-run</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Try operation but make no changes.</p>
+               </dd>
+            </dl>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s17.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s19.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Moving Items&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Switching a Working Copy</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

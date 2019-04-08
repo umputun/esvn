@@ -1,0 +1,403 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/9.1/vpj.dtd">
+<Project
+	Version="9.1"
+	VendorName="SlickEdit"
+	WorkingDir="."
+	BuildSystem="vsbuild"
+	BuildMakeFile="">
+	<Config
+		Name="Debug"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bdesvn"
+		CompilerConfigName="Latest Version"
+		Defines='"/DVERSION=0"'>
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='g++ -c %xup %defd -O0 -g3 -ggdb -Wall -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec
+					CmdLine='g++ %xup -O0 -g3 -ggdb -Wall -o "%o" %objs %~other'
+					OtherOptions="-lqt-mt -lXext -lX11 -lm"/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw"
+				Dialog="_gnuc_options_form Compile">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw"
+				Dialog="_gnuc_options_form Compile">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<Includes>
+			<Include Dir="/usr/lib/qt3/include"/>
+			<Include Dir=".ui"/>
+			<Include Dir="."/>
+			<Include Dir="/usr/lib/qt-3.3/include"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="-L/$QTDIR/lib"/>
+			<Lib File="-L/usr/X11R6/lib"/>
+			<Lib File="-L./.ui"/>
+			<Lib File="-L../../libs/bin"/>
+		</Libs>
+	</Config>
+	<Config
+		Name="Release"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bdesvn"
+		CompilerConfigName="Latest Version"
+		Defines='"/DVERSION=0"'>
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='g++ -c %xup %defd -Wall -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec
+					CmdLine='g++ %xup -Wall -o "%o" %objs %~other'
+					OtherOptions="-lqt-mt -lXext -lX11 -lm"/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw"
+				Dialog="_gnuc_options_form Compile">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw"
+				Dialog="_gnuc_options_form Compile">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<Includes>
+			<Include Dir="/usr/lib/qt3/include"/>
+			<Include Dir=".ui"/>
+			<Include Dir="."/>
+			<Include Dir="/usr/lib/qt-3.3/include"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="-L/$QTDIR/lib"/>
+			<Lib File="-L/usr/X11R6/lib"/>
+			<Lib File="-L./.ui"/>
+			<Lib File="-L../../libs/bin"/>
+		</Libs>
+	</Config>
+	<Files>
+		<Folder
+			Name="Header Files"
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+			<F N="src/changedwindow.h"/>
+			<F N="src/check_lbi.h"/>
+			<F N="src/cmd_lineedit.h"/>
+			<F N="src/commitwindow.h"/>
+			<F N="src/diffwindow.h"/>
+			<F N="src/dirs_list.h"/>
+			<F N=".ui/dlg_checkout.ui.h"/>
+			<F N=".ui/dlg_commit.ui.h"/>
+			<F N=".ui/dlg_diff_setup.ui.h"/>
+			<F N=".ui/dlg_log.ui.h"/>
+			<F N=".ui/dlg_prop.ui.h"/>
+			<F N=".ui/dlg_repository.ui.h"/>
+			<F N=".ui/dlg_switch.ui.h"/>
+			<F N=".ui/dlg_view.ui.h"/>
+			<F N="src/entries_parser.h"/>
+			<F N="src/esvn_utils.h"/>
+			<F N=".ui/frm_main.ui.h"/>
+			<F N="src/list_stat_parser.h"/>
+			<F N="src/logwindow.h"/>
+			<F N="src/mainwindow.h"/>
+			<F N="src/mergewindow.h"/>
+			<F N="src/options.h"/>
+			<F N="src/propwindow.h"/>
+			<F N="src/reposwindow.h"/>
+			<F N="src/svn_commands.h"/>
+			<F N="src/svn_status.h"/>
+			<F N="src/url_wizard.h"/>
+			<F N="src/workspacewindow.h"/>
+		</Folder>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl">
+			<F N="src/check_lbi.cpp"/>
+			<F N="src/cmd_lineedit.cpp"/>
+			<F N="src/commitwindow.cpp"/>
+			<F N="src/diffwindow.cpp"/>
+			<F N="src/dirs_list.cpp"/>
+			<F N="src/entries_parser.cpp"/>
+			<F N="src/esvn.cpp"/>
+			<F N="src/list_stat_parser.cpp"/>
+			<F N="src/mainwindow.cpp"/>
+			<F N="src/options.cpp"/>
+			<F N="src/reposwindow.cpp"/>
+			<F N="src/svn_commands.cpp"/>
+			<F N="src/svn_status.cpp"/>
+		</Folder>
+		<Folder
+			Name="Other Files"
+			Filters="">
+			<F N="ChangeLog"/>
+			<F N="esvn.pro"/>
+			<F N="esvn.spec"/>
+			<F N="Makefile"/>
+			<F N="dist/Makefile"/>
+			<F N="VERSION"/>
+		</Folder>
+		<Folder
+			Name="gui"
+			Filters="">
+			<F N=".ui/dlg_about.cpp"/>
+			<F N=".ui/dlg_about.h"/>
+			<F N=".ui/dlg_auth.cpp"/>
+			<F N=".ui/dlg_auth.h"/>
+			<F N=".ui/dlg_busy.cpp"/>
+			<F N=".ui/dlg_busy.h"/>
+			<F N=".ui/dlg_changed.cpp"/>
+			<F N=".ui/dlg_checkout.cpp"/>
+			<F N=".ui/dlg_checkout.h"/>
+			<F N=".ui/dlg_commit.cpp"/>
+			<F N=".ui/dlg_commit.h"/>
+			<F N=".ui/dlg_copy.cpp"/>
+			<F N=".ui/dlg_copy.h"/>
+			<F N=".ui/dlg_diff_output.cpp"/>
+			<F N=".ui/dlg_diff_output.h"/>
+			<F N=".ui/dlg_diff_setup.cpp"/>
+			<F N=".ui/dlg_diff_setup.h"/>
+			<F N=".ui/dlg_export.cpp"/>
+			<F N=".ui/dlg_export.h"/>
+			<F N=".ui/dlg_help.cpp"/>
+			<F N=".ui/dlg_help.h"/>
+			<F N=".ui/dlg_import.cpp"/>
+			<F N=".ui/dlg_import.h"/>
+			<F N=".ui/dlg_import.ui.h"/>
+			<F N=".ui/dlg_info.cpp"/>
+			<F N=".ui/dlg_info.h"/>
+			<F N=".ui/dlg_log.cpp"/>
+			<F N=".ui/dlg_map_edit.cpp"/>
+			<F N=".ui/dlg_mapping.cpp"/>
+			<F N=".ui/dlg_merge.cpp"/>
+			<F N=".ui/dlg_merge.h"/>
+			<F N=".ui/dlg_merge.ui.h"/>
+			<F N=".ui/dlg_options.cpp"/>
+			<F N=".ui/dlg_options.h"/>
+			<F N=".ui/dlg_options.ui.h"/>
+			<F N=".ui/dlg_prop.cpp"/>
+			<F N=".ui/dlg_prop.h"/>
+			<F N=".ui/dlg_propedit.cpp"/>
+			<F N=".ui/dlg_propedit.h"/>
+			<F N=".ui/dlg_repository.cpp"/>
+			<F N=".ui/dlg_repository.h"/>
+			<F N=".ui/dlg_switch.cpp"/>
+			<F N=".ui/dlg_switch.h"/>
+			<F N=".ui/dlg_update.cpp"/>
+			<F N=".ui/dlg_update.h"/>
+			<F N=".ui/dlg_url.cpp"/>
+			<F N=".ui/dlg_url.h"/>
+			<F N=".ui/dlg_url.ui.h"/>
+			<F N=".ui/dlg_verupdate.cpp"/>
+			<F N=".ui/dlg_view.cpp"/>
+			<F N=".ui/dlg_view.h"/>
+			<F N=".ui/dlg_workspace.cpp"/>
+			<F N=".ui/dlg_workspace.h"/>
+			<F N=".ui/dlg_ws_edit.cpp"/>
+			<F N=".ui/dlg_ws_edit.h"/>
+			<F N=".ui/frm_main.cpp"/>
+			<F N=".ui/frm_main.h"/>
+			<F N=".moc/moc_commitwindow.cpp"/>
+			<F N=".ui/qmake_image_collection.cpp"/>
+		</Folder>
+		<Folder
+			Name="ui"
+			Filters="">
+			<F N=".ui/dlg_about.ui"/>
+			<F N=".ui/dlg_busy.ui"/>
+			<F N=".ui/dlg_checkout.ui"/>
+			<F N=".ui/dlg_commit.ui"/>
+			<F N=".ui/dlg_copy.ui"/>
+			<F N=".ui/dlg_diff.ui"/>
+			<F N=".ui/dlg_diff_output.ui"/>
+			<F N=".ui/dlg_diff_setup.ui"/>
+			<F N=".ui/dlg_info.ui"/>
+			<F N=".ui/dlg_log.h"/>
+			<F N=".ui/dlg_log.ui"/>
+			<F N=".ui/dlg_merge.ui"/>
+			<F N=".ui/dlg_options.ui"/>
+			<F N=".ui/dlg_startup.cpp"/>
+			<F N=".ui/dlg_startup.h"/>
+			<F N=".ui/dlg_switch.ui"/>
+			<F N=".ui/dlg_update.ui"/>
+			<F N=".ui/dlg_view.ui"/>
+			<F N=".ui/frm_main.ui"/>
+		</Folder>
+		<Folder
+			Name="moc"
+			Filters="">
+			<F N=".moc/moc_cmd_lineedit.cpp"/>
+			<F N=".moc/moc_dirs_list.cpp"/>
+			<F N=".moc/moc_dlg_about.cpp"/>
+			<F N=".moc/moc_dlg_auth.cpp"/>
+			<F N=".moc/moc_dlg_busy.cpp"/>
+			<F N=".moc/moc_dlg_changed.cpp"/>
+			<F N=".moc/moc_dlg_checkout.cpp"/>
+			<F N=".moc/moc_dlg_commit.cpp"/>
+			<F N=".moc/moc_dlg_copy.cpp"/>
+			<F N=".moc/moc_dlg_diff_output.cpp"/>
+			<F N=".moc/moc_dlg_diff_setup.cpp"/>
+			<F N=".moc/moc_dlg_export.cpp"/>
+			<F N=".moc/moc_dlg_help.cpp"/>
+			<F N=".moc/moc_dlg_import.cpp"/>
+			<F N=".moc/moc_dlg_info.cpp"/>
+			<F N=".moc/moc_dlg_log.cpp"/>
+			<F N=".moc/moc_dlg_map_edit.cpp"/>
+			<F N=".moc/moc_dlg_mapping.cpp"/>
+			<F N=".moc/moc_dlg_merge.cpp"/>
+			<F N=".moc/moc_dlg_options.cpp"/>
+			<F N=".moc/moc_dlg_prop.cpp"/>
+			<F N=".moc/moc_dlg_propedit.cpp"/>
+			<F N=".moc/moc_dlg_repository.cpp"/>
+			<F N=".moc/moc_dlg_startup.cpp"/>
+			<F N=".moc/moc_dlg_switch.cpp"/>
+			<F N=".moc/moc_dlg_update.cpp"/>
+			<F N=".moc/moc_dlg_url.cpp"/>
+			<F N=".moc/moc_dlg_verupdate.cpp"/>
+			<F N=".moc/moc_dlg_view.cpp"/>
+			<F N=".moc/moc_dlg_workspace.cpp"/>
+			<F N=".moc/moc_dlg_ws_edit.cpp"/>
+			<F N=".moc/moc_frm_main.cpp"/>
+			<F N=".moc/moc_mainwindow.cpp"/>
+			<F N=".moc/moc_svn_commands.cpp"/>
+		</Folder>
+	</Files>
+</Project>

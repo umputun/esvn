@@ -1,0 +1,343 @@
+changes from 0.6.11 to 0.6.12
+
+[*] Implement parser for .svn/enties with format > 6 (Damien Caliste).
+[*] Fix missing #includes: FTBFS with GCC 4.3 ( Martin Michlmayr - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=417175 )
+[*] Change windows title to reflect name of workspace used (Julien Torres)
+[*] Fix esvn.pro for avoid qmake compilation pbs. (Julien Dumont)
+
+
+changes from 0.6.9 to 0.6.11
+
+[*] Code cleanup (Igor Kovalenko)
+[*] dist/Makefile changed in order to support branch-based rpm build
+[*] Slightly improve modified files filtering - only hide items explicitly marked as not modified, and handle symlink status as a special case. (Igor Kovalenko)
+[*] Fix last char of selected path name removed problem and allow copy local files. (Igor Kovalenko)
+[*] Fixed problem with wrong paths (incorrect separator) under Win32 (Igor Kovalenko)
+[*] Fixed problems with custom color schemes (#90) (Igor Kovalenko)
+[*] Fix diff wrapper passing wrong number of arguments to external diff command. (Igor Kovalenko)
+
+
+changes from 0.6.8 to 0.6.9
+
+[+] Added selection of the second revision for diff in the "Log" window (Igor Kovalenko)
+
+[*] Fixed segfault for update from empty Log window (#60)
+[*] Improved timestamps handling (Igor Kovalenko)
+[*] Fixed problem with recursive symlinks in commit list (#63)
+[*] Fixed external diff settings (#65)
+[*] Fixed #66 - last character removed in the file selector (Igor Kovalenko)
+[*] Fixed #67 - incorrect processing of a1 (%a1) and a2 (%a2) parameters in the external diff mask
+[*] Fixed #69 - incorrect password was used for "refresh online" (Pierre Graceffa)
+[*] Fixed #70 - abnormal switching of "Move" to remote mode (URL wizard instead of file selector)
+[*] Fixed #67 - Incorect prosessing of a1 and a2 macros in esvn-diff-wrapper
+
+
+changes from 0.6.7 to 0.6.8 (01/11/2005)
+
+[*] A few small fixes for Win32 build (Mark Hillary)
+[*] Restored correct behaviour of the URL wizard for "Copy (remote)" (#53)
+[*] Fixed Makefile (failed during docs copy)
+[*] Fixed right-click selection in the file list (#51)
+[*] Fixed indication of deleted files in the commit list (#54) (Alexander Darovsky)
+
+changes from 0.6.6 to 0.6.7 (01/05/2005)
+
+[*] Implemented progressive load in repository browser (flupke)
+[*] Improved "FlatView" mode (Igor Kovalenko)
+[*] Fixed problems with file list (Commit dialog) for added/deleted files (Alexander Darovsky)
+[*] Added option "Hide commit list" (Options/General). If selected, commit dialog won't include list of commited items and that dialog will work as in versions < 0.6.4
+[*] Fixed bug with reloading of file list caused failure during multiple-secltion actions (move/copy/commits of multiple files) (Igor Kovalenko)
+[*] "Flat view" and "Show changed" moved to the "View" toolbar
+[*] "Flat view - changeg" renamed to "Show changed"
+
+
+changes from 0.6.5 to 0.6.6 (12/10/2004)
+
+[*] Fixed incorrect directory view
+[*] Password in "Checkout" and output (log) window shows as ******
+[*] Removed "Hide unknown files" from the "Options" dialog (still avaliable from Menu/View only).
+
+changes from 0.6.4 to 0.6.5 (12/05/2004)
+
+[+] Added "Flat View" and "Flat view - changed only" (Igor Kovalenko)
+[+] Added list of modified files/dirs to the Commit dialog (Alexander Darovsky)
+[+] Added support of symlinks (subversion >= 1.1)
+
+[*] Fixed bug with restoring multiple instances of eSvn (on start new sesion of KDE/Gnome)
+[*] Sends all error's info (stderr) to the log (output) window for all commands.
+[*] Fixed conflicted call of svn status (online mode, auto-refresh) caused 
+too verbouse output to the log window
+[*] Fixed incorrect behaivour of "svn status" with full path (looks like svn's bug)
+[*] Fixed incorrect detection of dirrectory's status (modified)
+[*] Fixed diff3 path's parsing for *nix version
+
+changes from 0.6.3 to 0.6.4 (10/22/2004)
+
+[*] Status detection (on-line mode, and on-line refresh) changed from "svn list" 
+    based to "svn status" based. Works fast for svn 1.1 and solved the problem with incorrect 
+    "out-of-date" for directories
+[*] Password field (Options/Other) shows as "******" instead of plain text
+[*] minor bug fixes
+[*] Optimzed refresh of huge directories (10000+ files)
+
+[+] Added log levels (Regular & Verbouse). See Options/Other
+ 
+
+changes from 0.6.2 to 0.6.3 (09/13/2004)
+
+[*] Fixed segfaults in the "Changed items" dialog (view & diff for empty item)
+[*] Fixed segfault for diff-3 for non-conflicted file
+[*] Fixed "Browse repository" wor win32 version (Mark Hillary)
+[*] Fixed support of external diff program for win32 build (Mark Hillary)
+[*] Improved support of external diff applications for diff-3 (Mark Hillary)
+[*] Fixed bug with incorrect status detection if used non-default location of svn.
+
+changes from 0.6.1 to 0.6.2 (09/13/2004)
+
+[+] Added "Changes items" dialog (shows all modificated/out-of-date... items for selected directory)
+[+] Added "File Mapping" page to the Options dialog and "Open" option to "Double click action"
+[+] Added support of user-defined ".svn" directory (--svndir=<directory>)
+
+[*] Patch for the Apple version (Christian Schaffner).
+[*] Fixed a segfault during opening of deleted workspace.
+[*] Patch for esvn-diff-wrapper provides support of non-english file names (Alexandr Darovsky).
+[*] Fixed a problem with missed refresh after dbl. click on the file panel.
+
+changes from 0.6.0 to 0.6.1 (09/05/2004)
+
+[+] Added navigation's support for the file pannel (dbl. click opens directory)
+[+] Added "Delete", "Merge", "Switch" and "Revert" to the popup menu
+[+] Added a button 'B' for the BASE revision (Diff dialog)
+[+] Added support of status's auto-refresh (Option/Other/Auto-refresh)
+
+[*] "Changed paths" shows after commit message (Log) 
+[*] Color of "Changed paths" changed (Log)
+[*] Disabled edit for directories
+[*] Improved the logic of "Quick Diff". For up-to-date files (online mode only) it compares with PREV revision, for other files - with "HEAD".
+
+changes from 0.5.9 to 0.6.0 (08/29/2004)
+
+[*] Fixed incorrect mkdir flags in Makefile
+[*] Fixed a problem with "Check for update" (ISP's side cashing)
+[-] Removed esvn.pdf from tar.gz and rpm packages
+
+changes from 0.5.8 to 0.5.9 (08/29/2004)
+
+[+] Added filters (message & author) for "Log" dialog
+[+] Added support of --stop-on-copy (Log)
+[+] Added the option "Hide log filters" (options)
+[+] Added move/copy for multiple files
+[+] Added "Check for update" dialog ("Help")
+
+[*] Fixed "Hide unknown file" option (form "Options" dialog)
+
+changes from 0.5.7-2 to 0.5.8 (08/27/2004)
+
+[+] Added "Help" (Help/Index)
+[+] Added toolbars (View/Toolbars)
+
+[*] Fixed double-refresh after update/commit and after directory's loading
+[*] Removed "Close" buttons from Cat and Quick diff dialogs
+
+changes from 0.5.7 to 0.5.7-2 (08/25/2004)
+
+[+] added documentation in pdf format (Sean Wheller)
+[*] CPU utilization of esvn (idle mode) was significantly decreased
+
+changes from 0.5.6 to 0.5.7 (08/24/2004)
+
+[+] Added documentation in html format (Sean Wheller)
+[+] Added option "Update after commit"
+[+] Added revison's and url's wizards to the "Merge" dialog
+[+] Added url's wizard and File-open dialog to "Copy" (remote & local)
+
+[*] Fixed prblems with building on BSD with gcc 2.95 (Andrej Zverev)
+[*] Fixed "Refresh workspace" in mutliple directories mode
+[*] Fixed a problem with incorrect detection of url in "Repository Browser/Checkout"
+
+changes from 0.5.5 to 0.5.6 (08/21/2004)
+
+[+] Added support of workspaces (set of directories, menu/File/Workspace")
+[+] Added history of messages to the Commit dialog (Mark Hillary)
+
+changes from 0.5.4 to 0.5.5 (08/21/2004)
+
+[+] Added "Welcome to eSvn" startup dialog (Sean Wheller)
+[+] Added "H" (HEAD) and "P" (PREV) buttons to the revision field in "Diff" dailog
+
+[*] Implemented support of commands history (Mark Hillary)
+
+changes from 0.5.3 to 0.5.4 (08/20/2004)
+
+[+] Added "Revert recursive" (menu/Modify)
+
+[*] Redesigned directory loading method. Now it works very, very fast.
+[*] Fixed buf with recursive refresh in the online mode. Now online refresh for huge directories works much faster
+
+
+changes from 0.5.2 to 0.5.3 (08/20/2004)
+
+[+] Added support of status "Add" (schedule=add) for files and directories
+[+] Added support of indication of all statuses for directories in the file panel
+[+] Added "ignore symlinks" option
+[+] Added "Disable change "svn:value" property" option
+[+] Added "Disable commit to tags" option
+
+[*] "Options" dialog was reorganized
+[*] Fixed bug with non-stop refresh (if working directory was deleted)
+
+
+changes from 0.5.1 to 0.5.2 (08/19/2004)
+
+[+] Added "revision wizard" to Diff dialog
+[+] Added support of WCPATH parameter to mode-2 of "Merge" dialog.
+
+[*] Fixed bug with incorrect detection of conflicts.
+[*] Fixed colors in the output window.
+[*] Fixed bug with skipping of empty strings in "View" dialog.
+[*] Additional patches for Win build (Mark Hillary).
+
+changes from 0.5.0 to 0.5.1 (08/17/2004)
+
+[*] Patch to build esvn with gcc 2.95 (Aurélien Gâteau).
+[*] Patch to build esvn for Win (Mark Hillary).
+[*] Fixed bug with incorrect import.
+[*] "Status" removed from popup menu, "Add" added.
+
+
+changes from 0.4.9 to 0.5.0 (08/15/2004)
+
+[+] Added "URL wizard" dialog to "Diff"
+
+[*] Fixed a bug with incorrect translation of ">" in "View" dialog
+[*] Fixed jump to positions 0 for messages (comments) in "Log" dialog.
+
+
+changes from 0.4.8 to 0.4.9 (08/15/2004)
+
+[+] Added support of mutliple select for add, commit, update, revert and delete commands.
+[+] Added a new target "install" to esvn.pro ("make install" works)
+[+] Added support of user-defined template for external diff command.
+    The template inlcudes: f1 - first file, f2 - second file, 
+    a1 - alias for first file, a2 - alias for second file. If no templates defined, will be used
+    "your_diff_program f1 f2".
+[+] Added a new utility "esvn-diff-wrapper". 
+    Is used internally by "Diff" command (in "external Diff" mode only).
+
+[*] Completely reimplemented "Diff" dialog. Not it has full support of all 
+    svn's diff features and able to diff directories as well.    
+[*] Fixed output of diff command (it's showing text with <, >, & correctly now).
+[*] Fixed output of cat command.
+[*] Significantly improved speed of workspace loading and "Refresh workspace"
+[*] Fixed high CPU uitilization during blocking svn oprations
+[*] Changed esvn.pro amd Makefile. 
+    Qmake generates esvn.mak and esvn-diff-wrapper.mak instead of Makefile
+
+changes from 0.4.7 to 0.4.8 (08/11/2004)
+
+[+] Added support of "out-of-date" status. It can operate in manual or online modes (see Options/Status Refresh). 
+In manual mode you should select View/Refresh Online (or press F2) for geting this 
+status from svn server.
+
+[+] Added (to rpm packages) esvn.desktop file and esvn icon. 
+Now eSvn's launcher should be visible in menu/Programming (thanks to Renato Ramonda)
+
+[*] Fixed opening of "Open File" dialog (button "...") in import and export dialogs.
+[*] Fixed a bug with incorrect refresh (list of files) during concurent operations.
+
+[-] Removed "Processing ..." window during svn operations (changed to "waiting" cursor)
+
+changes from 0.4.6 to 0.4.7 (08/12/2004)
+
+[+] Added "Show changed paths" to Options dialog. If selected, Log window 
+will show changed paths in addition to commit message (svn log --verbose ...)
+
+[*] Fixed saveing of columns with (repository browser)
+[*] Fixed a bug with multiple refresh of files list
+[*] Unused "Close" button removed from "Porcessing ..." window
+[*] Fixed resizing of the main window content (list of files).
+
+changes from 0.4.5 to 0.4.6 (08/11/2004)
+
+[+] Added support of svn authentication (see Options dialog).
+[+] Added support of "svn import" (see File/Import dialog).
+[+] Added support of "svn export" (see File/Export dialog).
+[+] Added support of "svn mkdir"  (see Modify/Make directory).
+[+] For most of menu items were added tooltip (in the status line).
+
+[*] Removed leading zero from revision numbers.
+[*] Fixed a bug with indication of top-level files in "Repository Browser"
+
+
+changes from 0.4.4 to 0.4.5 (08/11/2004)
+
+[+] Implemented "Repository Browser" (full navigation + direct view and checkout)
+[+] Added indication of workspace loading progress
+
+[*] Icons changed
+[*] Fixed a few bugs with refersh of properties list.
+[*] All internal time operations were chnaged to UTC. It solved a lot of problem with incorrect
+detection of "modificated" status for files changed before current daylight value.
+[*] Fixed truncation of date_time filed in Log window
+[*] Detecting of BSD changed, so you don't need to define ESVN_BSD anymore (Darovsky Alexander)
+[*] Fixed a problem with incorrect usage of user-defined path to svn.
+
+
+
+=================================================================================================
+
+changes from 0.4.3 to 0.4.4 (08/09/2004)
+
+[+] Added support of svn properties (Query/Propery).
+[+] Added support of "svn blame" (Query/Blame)
+
+[*] Fixed wrong URL generation (Switch dialog, Change URL) for non top-level files/directories
+[*] Fixed opposite order of files for external diff application.
+
+changes from 0.4.2 to 0.4.3 (08/09/2004)
+
+[*] Big set of STL-to-QT patches (Darovsky Alexander). 
+    Now it should works correct with non-english codepages.
+[*] .svn/entries parser was re-implemented by using Qt/DOM parser (Darovsky Alexander)
+
+[*] ESVN_BSD compile flag (define) cause compilation of a spechial BSD code 
+    for time caliclation (Andrej Zverev)
+
+changes from 0.4.1 to 0.4.2 (08/08/2004)
+
+[+] Added indication of the current tag/branch
+[+] Added indication of the conflict status
+[+] Implemented fonts configuration (see options/fonts)
+[+] Added support of URL's generation in "Switch" dialog (Trunk/Tag/Branch)
+[+] Added Message field to "Copy" and "Move" dialogs
+[+] Added "Hide unknown files" to "Options" dialog
+[+] Added support of externall diff3 application (for conflicts only).
+    See Query/Diff-3 and Options/Diff-3
+    
+
+[*] Fixed "Resolved" command
+[*] Fixed RPM package (added ChangeLog to ...tar.gz)
+[*] Fixed "Move" command
+
+
+----------------------------------------------------------------------------
+
+changes from 0.3.14 to 0.4.1 (08/07/2004)
+
+[+] Added support of resolve (Modify/Resolve) 
+[+] Added support of move  (Modify/Move)
+[+] Added esvn.spec file (thanks to Michel Lang)
+[+] Added auto-saving of the main window position 
+[+] Added slider to Log window 
+[+] Added support of recently opened workspaces (File/Recently opened)
+
+[*] In the "View" window "Font size" is active and works
+[*] Wordwraped "Processing..." window message
+[*] Fixed a bug whith wrong directory's selection
+[*] Fixed wrong label for Merge menu's item
+[*] Fixed errors in log parsing  
+[*] Changed icons
+
+[-] Removed unused items from main menu
+
+

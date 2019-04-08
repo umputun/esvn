@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<shortcut>
+		<keycap>F5</keycap>
+	</shortcut>
+	<guimenu>View</guimenu>
+	<guimenuitem>Refresh local</guimenuitem>
+</menuchoice>

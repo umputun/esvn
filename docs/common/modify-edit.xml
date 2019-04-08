@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<shortcut>
+		<keycap>F4</keycap>
+	</shortcut>
+	<guimenu>Modify</guimenu>
+	<guimenuitem>Edit</guimenuitem>
+</menuchoice>

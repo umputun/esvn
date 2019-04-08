@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<shortcut>
+		<keycombo>
+			<keycap>F3</keycap>
+		</keycombo>
+	</shortcut>
+	<guimenu>Query</guimenu>
+	<guimenuitem>View cat</guimenuitem>
+</menuchoice>

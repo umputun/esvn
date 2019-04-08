@@ -1,0 +1,254 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_changed</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_changed</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>622</width>
+            <height>282</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Changed items</string>
+    </property>
+    <property name="icon">
+        <pixmap>headline.png</pixmap>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QListView" row="0" column="0">
+            <column>
+                <property name="text">
+                    <string>Name</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Status</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Modified</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>lv_status</cstring>
+            </property>
+            <property name="lineWidth">
+                <number>1</number>
+            </property>
+            <property name="resizePolicy">
+                <enum>Manual</enum>
+            </property>
+            <property name="vScrollBarMode">
+                <enum>Auto</enum>
+            </property>
+            <property name="hScrollBarMode">
+                <enum>AlwaysOff</enum>
+            </property>
+            <property name="allColumnsShowFocus">
+                <bool>true</bool>
+            </property>
+            <property name="showSortIndicator">
+                <bool>true</bool>
+            </property>
+            <property name="resizeMode">
+                <enum>LastColumn</enum>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>layout29</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_diff</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Diff</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_view</cstring>
+                    </property>
+                    <property name="text">
+                        <string>View</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_log</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Log</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_update</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Update</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>30</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_refresh</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Refresh</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer10</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer>
+                    <property name="name">
+                        <cstring>Horizontal Spacing2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>90</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Close</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_changed</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>bt_refresh</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_changed</receiver>
+        <slot>bt_refresh_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_update</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_changed</receiver>
+        <slot>bt_update_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_view</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_changed</receiver>
+        <slot>bt_view_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_diff</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_changed</receiver>
+        <slot>bt_diff_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_log</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_changed</receiver>
+        <slot>bt_log_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">dlg_changed.ui.h</include>
+</includes>
+<slots>
+    <slot>bt_refresh_clicked()</slot>
+    <slot>bt_update_clicked()</slot>
+    <slot>bt_view_clicked()</slot>
+    <slot>bt_diff_clicked()</slot>
+    <slot>bt_log_clicked()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

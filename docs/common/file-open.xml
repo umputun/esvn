@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<shortcut>
+		<keycombo>
+			<keysym>Ctrl+O</keysym>
+		</keycombo>
+	</shortcut>
+	<guimenu>
+		<accel>F</accel>ile</guimenu>
+	<guimenuitem>Open working directory ...</guimenuitem>
+</menuchoice>

@@ -1,0 +1,149 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Diff-3 (conflict)</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s29.html" title="Quick Diff">
+      <link rel="next" href="ch03s31.html" title="Blame">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Diff-3 (conflict)</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s29.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s31.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-diff-3"></a>Diff-3 (conflict)
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>When performing an update or a merge operation <span><b class="application">subversion</b></span> will merge the differences from
+                    files in the repository to the working copy. During this operation the following may occur:
+         </p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>Unchanged working copy files will be updated and set to
+                                 'up-to-date' status.
+                  </p>
+               </li>
+               <li>
+                  <p>Changed working copy files with changes that do not overlap with changes coming from
+                                 the repository are merged and set to 'up-to-date' status.
+                  </p>
+               </li>
+               <li>
+                  <p>Changed working copy files with changes that do overlap with changes coming from the
+                                 repository are set to the 'conflict' status.
+                  </p>
+               </li>
+            </ul>
+         </div>
+         <p>The first two cases result in an 'up-to-date' status. There is
+                    therefore no reason for concern. However the third case results in a
+                    'conflict' status that means the changes from the server overlapped with
+                    those in the working copy and must be manually resolved by choosing between them.
+         </p>
+         <p>When a file is in the 'conflict' status <span><b class="application">eSvn</b></span> the file is marked
+                    with the 'conflict' icon, 3 different files are created and conflicted
+                    markers are added:
+         </p>
+         <div class="variablelist">
+            <dl>
+               <dt><span class="term">
+                                 <b class="filename"><tt>[filename].mine</tt></b>
+                               </span></dt>
+               <dd>
+                  <p>This is the file that existed in working copy before the update operation. This
+                                   file does not contain conflict markers it is your local changes and nothing else.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <b class="filename"><tt>[filename].r[OLDREV]</tt></b>
+                               </span></dt>
+               <dd>
+                  <p>This is the file that was the <tt class="envar">BASE</tt> revision before the update
+                                   operation. That is, the file checked out before editing.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <b class="filename"><tt>[filename].r[NEWREV]</tt></b>
+                               </span></dt>
+               <dd>
+                  <p>This is the file that <span><b class="application">eSvn</b></span> just received from the repository as a result of
+                                   the update operation. This file corresponds to the <tt class="envar">HEAD</tt> revision of the repository.
+                  </p>
+               </dd>
+            </dl>
+         </div>
+         <p>To resolve this situation you can edit the file manually in order to resolve all
+                    conflicts (marked with &lt;&lt;&lt;&lt; and
+                    &gt;&gt;&gt;&gt;) or use <tt class="option">Diff 3 (conflict)</tt> option
+                    (
+            <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Diff-3 (conflict)</span> (<span><b class="shortcut"><span class="keysym">Ctrl+Shft+F9</span></b></span>)
+            ). This option passes the three files to the external 3-way diff
+                    application specified in the <tt class="interfacename">Options</tt> dialog. Use this
+                    application to view the differences between the files and merge them to your working file.
+         </p>
+         <p>In some cases it is not th keeping the changes made in
+                    <b class="filename"><tt>[filename].mine</tt></b>. In this case you may also:
+         </p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>Copy one of the temporary files on top of your working file.</p>
+               </li>
+               <li>
+                  <p>Use the Revert option (
+                     <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Revert</span> (<span><b class="shortcut"><span class="keysym">Alt+R</span></b></span>)
+                     ) option to throw away all of your local
+                                 changes in favor of the changes in <b class="filename"><tt>[filename].r[NEWREV]</tt></b> (<tt class="envar">HEAD</tt>).
+                  </p>
+               </li>
+            </ul>
+         </div>
+         <p>When this is done, remember to use the resolved option (
+            <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Resolved</span> (<span><b class="shortcut"><span class="keysym">Alt+E</span></b></span>)
+            ) to inform
+                    <span><b class="application">subversion</b></span> that the conflict in fixed. This will remove the temporary files (
+                    <b class="filename"><tt>[filename].r[OLDREV]</tt></b> and <b class="filename"><tt>[filename].r[NEWREV]</tt></b>)
+                    from the working copy and enable <span><b class="application">eSvn</b></span> to perform a commit operation. Before this is
+                    done, <span><b class="application">eSvn</b></span> will not allow commit operations on the working copy.
+         </p>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s29.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s31.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Quick Diff&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Blame</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

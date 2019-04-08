@@ -1,0 +1,861 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Main Interface</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch02.html" title="Chapter&nbsp;2.&nbsp;Getting Started">
+      <link rel="previous" href="ch02.html" title="Chapter&nbsp;2.&nbsp;Getting Started">
+      <link rel="next" href="ch02s03.html" title="Exiting eSvn">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Main Interface</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch02.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;2.&nbsp;Getting Started</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s03.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-mainint"></a>Main Interface
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>The main interface is comprised of the following areas (see <a href="ch02s02.html#esvn-fig-mainint" title="Figure&nbsp;2.2.&nbsp;Main Interface">Figure&nbsp;2.2</a>):
+         </p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>
+                                 <a href="ch02s02.html#esvn-main-menus">Main Menus</a>
+                               
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <a href="ch02s02.html#esvn-toolbar">Toolbar</a> - By default set to OFF.
+                                 When set to ON, displayed under the menus. 
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <a href="ch02s02.html#esvn-tree-view">Tree View</a> - left side pane 
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <a href="ch02s02.html#esvn-file-view">File View</a> - right side top pane 
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <a href="ch02s02.html#esvn-log-view">Log View</a> - right side bottom pane 
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <a href="ch02s02.html#esvn-command-prompt">Command Prompt</a>
+                               
+                  </p>
+               </li>
+            </ul>
+         </div>
+         <p>The real-estate of the main interface can be managed by resizing the amount of space a
+                    pane takes in the application window. <span class="action">Move</span> the mouse pointer over either
+                    the vertical or horizontal pane separators. The pointer will change, then
+                    <span class="action">click</span> and <span class="action">hold</span> the mouse button while
+                    <span class="action">dragging</span> the pointer to a new position in order to resize a pane.
+         </p>
+         <div class="figure"><a name="esvn-fig-mainint"></a><p class="title"><b>Figure&nbsp;2.2.&nbsp;Main Interface</b></p>
+            <div class="screenshot">
+               <div class="mediaobject">
+                  <table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="425">
+                     <tr>
+                        <td><img src="images/main.jpg" width="425" alt="Main Interface"></td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-main-menus"></a>Main Menus
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>SVN commands and <span><b class="application">eSvn</b></span> functions are menu driven. Following is a description of
+                         the main menus, their options and shortcut keys where applicable.
+            </p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="common/admon/tip.png"></td>
+                     <th align="left"></th>
+                  </tr>
+                  <tr>
+                     <td colspan="2" align="left" valign="top">
+                        <p>When navigating the menu options look at the <tt class="interfacename">Status
+                                          bar</tt>, located at the bottom of the <tt class="interfacename">main
+                                          window</tt>, for tips about the function of the selected option.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <p><a name="esvn-fpara-file-menu"></a><b>File Menu.&nbsp;</b>
+                           
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Open working directory ...</span> (<span><b class="shortcut"><span class="keysym">Ctrl+O</span></b></span>)
+                        : Displays a common dialog for browsing to and opening local
+                                          folders containing resources which may or may not be under
+                                          <span><b class="application">subversion</b></span> control (see <a href="ch03.html#esvn-open-workspace" title="Opening a Working Directory">the section called &#8220;Opening a Working Directory&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Workspace ...</span> (<span><b class="shortcut"><span class="keysym">Ctrl+W</span></b></span>)
+                        : Displays the Workspace Manager dialog used to manage
+                                          workspaces (see <a href="ch03s02.html" title="Managing Workspaces">the section called &#8220;Managing Workspaces&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">
+                           		<span class="accel">C</span>heckout ...</span>
+                        : Displays the checkout dialog used to specify parameters
+                                          for the checkout process (see <a href="ch03s03.html" title="Checking Out a Working Copy">the section called &#8220;Checking Out a Working Copy&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Browse repository ...</span> (<span><b class="shortcut"><span class="keysym">Ctrl+B</span></b></span>)
+                        : Displays the repository browser which can be used to
+                                          explore a remote or local subversion repository without performing a checkout (see
+                                            <a href="ch03s04.html" title="Browsing Remote Repositories">the section called &#8220;Browsing Remote Repositories&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Import ...</span>
+                        : Displays the import dialog used to specify a path that will
+                                          be committed to a given <span class="acronym">URL</span> (see <a href="ch03s05.html" title="Importing a File System">the section called &#8220;Importing a File System&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Export ...</span>
+                        : Displays the export dialog used to specify a
+                                          <span class="acronym">URL</span> from which a clean directory tree will be made in a given
+                                          local path (see <a href="ch03s06.html" title="Exporting a Folder System">the section called &#8220;Exporting a Folder System&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Options</span>
+                        : Displays the options dialog used to set preferences for
+                                          <span><b class="application">eSvn</b></span> (see <a href="ch03s07.html" title="Configuring Options">the section called &#8220;Configuring Options&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Recent workspaces</span>
+                        : A list of the most recently opened work spaces. Select an
+                                          option to open the workspace.
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">
+                           		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Exit</span>
+                        : Closes <span><b class="application">eSvn</b></span>.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>
+                         
+            </p>
+            <p><a name="esvn-fpara-view-menu"></a><b>View Menu.&nbsp;</b>
+                           
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>
+                        <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Refresh local</span> (<span><b class="shortcut"><span><b class="keycap">F5</b></span></b></span>)
+                        : Refreshes the <a href="ch02s02.html#esvn-file-view">File View</a> of the folder selected in the <a href="ch02s02.html#esvn-tree-view">Tree View</a>. 
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Refresh workspace</span> (<span><b class="shortcut"><span class="keysym">Shift+F5</span></b></span>)
+                        : Refreshes both the <a href="ch02s02.html#esvn-file-view">File View</a> and <a href="ch02s02.html#esvn-tree-view">Tree View</a>.
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Refresh online</span> (<span><b class="shortcut"><span class="keysym">Shift+F5</span></b></span>)
+                        : Refreshes both the <a href="ch02s02.html#esvn-file-view">File View</a> and <a href="ch02s02.html#esvn-tree-view">Tree View</a> and compares the
+                                          revision number of all local files with those in the repository.
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Toolbars</span>
+                        : Displays a sub menu listing the available <a href="ch02s02.html#esvn-toolbar">Toolbar</a> options.
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Hide unknown files</span> (<span><b class="shortcut"><span class="keysym">Ctrl+H</span></b></span>)
+                        : Toggles visibility of files with the status
+                                          "- unknown -" in the <a href="ch02s02.html#esvn-file-view">File View</a>.
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Toolbars</span>
+                        : Clears all output from the output pane.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>
+                         
+            </p>
+            <p><a name="esvn-fpara-modify-menu"></a><b>Modify Menu.&nbsp;</b>
+                           
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Update</span> (<span><b class="shortcut"><span class="keysym">Alt+U</span></b></span>)
+                        : Updates all local, unmodified files with new versions
+                                          that may be residing in the repository (see <a href="ch03s09.html" title="Updating Local Copy">the section called &#8220;Updating Local Copy&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Update revision ...</span> (<span><b class="shortcut"><span class="keysym">Ctrl+U</span></b></span>)
+                        : Displays the update dialog used to specify a
+                                          revision number or date to which the local copy should be updated. Forward and
+                                          backward revision updates are possible (<a href="ch03s10.html" title="Updating the Revision">the section called &#8220;Updating the Revision&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Commit</span> (<span><b class="shortcut"><span class="keysym">Alt+C</span></b></span>)
+                        : Commits changes made locally back to the repository (see
+                                            <a href="ch03s11.html" title="Committing to the Repository">the section called &#8220;Committing to the Repository&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Add</span> (<span><b class="shortcut"><span class="keysym">Alt+A</span></b></span>)
+                        : Adds a folder or file to the workspace directory so that it
+                                          comes under <span><b class="application">subversion</b></span> control. The file or folder is
+                                          only added to the server repository on the next commit operation (see <a href="ch03s12.html" title="Adding to the Repository">the section called &#8220;Adding to the Repository&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Add recursive ...</span> (<span><b class="shortcut"><span class="keysym">Ctrl+A</span></b></span>)
+                        : Adds a folder and its contents to the local
+                                          repository so that it comes under <span><b class="application">subversion</b></span> control.
+                                          The folder and its contents are only added to the server repository on the next
+                                          commit operation (see <a href="ch03s13.html" title="Recursive Addition">the section called &#8220;Recursive Addition&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Delete</span> (<span><b class="shortcut"><span class="keysym">Alt+D</span></b></span>)
+                        : Deletes a folder or file from the working copy (see <a href="ch03s14.html" title="Deleting">the section called &#8220;Deleting&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Copy (local)</span> (<span><b class="shortcut"><span class="keysym">Alt+Q</span></b></span>)
+                        : Displays the copy dialog used to specify a source
+                                          folder path or file located in the workspace directory and the local destination
+                                          to which it will be copied (see <a href="ch03s15.html" title="Copying Local Files">the section called &#8220;Copying Local Files&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Copy (remote)</span> (<span><b class="shortcut"><span class="keysym">Ctrl+Q</span></b></span>)
+                        : Displays the copy dialog used to specify a source
+                                          folder path or file located in a remote repository and the remote destination to
+                                          which it will be copied (see <a href="ch03s16.html" title="Copying Remote Files">the section called &#8220;Copying Remote Files&#8221;</a>)
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Move ...</span> (<span><b class="shortcut"><span class="keysym">Alt+V</span></b></span>)
+                        : Displays the move dialog used to specify a source folder or
+                                          file and the destination to which it will be moved (see <a href="ch03s17.html" title="Moving Items">the section called &#8220;Moving Items&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Make directory ...</span> (<span><b class="shortcut"><span class="keysym">Alt+G</span></b></span>)
+                        : Displays the make a directory dialog used to specify a
+                                          folder name that will be created under the folder selected in the <a href="ch02s02.html#esvn-tree-view">Tree View</a>.
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Merge</span> (<span><b class="shortcut"><span class="keysym">Alt+M</span></b></span>)
+                        : Displays the merge dialog used to specify to sources whose
+                                          differences will be merged to a given location (see <a href="ch03s18.html" title="Merging">the section called &#8220;Merging&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Switch</span> (<span><b class="shortcut"><span class="keysym">Alt+S</span></b></span>)
+                        : Displays the switch dialog used to specify a new location
+                                          to which the local source will be updated (see <a href="ch03s19.html" title="Switching a Working Copy">the section called &#8220;Switching a Working Copy&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Revert</span> (<span><b class="shortcut"><span class="keysym">Alt+R</span></b></span>)
+                        : Roles back all edits on the selected local item to the
+                                          last version in the server repository (see <a href="ch03s20.html" title="Reverting">the section called &#8220;Reverting&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Revert recursive</span> (<span><b class="shortcut"><span class="keysym">Ctrl+R</span></b></span>)
+                        : Roles back all edits on the selected local
+                                          folder and it contents to the last version in the server repository (see <a href="ch03s20.html" title="Reverting">the section called &#8220;Reverting&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Cleanup</span> (<span><b class="shortcut"><span class="keysym">Alt+Z</span></b></span>)
+                        : Performs a recursive cleanup of the workspace directory,
+                                          removing stale locks and resuming uncompleted operations (see <a href="ch03s21.html" title="Cleaning up">the section called &#8220;Cleaning up&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Resolved</span> (<span><b class="shortcut"><span class="keysym">Alt+E</span></b></span>)
+                        : Removes conflicted state from selected folders or files
+                                          (see <a href="ch03s22.html" title="Resolving Conflicts">the section called &#8220;Resolving Conflicts&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p>
+                        <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Edit</span> (<span><b class="shortcut"><span><b class="keycap">F4</b></span></b></span>)
+                        : Opens the selected file with the editor specified (see
+                                            <a href="ch03s07.html" title="Configuring Options">the section called &#8220;Configuring Options&#8221;</a>).
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>
+                         
+            </p>
+            <p><a name="esvn-fpara-query-menu"></a><b>Query Menu.&nbsp;</b>
+                           
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Log</span> (<span><b class="shortcut"><span class="keysym">Alt+L</span></b></span>)
+                        : Displays commit log messages (see <a href="ch03s24.html" title="Log">the section called &#8220;Log&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Info</span> (<span><b class="shortcut"><span class="keysym">Alt+I</span></b></span>)
+                        : Displays information about a selected path (see <a href="ch03s25.html" title="Info">the section called &#8220;Info&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Status</span> (<span><b class="shortcut"><span class="keysym">Alt+S</span></b></span>)
+                        : Displays the status of a selected item. If a folder
+                                          displays status of folder contents (see <a href="ch03s26.html" title="Status">the section called &#8220;Status&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Properties</span> (<span><b class="shortcut"><span class="keysym">Alt+P</span></b></span>)
+                        : Displays the properties associated with the selected
+                                          path (see <a href="ch03s27.html" title="Properties">the section called &#8220;Properties&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Diff</span> (<span><b class="shortcut"><span><b class="keycap">F9</b></span></b></span>)
+                        : Displays the diff dialog used to specify a version in the
+                                          repository against which to compare the local item (see <a href="ch03s29.html" title="Quick Diff">the section called &#8220;Quick Diff&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Quick Diff</span> (<span><b class="shortcut"><span class="keysym">Shft+F9</span></b></span>)
+                        : Displays the difference between the current local and
+                                          the last revision in the repository (see <a href="ch03s28.html" title="Diff">the section called &#8220;Diff&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Diff-3 (conflict)</span> (<span><b class="shortcut"><span class="keysym">Ctrl+Shft+F9</span></b></span>)
+                        : Invokes any 3-way-diff, as specified in the options
+                                          settings, to be used for resolving conflicts, (see <a href="ch03s30.html" title="Diff-3 (conflict)">the section called &#8220;Diff-3 (conflict)&#8221;</a>).
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Blame</span> (<span><b class="shortcut"><span class="keysym">Alt+B</span></b></span>)
+                        : Displays the author and revision information for a
+                                          selected folder, file or URL.
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Show changed items ...</span> (<span><b class="shortcut"><span class="keysym">Ctrl+S</span></b></span>)
+                        : Displays the <tt class="interfacename">Changed
+                                             items</tt> dialog that lists all changed items.
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">View cat</span> (<span><b class="shortcut"><span><b class="keycap">F3</b></span></b></span>)
+                        : Displays the contents of the last revision of a
+                                          selected file from the repository (see <a href="ch03s33.html" title="View (cat)">the section called &#8220;View (cat)&#8221;</a>).
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>
+                         
+            </p>
+            <p><a name="esvn-fpara-help-menu"></a><b>Help Menu.&nbsp;</b>
+                           
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p> 
+                        <span class="guimenu">
+                           		<span class="accel">H</span>elp</span>-&gt;<span class="guimenuitem">
+                           		<span class="accel">C</span>ontents</span>
+                        : Displays the Online Help system.
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">
+                           		<span class="accel">H</span>elp</span>-&gt;<span class="guimenuitem">Web Site</span>
+                        : Opens the <span><b class="application">eSvn</b></span> web site in a browser.
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">
+                           		<span class="accel">H</span>elp</span>-&gt;<span class="guimenuitem">Check for updates</span>
+                        : Displays the <tt class="interfacename">Version
+                                             update</tt> dialog.
+                     </p>
+                  </li>
+                  <li>
+                     <p> 
+                        <span class="guimenu">
+                           		<span class="accel">H</span>elp</span>-&gt;<span class="guimenuitem">
+                           		<span class="accel">A</span>bout</span>
+                        : Displays the <tt class="interfacename">About</tt> dialog.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>
+                         
+            </p>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-toolbar"></a>Toolbar
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>There is a toolbar for each of the <span><b class="application">eSvn</b></span> menus. The toolbars provide quick access
+                         to the options available on the menus. Each option is represented by a button. To use a
+                         option just <span class="action">click</span> the toolbar button. If you are not certain of a buttons
+                         function, hold the mouse cursor over the button to display a tool-tip.
+            </p>
+            <p>To display the <tt class="interfacename">File</tt> toolbar select 
+               <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Toolbars</span>-&gt;<span class="guimenuitem">File</span>
+               .
+            </p>
+            <div class="informalfigure">
+               <div class="mediaobject"><img src="images/toolbar-file.jpg"></div>
+            </div>
+            <p>To display the <tt class="interfacename">View</tt> toolbar select 
+               <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Toolbars</span>-&gt;<span class="guimenuitem">View</span>
+               .
+            </p>
+            <div class="informalfigure">
+               <div class="mediaobject"><img src="images/toolbar-view.jpg"></div>
+            </div>
+            <p>To display the <tt class="interfacename">Modify</tt> toolbar select 
+               <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Toolbars</span>-&gt;<span class="guimenuitem">Modify</span>
+               .
+            </p>
+            <div class="informalfigure">
+               <div class="mediaobject"><img src="images/toolbar-modify.jpg"></div>
+            </div>
+            <p>To display the <tt class="interfacename">Query</tt> toolbar select 
+               <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Toolbars</span>-&gt;<span class="guimenuitem">Query</span>
+               .
+            </p>
+            <div class="informalfigure">
+               <div class="mediaobject"><img src="images/toolbar-query.jpg"></div>
+            </div>
+            <p>When <span><b class="application">eSvn</b></span> is first started the toolbars are not displayed. To display a toolbar
+                         select 
+               <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Toolbars</span>
+                and choose one of the available sub menu options. Options
+                         displaying a checked symbol are enabled, those without are not. In this way toolbars can
+                         be toggled ON and OFF depending on preference.
+            </p>
+            <p>When a toolbar is enabled it is by default displayed in the docked position below the
+                         main menu. Toolbars can be docked on any side of the main interface (top, left, bottom,
+                         right). To dock a toolbar select the toolbar handle and drag it to one of the sides. While
+                         moving the toolbar the contents are transparent and the outline of the area is represented
+                         by a thick lined rectangle. When the toolbar is brought close to any side this line is
+                         thin, indicating that the toolbar can be docked in this position. Release the toolbar when
+                         the outline changes and the toolbar will span into the docked position. Within the docked
+                         position the toolbar position can be adjusted according to preference.
+            </p>
+            <p>Toolbars can also be free-floating within any area of the desktop real-estate, even
+                         beyond the <span><b class="application">eSvn</b></span> window space. When a toolbar is free-floating it can be returned to
+                         the top docking position by <span class="action">double-clicking</span> its title bar.
+            </p>
+            <p>The layout and position of toolbars is set to be persistent so that the <span><b class="application">eSvn</b></span>
+                         workspace is restored to the preferences of the previous session. As example of the
+                         interface with docked and free-floating menus can be seen in <a href="ch02s02.html#esvn-fig-mainint" title="Figure&nbsp;2.2.&nbsp;Main Interface">Figure&nbsp;2.2</a>.
+            </p>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-tree-view"></a>Tree View
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>The tree view displays the tree folder structure of the workspace directory. Folder
+                         levels can be expanded and collapsed. The status of a folder is displayed by changes in
+                         the folder icon as follows.
+            </p>
+            <div class="table"><a name="d4e986"></a><p class="title"><b>Table&nbsp;2.1.&nbsp;Tree View Status Icons</b></p>
+               <table summary="Tree View Status Icons" border="1">
+                  <colgroup>
+                     <col width="50%">
+                     <col width="50%">
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th>Icon</th>
+                        <th>Meaning</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/folder_green.png"></span><span class="inlinemediaobject"><img src="images/folder_green_open.png"></span></td>
+                        <td>Folder open/closed. Exists in local and repository.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/folder_grey_3.png"></span><span class="inlinemediaobject"><img src="images/folder_grey_open_3.png"></span></td>
+                        <td>Folder open/closed. Exists local only.</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <p>In addition to enabling exploration of the folder structure and displaying status, the
+                         tree view provides access to a number of <span><b class="application">subversion</b></span> operations
+                         by way of a context menu (<span class="action">right-click</span>).
+            </p>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-file-view"></a>File View
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>The file view displays the contents of the folder selected in the "<a href="ch02s02.html#esvn-tree-view">Tree View</a>". For each item the
+                         following information is displayed is columns. Items can be ordered by column in ascending
+                         or descending order by <span class="action">clicking</span> the column title.
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Filename</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>The name of the file.</p>
+                  </dd>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Status</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>The status of the file, states include:</p>
+                     <div class="itemizedlist">
+                        <ul type="disc">
+                           <li>
+                              <p>up-to-date</p>
+                           </li>
+                           <li>
+                              <p>modified</p>
+                           </li>
+                           <li>
+                              <p>out of date</p>
+                           </li>
+                           <li>
+                              <p>- unknown -</p>
+                           </li>
+                           <li>
+                              <p>- missing -</p>
+                           </li>
+                        </ul>
+                     </div>
+                  </dd>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Revision</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>The latest revision in the repository.</p>
+                  </dd>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Last revision</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>The last revision containing an a change.</p>
+                  </dd>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Last updated</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>The date and time of last up date.</p>
+                  </dd>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Modified (local)</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>The date and time of last modification made locally.</p>
+                  </dd>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Author</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>User name of <span><b class="application">subversion</b></span> account that performed a
+                                        modification and did commit.
+                     </p>
+                  </dd>
+                  <dt><span class="term">
+                                      <span class="bold"><b>Tag/Branch</b></span>
+                                    </span></dt>
+                  <dd>
+                     <p>The trunk, tag or branch of the repository filesystem under which the file
+                                        resides. When the file resides in a <b class="filename"><tt>branch</tt></b> or
+                                        a <b class="filename"><tt>tag</tt></b> folder the <span class="inlinemediaobject"><img src="images/b-16x16.png"></span> or <span class="inlinemediaobject"><img src="images/t-16x16.png"></span> icons are used respectively and the value is change from trunk
+                                        to branch or tag accordingly.
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+            <p>The file view also provides visual indication item status by way of a graphic icon
+                         located before the item as described in the following table.
+            </p>
+            <div class="table"><a name="esvn-tbl-file-view-status-icons"></a><p class="title"><b>Table&nbsp;2.2.&nbsp;File View Status Icons</b></p>
+               <table summary="File View Status Icons" border="1">
+                  <colgroup>
+                     <col width="50%">
+                     <col width="50%">
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th>Icon</th>
+                        <th>Meaning</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/FileUnknown16x16.jpg"></span></td>
+                        <td>File unknown. Not under repository control.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/FileAdded16x16.png"></span></td>
+                        <td>File added. Scheduled for commit.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/FileWriteable16x16.jpg"></span></td>
+                        <td>Up to date and writable.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/FileModified16x16.jpg"></span></td>
+                        <td>Locally modified.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/FileNeedsPatch16x16.jpg"></span></td>
+                        <td>Out of date. Needs Patch.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/FileConflict16x16.jpg"></span></td>
+                        <td>Conflict resulted from Merge or Update operation.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/FileRemoved16x16.jpg"></span></td>
+                        <td>File locally removed.</td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/folder_red.png"></span></td>
+                        <td>Contents have been added to the folder but not yet sent to repository in
+                                             commit, content is modified. Only displayed when <tt class="option">Show folders in File
+                                                List</tt> option is checked (see <a href="ch03s07.html" title="Configuring Options">the section called &#8220;Configuring Options&#8221;</a>).
+                        </td>
+                     </tr>
+                     <tr>
+                        <td><span class="inlinemediaobject"><img src="images/folder_exec_3.png"></span></td>
+                        <td>Folder contains items under repository control that have been modified,
+                                             contents are out-of-date. Only displayed when <tt class="option">Show folders in File
+                                                List</tt> option is checked (see <a href="ch03s07.html" title="Configuring Options">the section called &#8220;Configuring Options&#8221;</a>).
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="common/admon/tip.png"></td>
+                     <th align="left"></th>
+                  </tr>
+                  <tr>
+                     <td colspan="2" align="left" valign="top">
+                        <p>To view the Log associated with a folder, <span class="action">double-click</span> the folder.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <p>In addition to displaying and providing access to and information about files, the
+                         file view provides access to a number of <span><b class="application">subversion</b></span> operations
+                         by way of a context menu (<span class="action">right-click</span>).
+            </p>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-log-view"></a>Log View
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>The log view displays the output of processing commands. Commands and the status of
+                         their results are highlighted.
+            </p>
+            <p>Output can be selected in part or in whole and copied to the
+                         <span><b class="application">Clipboard</b></span>. <span class="action">Right-click</span> choose
+                           <span class="guimenuitem">Select All</span> to select all the entire content of the output log
+                         or <span class="action">click</span> and <span class="action">drag</span> the mouse pointer across a part of the
+                         log to select a portion. Use <span class="keysym">Ctrl+C</span> or <span class="action">right-click</span> choose <span class="guimenuitem">Copy</span> to
+                         place a copy of the selected output on the <span><b class="application">clipboard</b></span>.
+            </p>
+         </div>
+         <div class="sect2" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a name="esvn-command-prompt"></a>Command Prompt
+                     </h3>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p>The Command Prompt enables manual input of <span><b class="application">subversion</b></span> commands as an alternative to
+                         driving functions using the menu options. When working at the Command Prompt use the
+                         &#8657; &amp; &#8659; direction keys to traverse the PREV and NEXT command history.
+            </p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="common/admon/tip.png"></td>
+                     <th align="left"></th>
+                  </tr>
+                  <tr>
+                     <td colspan="2" align="left" valign="top">
+                        <p>Type <span><b class="command">svn help</b></span> to display the <span><b class="application">subversion</b></span> help menu list of
+                                       commands. Type <span><b class="command">svn help [command]</b></span> to view more information about a command.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch02.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch02.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s03.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Chapter&nbsp;2.&nbsp;Getting Started&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Exiting eSvn</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

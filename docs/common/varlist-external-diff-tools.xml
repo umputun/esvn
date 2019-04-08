@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE variablelist PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                      "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"[
+	<!ENTITY % global_entities SYSTEM "../common/global.ent">
+	%global_entities;
+]>-->
+<variablelist>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">
+				<application class="software">kdiff3</application>
+			</emphasis>
+		</term>
+		<listitem>
+			<para>KDiff3 is a program that compares or merges two or three text input files or
+				directories, showing the differences line by line and character by character. KDiff3
+				provides an automatic merge-facility and an integrated editor for comfortable solving of
+				merge-conflicts. The program also supports KIO on KDE (allows accessing ftp, sftp, fish, smb
+				etc.), and has an intuitive graphical user interface. More information and downloads are
+				available from the <ulink url="http://kdiff3.sourceforge.net/">KDiff3 Web Site</ulink>.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">
+				<application class="software">Kompare</application>
+			</emphasis>
+		</term>
+		<listitem>
+			<para>Kompare is a KDE frontend to the Open Source diff application. Kompare is shipped as
+				part of the KDE SDK. More information is available from the <ulink
+					url="http://www.kde.org/">KDE Web Site</ulink>.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">
+				<application class="software">xxdiff</application>
+			</emphasis>
+		</term>
+		<listitem>
+			<para>xxdiff is a graphical file and directories comparator and merge tool. xxdiff is useful
+				for comparing two files, three files, or two directories (shallow and recursive). It
+				provides horizontal diffs highlighting and files can be merged interactively with
+				visualization and saving of the resulting output. xxdiff has features to assist in
+				performing merge reviews/policing and can unmerge CVS conflicts in automatically merged file
+				and display them as two files, to help resolve conflicts. xxdiff uses external diff programs
+				to compute differences: works with GNU diff, SGI diff and ClearCase's cleardiff, and any
+				other similar diff tools. More information and downloads can be found at the <ulink
+					url="http://xxdiff.sourceforge.net/">xxdiff Web Site</ulink>. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">
+				<application class="software">TkDiff</application>
+			</emphasis>
+		</term>
+		<listitem>
+			<para>TkDiff is a graphical front end to the diff program. It provides a side-by-side view of
+				the differences between two files, along with several innovative features such as diff
+				bookmarks and a graphical map of differences for quick navigation. More information and
+				download can be found on the <ulink url="http://tkdiff.sourceforge.net/">TkDiff Web Site</ulink>.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">
+				<application class="software">GTKdiff</application>
+			</emphasis>
+		</term>
+		<listitem>
+			<para>GTKdiff is a graphical diff tool. It has diff3 and merge features. It's written with
+				GTK+. After gtkdiff-0.8.0, it requires <ulink url="http://www.gnome.org/">GNOME</ulink>.
+				More information and download can be found the <ulink
+					url="http://home.catv.ne.jp/pp/ginoue/software/gtkdiff/index-e.html">GTKdiff Web Site</ulink>.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">
+				<application class="software">Meld</application>
+			</emphasis>
+		</term>
+		<listitem>
+			<para>Meld is a visual diff and merge tool. It integrates especially well with CVS. The diff
+				viewer lets you edit files in place (diffs update dynamically), and a middle column shows
+				detailed changes and allows merges. The margins show location of changes for easy
+				navigation, and it also features a tabbed interface that allows you to open many diffs at
+				once. More information and download can be found the <ulink
+					url="http://meld.sourceforge.net/">Meld Web Site</ulink>.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<emphasis role="bold">
+				<application class="software">ExamDiff</application>
+			</emphasis>
+		</term>
+		<listitem>
+			<para>ExamDiff Pro is a powerful yet intuitive and easy to use visual file and directory
+				comparison tool for Windows. It features unique functionality that distinguishes ExamDiff
+				Pro from other comparison programs. If you used WinDiff or UNIX diff before, you will find
+				that ExamDiff Pro offers much more efficient and user-friendly way to compare files and
+				folders. More information and download can be found the <ulink
+				url="http://www.prestosoft.com/">PrestoSoft</ulink> the developers of ExamDiff.</para>
+		</listitem>
+	</varlistentry>
+</variablelist>

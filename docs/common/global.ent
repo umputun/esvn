@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- General-->
+<!ENTITY version SYSTEM '../../VERSION'>
+<!ENTITY esvn '<application class="software">eSvn</application>'>
+<!ENTITY svn '<application class="software">subversion</application>'>
+<!ENTITY desktop-menu SYSTEM 'desktop-menu.xml'>
+<!ENTITY itemlist-dates SYSTEM 'itemlist-dates.xml'>
+<!ENTITY varlist-keywords SYSTEM 'varlist-keywords.xml'>
+<!-- Lists -->
+<!ENTITY varlist-external-diff-tools SYSTEM 'varlist-external-diff-tools.xml'>
+<!ENTITY varlist-requirements SYSTEM 'varlist-requirements.xml'>
+<!-- Appendix-->
+<!ENTITY appen-tools SYSTEM '../manual/tools.xml'>
+<!ENTITY appen-building SYSTEM '../manual/building.xml'>
+<!ENTITY appen-acknowledge SYSTEM '../manual/acknowledge.xml'>
+
+<!-- File Menu Choices -->
+<!ENTITY file-open SYSTEM 'file-open.xml'>
+<!ENTITY file-workspace SYSTEM 'file-workspace.xml'>
+<!ENTITY file-checkout SYSTEM 'file-checkout.xml'>
+<!ENTITY file-browse SYSTEM 'file-browse.xml'>
+<!ENTITY file-import SYSTEM 'file-import.xml'>
+<!ENTITY file-export SYSTEM 'file-export.xml'> 
+<!ENTITY file-options SYSTEM 'file-options.xml'>
+<!ENTITY file-recent SYSTEM 'file-recent.xml'>
+<!ENTITY file-exit SYSTEM 'file-exit.xml'>
+
+<!-- View Menu Choices -->
+<!ENTITY view-refreshlocal SYSTEM 'view-refreshlocal.xml'>
+<!ENTITY view-refreshworkspace SYSTEM 'view-refreshworkspace.xml'>
+<!ENTITY view-refreshonline SYSTEM 'view-refreshonline.xml'>
+<!ENTITY view-toolbars SYSTEM 'view-toolbars.xml'>
+<!ENTITY view-flat-view SYSTEM 'view-flat-view.xml'>
+<!ENTITY view-flat-view-changed SYSTEM 'view-flat-view-changed.xml'>
+
+<!-- start sub menu-->
+<!ENTITY view-toolbars-file SYSTEM 'view-toolbars-file.xml'>
+<!ENTITY view-toolbars-view SYSTEM 'view-toolbars-view.xml'>
+<!ENTITY view-toolbars-modify SYSTEM 'view-toolbars-modify.xml'>
+<!ENTITY view-toolbars-query SYSTEM 'view-toolbars-query.xml'>
+<!-- end submenu-->
+<!ENTITY view-hideunknown SYSTEM 'view-hideunknown.xml'>
+<!ENTITY view-clearoutput SYSTEM 'view-clearoutput.xml'>
+
+<!-- Modify Menu Choices -->
+<!ENTITY modify-update SYSTEM 'modify-update.xml'>
+<!ENTITY modify-update-revision SYSTEM 'modify-update-revision.xml'>
+<!ENTITY modify-commit SYSTEM 'modify-commit.xml'>
+<!ENTITY modify-add SYSTEM 'modify-add.xml'>
+<!ENTITY modify-add-recursive SYSTEM 'modify-add-recursive.xml'>
+<!ENTITY modify-delete SYSTEM 'modify-delete.xml'>
+<!ENTITY modify-copy-local SYSTEM 'modify-copy-local.xml'>
+<!ENTITY modify-copy-remote SYSTEM 'modify-copy-remote.xml'>
+<!ENTITY modify-move SYSTEM 'modify-move.xml'>
+<!ENTITY modify-mkdir SYSTEM 'modify-mkdir.xml'>
+<!ENTITY modify-merge SYSTEM 'modify-merge.xml'>
+<!ENTITY modify-switch SYSTEM 'modify-switch.xml'>
+<!ENTITY modify-revert SYSTEM 'modify-revert.xml'>
+<!ENTITY modify-revert-recursive SYSTEM 'modify-revert-recursive.xml'>
+<!ENTITY modify-cleanup SYSTEM 'modify-cleanup.xml'>
+<!ENTITY modify-resolved SYSTEM 'modify-resolved.xml'>
+<!ENTITY modify-edit SYSTEM 'modify-edit.xml'>
+
+<!-- Query Menu Choices -->
+<!ENTITY query-log SYSTEM 'query-log.xml'>
+<!ENTITY query-info SYSTEM 'query-info.xml'>
+<!ENTITY query-status SYSTEM 'query-status.xml'>
+<!ENTITY query-properties SYSTEM 'query-properties.xml'>
+<!ENTITY query-diff SYSTEM 'query-diff.xml'>
+<!ENTITY query-quick-diff SYSTEM 'query-quick-diff.xml'>
+<!ENTITY query-diff-3 SYSTEM 'query-diff-3.xml'>
+<!ENTITY query-blame SYSTEM 'query-blame.xml'>
+<!ENTITY query-showchanged SYSTEM 'query-showchanged.xml'>
+<!ENTITY query-view-cat SYSTEM 'query-view-cat.xml'>
+
+<!-- Help Menu Choices -->
+<!ENTITY help-contents SYSTEM 'help-contents.xml'>
+<!ENTITY help-website SYSTEM 'help-website.xml'>
+<!ENTITY help-checkupdates SYSTEM 'help-checkupdates.xml'>
+<!ENTITY help-about SYSTEM 'help-about.xml'>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+	<!ENTITY % global_entities SYSTEM "../common/global.ent">
+	%global_entities;
+]>-->
+<appendix id="appen-tools">
+	<title>Tools</title>
+	<sect1>
+		<title>External Diff Tools</title>
+		<para>The <interfacename>Options</interfacename> dialog enables users to specify their
+			preference of programs that will be invoked to perform operations such as editing and
+			performing difference comparison between files. Following is a list of diff applications that
+			can be used.</para>
+		&varlist-external-diff-tools;
+	</sect1>
+</appendix>

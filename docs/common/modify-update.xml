@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<shortcut>
+		<keycombo>
+			<keysym>Alt+U</keysym>
+		</keycombo>
+	</shortcut>
+	<guimenu>Modify</guimenu>
+	<guimenuitem>Update</guimenuitem>
+</menuchoice>

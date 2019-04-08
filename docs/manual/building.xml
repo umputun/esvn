@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+	<!ENTITY % global_entities SYSTEM "../common/global.ent">
+	%global_entities;
+]>-->
+<appendix id="appen-building">
+    <title>Building</title>
+    <para>Since not all computer operating systems are configured in the same standard way and their
+        environments differ, there is a need to build packages that are specifically build to
+        accommodate the needs of the various target systems. Many Linux distributions use the Red
+        Hat Package Manager as the tool of choice managing packages. This quote explains what RPM is:</para>
+    <para>
+        <blockquote>
+            <attribution>
+                <ulink url="http://www.rpm.org">rpm.org</ulink>
+            </attribution>
+            <para>The RPM Package Manager (RPM) is a powerful command line driven package management
+                system capable of installing, uninstalling, verifying, querying, and updating
+                computer software packages. Each software package consists of an archive of files
+                along with information about the package like its version, a description, and the
+                like. There is also a related API (&quot;Application Program
+                Interface&quot;), permitting advanced developers to bypass &apos;shelling
+                out&apos; to a command line, and to manage such transactions from within a
+                native coding language.</para>
+        </blockquote>
+    </para>
+    <para>While RPM is a standard tool for managing software packages it is not necessarily true
+        that all software packages made with RPM can be installed on all Linux distributions. The
+        reason being is that very often the various &apos;distro&apos; have arranged their
+        file and folder systems in ways that are different to greater or lesser degrees, depending
+        on which two you compare. As a result it is recommended that a software is installed with a
+        RPM that is specifically configured for the target operating system and its environment.</para>
+    <para>The tool used to build RPM packages is called <application
+        class="software">rpmbuild</application>. It is a command line tool, which is a part of the
+        Red Hat Package Manager (RPM), that enables building of the following software package types:</para>
+    <variablelist>
+        <varlistentry>
+            <term>
+                <emphasis role="bold">binary</emphasis>
+            </term>
+            <listitem>
+                <para>Contains software to be installed</para>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>
+                <emphasis role="bold">source</emphasis>
+            </term>
+            <listitem>
+                <para>Contains the source code and recipe necessary to produce binary packages</para>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+    <para>A package consists of an archive of files and meta-data used to install and erase the
+        archive files. The meta-data includes helper scripts, file attributes, and descriptive
+        information about the package. So a package holds together all the information required to
+        install and uninstall a piece of software.</para>
+    <para>This appendix covers only the most basic information needed for package builders. It
+        assumes experience with building and testing packages, especially resolving problems to
+        configure for the target system. If you wish to build packages for a particular system using
+        RPM and need more information about RPM a good resource to read is &quot;<ulink
+            url="http://rpm-devel.colug.net/max-rpm/index.html">Maximum RPM</ulink>&quot; by
+        Edward C. Bailey, Paul Nasrat, Matthias Saou, Ville Skyttä.</para>
+    <para>In combination with this book we give a pretty good overview of how you can build packages
+        for &esvn;. However, before you decide to go through all this work you may first want to
+        check at the &esvn; <ulink url="http://esvn.umputun.com">Web Site</ulink> to see if
+        somebody has already built a package for your system.</para>
+    <sect1>
+        <title>Prerequisites</title>
+        <para>To build &esvn; the following packages and their dependencies must be installed
+            and available on the build machine:</para>
+        <itemizedlist>
+            <listitem>
+                <para>qt3-devel</para>
+            </listitem>
+            <listitem>
+                <para>GNU Make</para>
+            </listitem>
+            <listitem>
+                <para>RPM</para>
+            </listitem>
+            <listitem>
+                <para>A copy of the &esvn; sources.</para>
+            </listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1>
+        <title>Building a Binary Package</title>
+        <para>To build a RPM use the following command. Replace the <varname>VERSION</varname>
+            variable with the number of the version.</para>
+        <para>
+            <command>rpm -ta esvn-$(VERSION)-$(RELEASE).tar.gz</command>
+        </para>
+    </sect1>
+    <sect1>
+        <title>Building from Binary Package with Source RPM</title>
+        <para>To build &esvn; from sources with <filename class="extension">rpms</filename> use
+            the following.</para>
+        <procedure>
+            <title>Building from RPM with RPMS</title>
+            <step>
+                <para>
+                    <command>rpm -Uvh src.rpm</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>rbmbuild -bb /usr/src/packages/SRPMS/esvn.spec</command>
+                </para>
+            </step>
+        </procedure>
+    </sect1>
+    <sect1>
+        <title>Building from Source Binary package without Source RPM</title>
+        <para>To build &esvn; from sources without <filename class="extension">rpms</filename>
+            use the following.</para>
+        <procedure>
+            <title>Building from RPM without RPMS</title>
+            <step>
+                <para><command>make clean &amp;&amp; make</command></para>
+            </step>
+            <step>
+                <para><command>su -c &quot;make install&quot;</command></para>
+            </step>
+        </procedure>
+    </sect1>
+    <sect1>
+        <title>Using the &esvn; Makefile</title>
+        <para>To make life easy, we have created a Makefile that can be used to create tarball
+                (<filename class="extension">tar.gz</filename>), binary (<filename
+            class="extension">rpm</filename>) and source binary (<filename
+            class="extension">rpms</filename>) from the your Working Copy code.</para>
+        <procedure>
+            <title>Building &esvn; with Make</title>
+            <step>
+                <para>
+                    <command>cd</command> to the root of your &esvn; working copy directory.</para>
+            </step>
+            <step>
+                <para>Do <command>svn update</command>.</para>
+            </step>
+            <step>
+                <para>
+                    <command>cd dist</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make clean</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make prog</command>
+                </para>
+            </step>
+        </procedure>
+    </sect1>
+    <sect1>
+        <title>Building the &esvn; Documentation</title>
+        <para>It is possible to build the &esvn; documentation in HTML and PDF without building
+            the &esvn; program.</para>
+        <procedure>
+            <title>Building the &esvn; Documentation</title>
+            <step>
+                <para>Do <command>svn update</command>.</para>
+            </step>
+            <step>
+                <para>
+                    <command>cd dist</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make clean</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make doc</command>
+                </para>
+            </step>
+        </procedure>
+        <procedure>
+            <title>Building the &esvn; HTML Documentation</title>
+            <step>
+                <para>Do <command>svn update</command>.</para>
+            </step>
+            <step>
+                <para>
+                    <command>cd dist</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make clean</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make HTML</command>
+                </para>
+            </step>
+        </procedure>
+        <procedure>
+            <title>Building the &esvn; PDF Documentation</title>
+            <step>
+                <para>Do <command>svn update</command>.</para>
+            </step>
+            <step>
+                <para>
+                    <command>cd dist</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make clean</command>
+                </para>
+            </step>
+            <step>
+                <para>
+                    <command>make fo</command>
+                </para>
+            </step>
+        </procedure>
+        <note>
+            <para>In order to transform the documentation to PDF, the HTML target must have been run
+                at least once. If you have run the HTML target at least once but added images to the
+                source, then the HTML target must be run again. It is not necessary to tun the HTML
+                target is documentation changes did not include the addition of images.</para>
+        </note>
+    </sect1>
+</appendix>

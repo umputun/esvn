@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=eSvn
+Name[it]=eSvn
+Comment=eSvn - Subversion GUI client
+Comment[it]=eSvn - Subversion (Client Grafico)
+Exec=esvn
+Icon=esvn.png
+Terminal=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=true

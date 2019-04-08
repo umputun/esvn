@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<guimenu>
+		<accel>F</accel>ile</guimenu>
+	<guimenuitem>
+		<accel>C</accel>heckout ...</guimenuitem>
+</menuchoice>

@@ -1,0 +1,226 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Status</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s25.html" title="Info">
+      <link rel="next" href="ch03s27.html" title="Properties">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Status</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s25.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s27.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-status"></a>Status
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To print the status of working copy files and directories in the Output log pane use the
+                    Status option (
+            <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Status</span> (<span><b class="shortcut"><span class="keysym">Alt+S</span></b></span>)
+            ).
+         </p>
+         <p>The first five columns in the output are each one character wide:</p>
+         <div class="variablelist">
+            <dl>
+               <dt><span class="term">
+                                 <span class="bold"><b>First column</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Says if item was added, deleted, or otherwise changed, values include:</p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>' ' - no modifications</p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">A</tt>' - Added
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">C</tt>' - Conflicted
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">D</tt>' - Deleted
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">G</tt>' - Merged
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">I</tt>' - Ignored
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">M</tt>' - Modified
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">R</tt>' - Replaced
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">X</tt>' - item is unversioned,
+                                                but is used by an externals definition
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">?</tt>' - item is not under
+                                                version control
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">!</tt>' - item is missing
+                                                (removed by non-svn command) or incomplete
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">~</tt>' - versioned item
+                                                obstructed by some item of a different kind
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Second column</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Modifications of a file's or directory's properties</p>
+                  <div class="itemizedlist">
+                     <p>' ' - no modifications</p>
+                     <ul type="disc">
+                        <li>
+                           <p>'<tt class="computeroutput">C</tt>' - Conflicted
+                           </p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">M</tt>' - Modified
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Third column</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Whether the working copy directory is locked.</p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>' ' - not locked</p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">L</tt>' - locked
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Fourth column</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Scheduled commit will contain addition-with-history.</p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>' ' - no history scheduled with commit</p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">+</tt>' - history scheduled
+                                                with commit
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Fifth column</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Whether the item is switched relative to its parent.</p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>' ' - normal</p>
+                        </li>
+                        <li>
+                           <p>'<tt class="computeroutput">S</tt>' - switched
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+            </dl>
+         </div>
+         <p>The out-of-date information appears in the eighth column (with <tt class="computeroutput">-u</tt>):
+         </p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>'<tt class="computeroutput">*</tt>' - a newer revision exists on
+                                 the server.
+                  </p>
+               </li>
+               <li>
+                  <p>' ' - the working copy is up to date.</p>
+               </li>
+            </ul>
+         </div>
+         <p>Remaining fields are variable width and delimited by spaces:</p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>The working revision (with <tt class="computeroutput">-u</tt> or <tt class="computeroutput">-v</tt>)
+                  </p>
+               </li>
+               <li>
+                  <p>The last committed revision and last committed author (with <tt class="computeroutput">-v</tt>)
+                  </p>
+               </li>
+            </ul>
+         </div>
+         <p>The working copy path is always the final field, so it can include spaces.</p>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s25.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s27.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Info&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Properties</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

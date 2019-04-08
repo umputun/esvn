@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemizedlist spacing="compact">
+	<listitem>
+		<para>2004-02-17</para>
+	</listitem>
+	<listitem>
+		<para>15:30</para>
+	</listitem>
+	<listitem>
+		<para>15:30:00.200000</para>
+	</listitem>
+	<listitem>
+		<para>2004-02-17 15:30</para>
+	</listitem>
+	<listitem>
+		<para>2004-02-17 15:30 +0230</para>
+	</listitem>
+	<listitem>
+		<para>2004-02-17T15:30</para>
+	</listitem>
+	<listitem>
+		<para>2004-02-17T15:30Z</para>
+	</listitem>
+	<listitem>
+		<para>2004-02-17T15:30-04:00</para>
+	</listitem>
+	<listitem>
+		<para>20040217T1530</para>
+	</listitem>
+	<listitem>
+		<para>20040217T1530Z</para>
+	</listitem>
+	<listitem>
+		<para>20040217T1530-0500</para>
+	</listitem>
+</itemizedlist>

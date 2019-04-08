@@ -1,0 +1,3552 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+	<!ENTITY % global_entities SYSTEM "../common/global.ent">
+	%global_entities;
+]>
+<book>
+    <bookinfo>
+    <title>The &esvn; User Manual</title>
+    <authorgroup>
+      <author>
+        <personname>
+          <firstname>Sean</firstname>
+          <surname>Wheller</surname>
+        </personname>
+      </author>
+    </authorgroup>
+    <legalnotice>
+      <para>Permission is granted to copy, distribute and/or modify this document under the terms of
+        the GNU Free Documentation License, Version 1.1 or any later version published by the Free
+        Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no
+        Back-Cover Texts. A copy of the license can be found at the &quot;<ulink url="http://www.gnu.org/licenses/fdl.html">GNU Web Site.&quot;</ulink>
+      </para>
+    </legalnotice>
+    <revhistory>
+      <revision>
+        <revnumber>0.1</revnumber>
+        <date>11/08/2004</date>
+        <revdescription>
+          <para>Initial document creation in accordance with version 0.5.8</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.2</revnumber>
+        <date>28/08/2004</date>
+        <revdescription>
+          <para>Version 0.5.9. [+] upgrading procedure, build procedures, toolbars. [*] update Main,
+            View and Quick Diff captures.</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.2.1</revnumber>
+        <date>29/08/2004</date>
+        <revdescription>
+          <para>Version 0.5.9. [*] fixes to grammar.</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.2.2</revnumber>
+        <date>30/08/2004</date>
+        <revdescription>
+          <para>Version 0.6.0. [+] help options Web Site, Check for updates [+] Versions update [*]
+            add filters to log [+] Browser to options [-] option help index.</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.2.3</revnumber>
+        <date>06/09/2004</date>
+        <revdescription>
+          <para>Version 0.6.1. [+] B option diff setup dlg [+] Auto refresh Options - other dlg [+]
+            Add Diff-3 (conflict) section [*] description of quick diff logic.</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.2.4</revnumber>
+        <date>14/09/2004</date>
+        <revdescription>
+          <para>Version 0.6.3 [+] Show changed items option to Query menu [+] Show changed
+            items section [*] Update main and query captures [+] Open option to Options, General
+            form [+] Add File Mapping to Options</para>
+        </revdescription>
+      </revision>
+        <revision>
+        <revnumber>0.2.5</revnumber>
+        <date>10/11/2004</date>
+        <revdescription>
+          <para>Version 0.6.4 [+] Added log levels (Regular and Verbose)</para>
+        </revdescription>
+        </revision>
+        <revision>
+        <revnumber>0.2.6</revnumber>
+        <date>11/12/2004</date>
+        <revdescription>
+          <para>Version 0.6.5 [+] Build instructions [+] Flat View [+] list of modified files/dirs to the Commit dialog</para>
+        </revdescription>
+        </revision>
+        <revision>
+        <revnumber>0.2.7</revnumber>
+        <date>11/12/2004</date>
+        <revdescription>
+          <para>Version &version; [*] Removed &quot;Hide unknown files&quot; from the &quot;Options&quot; dialog (still avaliable from Menu/View only)</para>
+        </revdescription>
+      </revision>
+    </revhistory>
+  </bookinfo>
+    <preface id="esvn-preface">
+        <title>Preface</title>
+        <sect1 id="esvn-contributing">
+            <title>Contributing</title>
+            <para>&esvn; is developed as a Free/Open Source project at <ulink
+                url="http://esvn.umputun.com/">umputun</ulink>. The source code and this
+                documentation is therefore publicly available under the conditions of the
+                <acronym>GPL</acronym> and <acronym>GFDL</acronym>. As a community project, everyone
+                can contribute to &esvn;, even if you know little about it. In fact, some tasks
+                may be better accomplished by those who know little about it, for example:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Improving this documentation</para>
+                </listitem>
+                <listitem>
+                    <para>Embellishing the interface with cool graphics</para>
+                </listitem>
+                <listitem>
+                    <para>Internationalization of the interface and documentation</para>
+                </listitem>
+                <listitem>
+                    <para>Testing features to see that they work</para>
+                </listitem>
+                <listitem>
+                    <para>Building <acronym>RPM</acronym>'s</para>
+                </listitem>
+            </itemizedlist>
+            <para>This said, there is always a need for good coders, so go ahead &quot;<ulink
+                    url="http://esvn.umputun.com/">Get the Source!</ulink>&quot; Once you have
+                done that register to the <ulink url="http://esvn.umputun.com/forum/">&esvn;
+                forum</ulink>. If you have something to contribute, state your interest and what you
+                want to work on. Members of the team will let you know if there is already somebody
+                working on the item you're interested in. If you have a contribution you will be
+                invited to join the developer group and given access to the &esvn;
+                <application>subversion</application> server.</para>
+            <para>If you just want a copy of &esvn; for your own use, visit the <ulink
+                    url="http://esvn.umputun.com/">&esvn; Web Site</ulink> download either an
+                RPM or tarball then see <xref linkend="esvn-installation"/>.</para>
+        </sect1>
+        <sect1 id="esvn-installation">
+            <title>Installation</title>
+            <para>Prior to proceeding with this section please ensure that you have downloaded your
+                chosen installation package and that your system meets the requirements.</para>
+            <para>&esvn; is available in source and packaged versions from the &esvn; <ulink
+                    url="http://esvn.umputun.com/">Web Site</ulink>. If you have downloaded the
+                <acronym>RPM</acronym> see <xref linkend="esvn-inst-inst-rpm"/>, otherwise see <xref
+                linkend="esvn-inst-inst-tarball"/> for installation instructions.</para>
+            <sect2 id="esvn-inst-req">
+                <title id="esvn-title-inst-req">Requirements</title>
+                <para>&esvn; requires:</para> &varlist-requirements; </sect2>
+            <sect2 id="esvn-inst-inst">
+                <title>Installing</title>
+                <para>Before proceeding with the following installation instructions, please ensure
+                    that your system meets the requirements for &esvn; (see <xref
+                        endterm="esvn-title-inst-req" linkend="esvn-inst-req"/>).</para>
+                <sect3 id="esvn-inst-inst-tarball">
+                    <title>Tarball</title>
+                    <para>If you downloaded the tarball, follow this procedure to install.</para>
+                    <procedure>
+                        <title>Installing &esvn; from tarball</title>
+                        <step>
+                            <para>
+                                <action>Open</action> a <application>Shell</application> session.</para>
+                        </step>
+                        <step>
+                            <para>Change to the directory where the &esvn; installation archive
+                                is located (<command>cd path/to/installation/archive</command>).</para>
+                        </step>
+                        <step>
+                            <para>Unpack the archive using the command <command>tar -zxf &esvn;.tar.gz</command>.</para>
+                        </step>
+                        <step>
+                            <para>Change to the resulting <filename
+                                class="directory">&esvn;</filename> directory <command>cd &esvn;</command>.</para>
+                        </step>
+                        <step>
+                            <para>Enter the following command <command>make</command>.</para>
+                        </step>
+                        <step>
+                            <para>Login as root.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Type</action>
+                                <command>make install</command>.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Logoff</action> root <command>exit</command>.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Type</action>
+                                <command>&esvn;</command> to start &esvn;.</para>
+                        </step>
+                    </procedure>
+                    <caution>
+                        <para>Do not delete the folder or files from the tarball source just in case
+                            you wish to uninstall &esvn;.</para>
+                    </caution>
+                </sect3>
+                <sect3 id="esvn-inst-inst-rpm">
+                    <title>RPM</title>
+                    <para>If you downloaded the <acronym>RPM</acronym> version of the distribution
+                        then &esvn; can be installed using <application>RPM</application>.</para>
+                    <procedure>
+                        <title>Installing &esvn; from rpm</title>
+                        <step>
+                            <para>
+                                <action>Open</action> a <application>Shell</application> session.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>login</action> as root <command>su</command>, then enter the
+                                root password.</para>
+                        </step>
+                        <step>
+                            <para>Change to the directory where the &esvn; installation archive
+                                is located (<command>cd path/to/installation/archive</command>).</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Type</action>
+                                <command>rpm -ivh [package]</command>. This will install &esvn;
+                                in full verbose mode so you can see what's happening and where files
+                                are put.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Logoff</action> root <command>exit</command>.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Type</action>
+                                <command>&esvn;</command> to start &esvn;.</para>
+                        </step>
+                    </procedure>
+                    <tip>
+                        <para>If you are running <application class="software">KDE</application> or
+                            have <application>KPackage</application> installed, <action>run</action>
+                            <application>KPackage</application> then <action>drag-drop</action> the
+                            <acronym>RPM</acronym> onto <application>KPackage</application>. This
+                            method is recommended for new users who are not sure about how to check
+                            dependencies etc.</para>
+                    </tip>
+                </sect3>
+            </sect2>
+            <sect2 id="esvn-upgrading">
+                <title>Upgrading</title>
+                <para>From time-to-time new versions of &esvn; are released with new features,
+                    functionality and fixes to bugs. When this happens you will want to upgrade. If
+                    you installed &esvn; from a RPM see <xref linkend="esvn-rpm-upgrade"
+                    endterm="esvn-title-rpm-upgrade"/>. If you installed from a tarball see <xref
+                        linkend="esvn-title-tar-upgrade" endterm="esvn-title-tar-upgrade"/>.</para>
+                <tip>
+                    <para>Select &help-checkupdates; to check the &esvn; web site for new
+                        versions (see <xref linkend="esvn-checking-versions"/>).</para>
+                </tip>
+                <sect3 id="esvn-rpm-upgrade">
+                    <title id="esvn-title-rpm-upgrade">RPM Upgrade</title>
+                    <para>To upgrade a RPM installation of &esvn; follow the procedure below.</para>
+                    <procedure>
+                        <title>RPM Upgrade</title>
+                        <step>
+                            <para>Download the latest RPM package.</para>
+                        </step>
+                        <step>
+                            <para>Start a <application>Shell</application> session.</para>
+                        </step>
+                        <step>
+                            <para>Change to the folder where the RPM package is located (<command>cd path/to/package/</command>).</para>
+                        </step>
+                        <step>
+                            <para>Login as root (<command>su</command> and <command>
+                                    <replaceable>password</replaceable>
+                                </command>).</para>
+                        </step>
+                        <step>
+                            <para>Enter the following command <command>rpm -Uvh [package]</command>.
+                                This will upgrade the existing installation and show progress of the operation.</para>
+                        </step>
+                        <step>
+                            <para>Logoff Super User session (<command>exit</command>).</para>
+                            <para>To start &esvn; see <xref linkend="esvn-starting"/>.</para>
+                        </step>
+                    </procedure>
+                </sect3>
+                <sect3 id="esvn-tar-upgrade">
+                    <title id="esvn-title-tar-upgrade">Tarball Upgrade</title>
+                    <!-- Not sure on the procedure how to do this  Just as a regular install, make && make install -->
+                    <para>TBD</para>
+                </sect3>
+            </sect2>
+            <sect2 id="esvn-inst-uninst">
+                <title>Uninstalling</title>
+                <para>You may wish to uninstall &esvn;. The method used depends on how you
+                    performed the installation. If you installed using tarball see <xref
+                    linkend="esvn-uninst-tarball"/>. If you used <acronym>RPM</acronym> see <xref linkend="esvn-uninst-rpm"/>.</para>
+                <sect3 id="esvn-uninst-tarball">
+                    <title>uninstall tarball installation</title>
+                    <para>To uninstall &esvn; when the installation was performed from a
+                        tarball, proceed as follows:</para>
+                    <procedure>
+                        <title>Uninstall tarball installation</title>
+                        <step>
+                            <para>
+                                <action>Open</action> a <application>Shell</application> session.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>login</action> as root <command>su</command>, then enter the
+                                root password.</para>
+                        </step>
+                        <step>
+                            <para>Change to the directory where you did <command>make</command> in
+                                the tarball (<command>cd path/to/installation/make/folder</command>).</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Type</action>
+                                <command>make uninstall</command>.</para>
+                        </step>
+                    </procedure>
+                    <note>
+                        <para>The folder containing the extracted archive can be removed if no
+                            longer required.</para>
+                    </note>
+                </sect3>
+                <sect3 id="esvn-uninst-rpm">
+                    <title>Uninstall RPM installation</title>
+                    <para>To uninstall &esvn; when the installation was performed from a RPM,
+                        proceed as follows:</para>
+                    <procedure>
+                        <title>Uninstall RPM installation</title>
+                        <step>
+                            <para>
+                                <action>Open</action> a <application>Shell</application> session.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>login</action> as root <command>su</command>, then enter the
+                                root password.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Type</action>
+                                <command>rpm -e esvn</command>.</para>
+                        </step>
+                        <step>
+                            <para>
+                                <action>Logoff</action> root <command>exit</command>.</para>
+                        </step>
+                    </procedure>
+                </sect3>
+            </sect2>
+        </sect1>
+        <sect1 id="esvn-checking-versions">
+            <title>Checking for new versions</title>
+            <para>From time-to-time new versions of &esvn; are released in order to introduce
+                new features and functions. There are tow types of version releases:</para>
+            <itemizedlist spacing="compact">
+                <listitem>
+                    <para>
+                        <emphasis role="bold">Stable</emphasis> - these versions include features
+                        that have been tested and are generally considered safe.</para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">Testing</emphasis> - these version are fresh from the
+                        oven, they include the latest additions and are not guaranteed to work
+                        without a bump or two.</para>
+                </listitem>
+            </itemizedlist>
+            <para>With &esvn; it is easy to discover which version you have installed and what
+                the latest stable and testing releases are by selecting &help-checkupdates;.
+                This displays the <interfacename>Version update</interfacename> dialog with the
+                following options:</para>
+            <figure id="fig-update-version" condition="fo">
+                <title>Version update</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/version-update.png" format="PNG" width="5cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>Current version</term>
+                    <listitem>
+                        <para>The version number installed.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Latest stable version</term>
+                    <listitem>
+                        <para>The last stable release. <action>Click</action>
+                            <guibutton>Update</guibutton> to display information about the stable
+                            release in the default <application>Web browser</application>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Latest testing version</term>
+                    <listitem>
+                        <para>The last testing release. <action>Click</action>
+                            <guibutton>Update</guibutton> to display information about the testing
+                            release in the default <application>Web browser</application>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>All versions</term>
+                    <listitem>
+                        <para>
+                            <action>Click</action>
+                            <guibutton>All versions</guibutton> to display information about all
+                            releases in the default <application>Web browser</application>.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+    </preface>
+    <chapter id="esvn-overview">
+        <title>Overview</title>
+        <para>
+            <application>&esvn;</application> is a <acronym>GUI</acronym> front end to <application>
+                <ulink url="http://subversion.tigris.org/">subversion</ulink>
+            </application> (<acronym>SVN</acronym>), a version control system developed by the
+                <ulink url="http://www.tigris.org">Tigris</ulink> community of Open Source
+            developers. For those who are familiar with <application>
+                <ulink url="https://www.cvshome.org/">Concurrent Versions System</ulink>
+            </application> (<acronym>CVS</acronym>), <application>subversion</application> is
+            <acronym>CVS</acronym> without the wrinkles, complexity and inefficiency of
+            <acronym>CVS</acronym>. Since <application>&esvn;</application> is a front end
+            application it relies on having <application>subversion</application> installed.</para>
+        <para>The main purpose of <application>subversion</application> is to be a file server that
+            provides revision control services for a given tree of folders and the files they
+            contain. Users can work in two ways with the file system, they can:</para>
+        <itemizedlist>
+            <listitem>
+                <para>access files directly over the network, or</para>
+            </listitem>
+            <listitem>
+                <para>checkout a copy of the files to their local machine</para>
+            </listitem>
+        </itemizedlist>
+        <para>Both methods enable users with the right permissions to perform common operations such
+            as create, modify, delete, copy, move. The difference between a normal file server and a
+            <application>subversion</application> server is that a
+            <application>subversion</application> server tracks and logs all changes to the
+            repository and keeps copies thereof. The advantage of this is that multiple users can
+            have simultaneous access to the file system. Each user can make changes and commit them
+            back without overriding each other work. All users can identify the most up-to-date
+            version of a file and access older versions If required.</para>
+        <para>A <application>subversion</application> server is therefore suited to managing files
+            that are frequently changed and developed over time by a group of users. The server acts
+            as the main focal point of the user effort and is therefore a collaborative environment.
+            Everything that is done to the files must be saved back to the
+            <application>subversion</application> server in order to be made available to all the
+            other members of the group.</para>
+    </chapter>
+    <chapter id="esvn-gettingstarted">
+        <title>Getting Started</title>
+        <para>This chapter provides an overview of the &esvn; interface, how it works, where to
+            find things and what they mean. For users that have knowledge of
+            <application>subversion</application> and other revision control front end applications
+            the interface is intuitive and easy to understand. This chapter should be enough for
+            such users to have an understanding of &esvn; and begin working immediately.</para>
+        <para>Users that are new to <application>subversion</application> or revision control front
+            end applications will also find the &esvn; interface to be intuitive and easy to
+            use, but will need to have an understanding of how <application>subversion</application>
+            works and how to use it in order to understand the purpose and usage of the various
+            &esvn; features and functions. To assist in such cases, this chapter provides links
+            to relevant sections within the main part of the book (see <xref linkend="esvn-using"/>).</para>
+        <sect1 id="esvn-starting">
+            <title>Starting &esvn;</title>
+            <para>&esvn; is normally installed in <filename
+                class="directory">/usr/bin/</filename> which should be in the system path. To start
+                &esvn; open a shell session and type <command>&esvn;</command>. This should
+                start &esvn;.</para>
+            <para>Alternatively, &esvn; is added to the
+                <application>GNOME</application>/<application>KDE</application> desktop menu. Select &desktop-menu;.</para>
+            <!-- Not sure that this desktop integration point is correct for GNOME -->
+            <para>On first start &esvn; will display the <interfacename>Welcome to
+                &esvn;</interfacename> dialog (see <xref linkend="fig-startup"/>). This dialog
+                enables three actions:</para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Open an existing working directory</emphasis>
+                    </term>
+                    <listitem>
+                        <para>If you already have a folder system under &svn; control,
+                            &esvn; can open the working copy directly. Select this option to
+                            display the <interfacename>Open</interfacename> dialog used to change
+                            path to a working copy. See <xref linkend="esvn-open-workspace"/>).</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Checkout a working copy</emphasis>
+                    </term>
+                    <listitem>
+                        <para>If you have no &svn; working copies in your file system or wish to
+                            checkout a working copy for the first time select this option to display
+                            the <interfacename>checkout</interfacename> dialog. For more information
+                            on performing a checkout see <xref linkend="esvn-checkout"/>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Import project to server</emphasis>
+                    </term>
+                    <listitem>
+                        <para>If you have a project in your local file system that is not under
+                            &svn; control and wish to place it into a &svn; server for
+                            others to access and revision control, then select this option to
+                            display the <interfacename>Import</interfacename> dialog. For more
+                            information on importing projects to &svn; servers see <xref linkend="esvn-import"/>.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <?pagebreak ?>
+            <figure id="fig-startup">
+                <title>The First Time Startup Dialog</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/startup.png" format="PNG" width="8cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <tip>
+                <para>
+                    <action>Delete</action> the <filename class="directory">~/.qt3/esvn</filename>
+                    directory to erase all configuration and preference settings. The
+                        <interfacename>Welcome to &esvn;</interfacename> dialog will again
+                    displayed be on first startup.</para>
+            </tip>
+        </sect1>
+        <sect1 id="esvn-mainint">
+            <title>Main Interface</title>
+            <para>The main interface is comprised of the following areas (see <xref linkend="esvn-fig-mainint"/>):</para>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <xref endterm="esvn-title-main-menus" linkend="esvn-main-menus"/>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <xref endterm="esvn-title-toolbar" linkend="esvn-toolbar"/> - By default set
+                        to OFF. When set to ON, displayed under the menus. </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <xref endterm="esvn-title-tree-view" linkend="esvn-tree-view"/> - left side
+                        pane </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <xref endterm="esvn-title-file-view" linkend="esvn-file-view"/> - right side
+                        top pane </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <xref endterm="esvn-title-log-view" linkend="esvn-log-view"/> - right side
+                        bottom pane </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <xref linkend="esvn-command-prompt" endterm="esvn-title-command-prompt"/>
+                    </para>
+                </listitem>
+            </itemizedlist>
+            <para>The real-estate of the main interface can be managed by resizing the amount of
+                space a pane takes in the application window. <action>Move</action> the mouse
+                pointer over either the vertical or horizontal pane separators. The pointer will
+                change, then <action>click</action> and <action>hold</action> the mouse button while
+                <action>dragging</action> the pointer to a new position in order to resize a pane.</para>
+            <?pagebreak ?>
+            <figure id="esvn-fig-mainint">
+                <title>Main Interface</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/main.jpg" format="JPEG" width="12cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <sect2 id="esvn-main-menus">
+                <title id="esvn-title-main-menus">Main Menus</title>
+                <para>SVN commands and &esvn; functions are menu driven. Following is a
+                    description of the main menus, their options and shortcut keys where applicable.</para>
+                <tip>
+                    <para>When navigating the menu options look at the <interfacename>Status
+                        bar</interfacename>, located at the bottom of the <interfacename>main
+                        window</interfacename>, for tips about the function of the selected option.</para>
+                </tip>
+                <formalpara id="esvn-fpara-file-menu">
+                    <title>File Menu</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&file-open;: Displays a common dialog for browsing to and
+                                    opening local folders containing resources which may or may not
+                                    be under <application>subversion</application> control (see
+                                        <xref linkend="esvn-open-workspace"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&file-workspace;: Displays the Workspace Manager dialog
+                                    used to manage workspaces (see <xref linkend="esvn-workspace"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&file-checkout;: Displays the checkout dialog used to
+                                    specify parameters for the checkout process (see <xref linkend="esvn-checkout"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&file-browse;: Displays the repository browser which can
+                                    be used to explore a remote or local subversion repository
+                                    without performing a checkout (see <xref linkend="esvn-browse"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&file-import;: Displays the import dialog used to specify
+                                    a path that will be committed to a given <acronym>URL</acronym>
+                                    (see <xref linkend="esvn-import"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &file-export;: Displays the export dialog used to specify
+                                    a <acronym>URL</acronym> from which a clean directory tree will
+                                    be made in a given local path (see <xref linkend="esvn-export"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&file-options;: Displays the options dialog used to set
+                                    preferences for &esvn; (see <xref linkend="esvn-options"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&file-recent;: A list of the most recently opened work
+                                    spaces. Select an option to open the workspace.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&file-exit;: Closes &esvn;.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </formalpara>
+                <formalpara id="esvn-fpara-view-menu">
+                    <title>View Menu</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&view-refreshlocal;: Refreshes the <xref
+                                        endterm="esvn-title-file-view" linkend="esvn-file-view"/> of
+                                    the folder selected in the <xref endterm="esvn-title-tree-view"
+                                    linkend="esvn-tree-view"/>. </para>
+                            </listitem>
+                            <listitem>
+                                <para>&view-refreshworkspace;: Refreshes both the <xref
+                                        endterm="esvn-title-file-view" linkend="esvn-file-view"/>
+                                    and <xref endterm="esvn-title-tree-view" linkend="esvn-tree-view"/>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&view-refreshonline;: Refreshes both the <xref
+                                        endterm="esvn-title-file-view" linkend="esvn-file-view"/>
+                                    and <xref endterm="esvn-title-tree-view"
+                                    linkend="esvn-tree-view"/> and compares the revision number of
+                                    all local files with those in the repository.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&view-flat-view;: Toggles display mode of the <xref
+                                        linkend="esvn-file-view" endterm="esvn-title-file-view"/>
+                                    between Hide Paths and Show Paths.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&view-flat-view-changed;: Filters the <xref
+                                        linkend="esvn-file-view" endterm="esvn-title-file-view"/> on
+                                    files with status &quot;changed&quot; when in Show Paths mode.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&view-toolbars;: Displays a sub menu listing the available
+                                        <xref endterm="esvn-title-toolbar" linkend="esvn-toolbar"/> options.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&view-hideunknown;: Toggles visibility of files with the
+                                    status &quot;- unknown -&quot; in the <xref
+                                        endterm="esvn-title-file-view" linkend="esvn-file-view"/>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&view-clearoutput;: Clears all output from the output pane.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </formalpara>
+                <formalpara id="esvn-fpara-modify-menu">
+                    <title>Modify Menu</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&modify-update;: Updates all local, unmodified files with
+                                    new versions that may be residing in the repository (see <xref linkend="esvn-update-local"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-update-revision;: Displays the update dialog used
+                                    to specify a revision number or date to which the local copy
+                                    should be updated. Forward and backward revision updates are
+                                    possible (<xref linkend="esvn-update-revision"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-commit;: Commits changes made locally back to the
+                                    repository (see <xref linkend="esvn-commit"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-add;: Adds a folder or file to the workspace
+                                    directory so that it comes under
+                                    <application>subversion</application> control. The file or
+                                    folder is only added to the server repository on the next commit
+                                    operation (see <xref linkend="esvn-add"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-add-recursive;: Adds a folder and its contents to
+                                    the local repository so that it comes under
+                                    <application>subversion</application> control. The folder and
+                                    its contents are only added to the server repository on the next
+                                    commit operation (see <xref linkend="esvn-recursive-add"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-delete;: Deletes a folder or file from the working
+                                    copy (see <xref linkend="esvn-delete"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-copy-local;: Displays the copy dialog used to
+                                    specify a source folder path or file located in the workspace
+                                    directory and the local destination to which it will be copied
+                                    (see <xref linkend="esvn-copy-local"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-copy-remote;: Displays the copy dialog used to
+                                    specify a source folder path or file located in a remote
+                                    repository and the remote destination to which it will be copied
+                                    (see <xref linkend="esvn-copy-remote"/>)</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-move;: Displays the move dialog used to specify a
+                                    source folder or file and the destination to which it will be
+                                    moved (see <xref linkend="esvn-move"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-mkdir;: Displays the make a directory dialog used
+                                    to specify a folder name that will be created under the folder
+                                    selected in the <xref endterm="esvn-title-tree-view" linkend="esvn-tree-view"/>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-merge;: Displays the merge dialog used to specify
+                                    to sources whose differences will be merged to a given location
+                                    (see <xref linkend="esvn-merge"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-switch;: Displays the switch dialog used to
+                                    specify a new location to which the local source will be updated
+                                    (see <xref linkend="esvn-switch"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-revert;: Roles back all edits on the selected
+                                    local item to the last version in the server repository (see
+                                        <xref linkend="esvn-revert"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-revert-recursive;: Roles back all edits on the
+                                    selected local folder and it contents to the last version in the
+                                    server repository (see <xref linkend="esvn-revert"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-cleanup;: Performs a recursive cleanup of the
+                                    workspace directory, removing stale locks and resuming
+                                    uncompleted operations (see <xref linkend="esvn-cleanup"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-resolved;: Removes conflicted state from selected
+                                    folders or files (see <xref linkend="esvn-resolve"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>&modify-edit;: Opens the selected file with the editor
+                                    specified (see <xref linkend="esvn-options"/>).</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </formalpara>
+                <formalpara id="esvn-fpara-query-menu">
+                    <title>Query Menu</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para> &query-log;: Displays commit log messages (see <xref linkend="esvn-log"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-info;: Displays information about a selected path
+                                    (see <xref linkend="esvn-info"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-status;: Displays the status of a selected item.
+                                    If a folder displays status of folder contents (see <xref linkend="esvn-status"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-properties;: Displays the properties associated
+                                    with the selected path (see <xref linkend="esvn-properties"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-diff;: Displays the diff dialog used to specify a
+                                    version in the repository against which to compare the local
+                                    item (see <xref linkend="esvn-quick-diff"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-quick-diff;: Displays the difference between the
+                                    current local and the last revision in the repository (see <xref linkend="esvn-diff"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-diff-3;: Invokes any 3-way-diff, as specified in
+                                    the options settings, to be used for resolving conflicts, (see
+                                        <xref linkend="esvn-diff-3"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-blame;: Displays the author and revision
+                                    information for a selected folder, file or URL.</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-showchanged;: Displays the <interfacename>Changed
+                                    items</interfacename> dialog that lists all changed items.</para>
+                            </listitem>
+                            <listitem>
+                                <para> &query-view-cat;: Displays the contents of the last
+                                    revision of a selected file from the repository (see <xref linkend="esvn-view"/>).</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </formalpara>
+                <formalpara id="esvn-fpara-help-menu">
+                    <title>Help Menu</title>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para> &help-contents;: Displays the Online Help system.</para>
+                            </listitem>
+                            <listitem>
+                                <para> &help-website;: Opens the &esvn; web site in a browser.</para>
+                            </listitem>
+                            <listitem>
+                                <para> &help-checkupdates;: Displays the <interfacename>Version
+                                    update</interfacename> dialog.</para>
+                            </listitem>
+                            <listitem>
+                                <para> &help-about;: Displays the
+                                    <interfacename>About</interfacename> dialog.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                </formalpara>
+            </sect2>
+            <sect2 id="esvn-toolbar">
+                <title id="esvn-title-toolbar">Toolbar</title>
+                <para>There is a toolbar for each of the &esvn; menus. The toolbars provide
+                    quick access to the options available on the menus. Each option is represented
+                    by a button. To use a option just <action>click</action> the toolbar button. If
+                    you are not certain of a buttons function, hold the mouse cursor over the button
+                    to display a tool-tip.</para>
+                <para>To display the <interfacename>File</interfacename> toolbar select &view-toolbars-file;.</para>
+                <informalfigure>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/toolbar-file.jpg" format="JPEG"/>
+                        </imageobject>
+                    </mediaobject>
+                </informalfigure>
+                <para>To display the <interfacename>View</interfacename> toolbar select &view-toolbars-view;.</para>
+                <informalfigure>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/toolbar-view.jpg" format="JPEG"/>
+                        </imageobject>
+                    </mediaobject>
+                </informalfigure>
+                <para>To display the <interfacename>Modify</interfacename> toolbar select &view-toolbars-modify;.</para>
+                <informalfigure>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/toolbar-modify.jpg" format="JPEG"/>
+                        </imageobject>
+                    </mediaobject>
+                </informalfigure>
+                <para>To display the <interfacename>Query</interfacename> toolbar select &view-toolbars-query;.</para>
+                <informalfigure>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/toolbar-query.jpg" format="JPEG"/>
+                        </imageobject>
+                    </mediaobject>
+                </informalfigure>
+                <para>When &esvn; is first started the toolbars are not displayed. To display a
+                    toolbar select &view-toolbars; and choose one of the available sub menu
+                    options. Options displaying a checked symbol are enabled, those without are not.
+                    In this way toolbars can be toggled ON and OFF depending on preference.</para>
+                <para>When a toolbar is enabled it is by default displayed in the docked position
+                    below the main menu. Toolbars can be docked on any side of the main interface
+                    (top, left, bottom, right). To dock a toolbar select the toolbar handle and drag
+                    it to one of the sides. While moving the toolbar the contents are transparent
+                    and the outline of the area is represented by a thick lined rectangle. When the
+                    toolbar is brought close to any side this line is thin, indicating that the
+                    toolbar can be docked in this position. Release the toolbar when the outline
+                    changes and the toolbar will span into the docked position. Within the docked
+                    position the toolbar position can be adjusted according to preference.</para>
+                <para>Toolbars can also be free-floating within any area of the desktop real-estate,
+                    even beyond the &esvn; window space. When a toolbar is free-floating it can
+                    be returned to the top docking position by <action>double-clicking</action> its
+                    title bar.</para>
+                <para>The layout and position of toolbars is set to be persistent so that the
+                    &esvn; workspace is restored to the preferences of the previous session. As
+                    example of the interface with docked and free-floating menus can be seen in
+                        <xref linkend="esvn-fig-mainint"/>.</para>
+            </sect2>
+            <sect2 id="esvn-tree-view">
+                <title id="esvn-title-tree-view">Tree View</title>
+                <para>The tree view displays the tree folder structure of the workspace directory.
+                    Folder levels can be expanded and collapsed. The status of a folder is displayed
+                    by changes in the folder icon as follows.</para>
+                <table>
+                    <title>Tree View Status Icons</title>
+                    <tgroup cols="2">
+                        <thead>
+                            <row>
+                                <entry>Icon</entry>
+                                <entry>Meaning</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/folder_green.png"
+                                                format="PNG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/folder_green_open.png"
+                                                format="PNG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Folder open/closed. Exists in local and repository.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/folder_grey_3.png" format="PNG"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/folder_grey_open_3.png" format="PNG"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Folder open/closed. Exists local only.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <para>In addition to enabling exploration of the folder structure and displaying
+                    status, the tree view provides access to a number of
+                    <application>subversion</application> operations by way of a context menu (<action>right-click</action>).</para>
+            </sect2>
+            <sect2 id="esvn-file-view">
+                <title id="esvn-title-file-view">File View</title>
+                <para>The file view lists files and folders and displays information about the
+                    listed items. The list of items displayed is determined by selecting a folder in
+                    the &quot;<xref endterm="esvn-title-tree-view"
+                    linkend="esvn-tree-view"/>&quot;. Items can be listed in two modes:</para>
+                <variablelist>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Hide Paths</emphasis>
+                        </term>
+                        <listitem>
+                            <para>This is the default view and displays items using the traditional
+                                <acronym>GUI</acronym> file/folder display method. This method shows
+                                only the root view of the selected folder, to view contents of
+                                folders the folder must be selected in the Tree View. Files in the
+                                root of the selected folder are shown by filename only and files
+                                contained by folders in the selected folder are not displayed.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Show Paths</emphasis>
+                        </term>
+                        <listitem>
+                            <para>This method of display is akin to a shell list view. Instead of
+                                showing only the root contents of the selected folder all items are
+                                recursively displayed. This enables the user to see all items and
+                                paths under the selected folder. The result can be a very long list
+                                of items, to show only files with a status of
+                                &quot;changed&quot; the Show Paths view can be filtered
+                                using the &view-flat-view-changed; option.</para>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+                <note>
+                    <para>The Show Paths mode is persistent on a per folder basis for the duration
+                        of a session. Changing focus in the Tree View to a folder that does not have
+                        Show Paths enabled will display the folder in Hide Paths mode in the File
+                        View. When focus is changed back to a folder that has Show Paths mode
+                        enabled the File View will continue to display items recursively. To revert
+                        back to Hide Paths mode, selected the &view-flat-view; option again.</para>
+                </note>
+                <para>For each item the following information is displayed in columns for both
+                    modes. Items can be ordered by column in ascending or descending order by
+                    <action>clicking</action> the column title.</para>
+                <variablelist>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Filename (Hide Paths mode)</emphasis>
+                        </term>
+                        <term>
+                            <emphasis role="bold">Path and Filename (Show Paths mode)</emphasis>
+                        </term>
+                        <listitem>
+                            <para>The name of the file or the path and name of the file, depending
+                                on which mode is currently selected.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Status</emphasis>
+                        </term>
+                        <listitem>
+                            <para>The status of the file, states include:</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>up-to-date</para>
+                                </listitem>
+                                <listitem>
+                                    <para>modified</para>
+                                </listitem>
+                                <listitem>
+                                    <para>out of date</para>
+                                </listitem>
+                                <listitem>
+                                    <para>- unknown -</para>
+                                </listitem>
+                                <listitem>
+                                    <para>- missing -</para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Revision</emphasis>
+                        </term>
+                        <listitem>
+                            <para>The latest revision in the repository.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Last revision</emphasis>
+                        </term>
+                        <listitem>
+                            <para>The last revision containing an a change.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Last updated</emphasis>
+                        </term>
+                        <listitem>
+                            <para>The date and time of last up date.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Modified (local)</emphasis>
+                        </term>
+                        <listitem>
+                            <para>The date and time of last modification made locally.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Author</emphasis>
+                        </term>
+                        <listitem>
+                            <para>User name of <application>subversion</application> account that
+                                performed a modification and did commit.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <emphasis role="bold">Tag/Branch</emphasis>
+                        </term>
+                        <listitem>
+                            <para>The trunk, tag or branch of the repository filesystem under which
+                                the file resides. When the file resides in a <filename
+                                class="directory">branch</filename> or a <filename
+                                class="directory">tag</filename> folder the <inlinemediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/b-16x16.png" format="PNG" scale="100"/>
+                                    </imageobject>
+                                </inlinemediaobject> or <inlinemediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/t-16x16.png" format="PNG" scale="100"/>
+                                    </imageobject>
+                                </inlinemediaobject> icons are used respectively and the value is
+                                change from trunk to branch or tag accordingly.</para>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+                <para>The file view also provides visual indication of item status by way of a
+                    graphic icon located before the item as described in the following table.</para>
+                <table id="esvn-tbl-file-view-status-icons">
+                    <title>File View Status Icons</title>
+                    <tgroup cols="2">
+                        <thead>
+                            <row>
+                                <entry>Icon</entry>
+                                <entry>Meaning</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/FileUnknown16x16.jpg"
+                                                format="JPEG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>File unknown. Not under repository control.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/FileAdded16x16.png"
+                                                format="JPEG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>File added. Scheduled for commit.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/FileWriteable16x16.jpg"
+                                                format="JPEG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Up to date and writable.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/FileModified16x16.jpg"
+                                                format="JPEG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Locally modified.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/FileNeedsPatch16x16.jpg"
+                                                format="JPEG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Out of date. Needs Patch.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/FileConflict16x16.jpg"
+                                                format="JPEG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Conflict resulted from Merge or Update operation.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/FileRemoved16x16.jpg"
+                                                format="JPEG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>File locally removed.</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/folder_red.png" format="PNG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Contents have been added to the folder but not yet sent to
+                                    repository in commit, content is modified. Only displayed when
+                                        <option>Show folders in File List</option> option is checked
+                                    (see <xref linkend="esvn-options"/>).</entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <inlinemediaobject>
+                                        <imageobject>
+                                            <imagedata fileref="images/folder_exec_3.png"
+                                                format="PNG" scale="100"/>
+                                        </imageobject>
+                                    </inlinemediaobject>
+                                </entry>
+                                <entry>Folder contains items under repository control that have been
+                                    modified, contents are out-of-date. Only displayed when
+                                        <option>Show folders in File List</option> option is checked
+                                    (see <xref linkend="esvn-options"/>).</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <tip>
+                    <para>To view the Log associated with a folder, <action>double-click</action>
+                        the folder.</para>
+                </tip>
+                <para>In addition to displaying and providing access to and information about files,
+                    the file view provides access to a number of
+                    <application>subversion</application> operations by way of a context menu (<action>right-click</action>).</para>
+            </sect2>
+            <sect2 id="esvn-log-view">
+                <title id="esvn-title-log-view">Log View</title>
+                <para>The log view displays the output of processing commands. Commands and the
+                    status of their results are highlighted.</para>
+                <para>Output can be selected in part or in whole and copied to the
+                    <application>Clipboard</application>. <action>Right-click</action> choose
+                        <guimenuitem>Select All</guimenuitem> to select all the entire content of
+                    the output log or <action>click</action> and <action>drag</action> the mouse
+                    pointer across a part of the log to select a portion. Use <keycombo>
+                        <keysym>Ctrl+C</keysym>
+                    </keycombo> or <action>right-click</action> choose
+                    <guimenuitem>Copy</guimenuitem> to place a copy of the selected output on the <application>clipboard</application>.</para>
+            </sect2>
+            <sect2 id="esvn-command-prompt">
+                <title id="esvn-title-command-prompt">Command Prompt</title>
+                <para>The Command Prompt enables manual input of &svn; commands as an
+                    alternative to driving functions using the menu options. When working at the
+                    Command Prompt use the &uArr; &amp; &dArr; direction keys to
+                    traverse the PREV and NEXT command history.</para>
+                <tip>
+                    <para>Type <command>svn help</command> to display the &svn; help menu list
+                        of commands. Type <command>svn help [command]</command> to view more
+                        information about a command.</para>
+                </tip>
+            </sect2>
+        </sect1>
+        <sect1 id="esvn-exiting">
+            <title>Exiting &esvn;</title>
+            <para>To end an &esvn; session select &file-exit;.</para>
+        </sect1>
+    </chapter>
+    <chapter id="esvn-using">
+        <title>Using &esvn;</title>
+        <para>This chapter provides explanation to the various options available in &esvn;. The
+            operations are sorted in accordance with the &esvn; menu structure.</para>
+        <!--================= START OF FILE OPERATIONS =================-->
+        <sect1 id="esvn-open-workspace">
+            <title>Opening a Working Directory</title>
+            <para>If you already have a local copy of a <application>subversion</application>
+                repository on your machine, it can be opened with &esvn;. It is also possible to
+                open other file systems not under <application>subversion</application> control as a
+                prelude to importing to the server (<xref linkend="esvn-import"/>).</para>
+            <procedure>
+                <title>Opening a working directory</title>
+                <step>
+                    <para>From the main menu select &file-open;. The
+                        <interfacename>Open</interfacename> dialog is displayed.</para>
+                    <screenshot condition="fo">
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/open_ws.jpg" format="JPEG" width="10cm"/>
+                            </imageobject>
+                        </mediaobject>
+                    </screenshot>
+                </step>
+                <step>
+                    <para>Change path to the root folder of the workspace directory, then <action>click</action>
+                        <guibutton>OK</guibutton>. The workspace is opened in &esvn;</para>
+                </step>
+            </procedure>
+        </sect1>
+        <?pagebreak ?>
+        <sect1 id="esvn-workspace">
+            <title>Managing Workspaces</title>
+            <para>The <interfacename>Workspace manager</interfacename>, enables multiple directories
+                to me managed as a single file set (see <xref linkend="fig-workspaces"/>).</para>
+            <figure id="fig-workspace-manager" condition="fo">
+                <title>Workspaces</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/ws_manager.png" format="PNG" width="12cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <informalexample>
+                <para>For example you may have a working copy of your projects' <envar>trunk</envar>
+                    and a working copy of a <envar>branch</envar> residing in two different paths on
+                    your local machine like this:</para>
+                <para>
+                    <filename class="directory">/home/sean/projects/esvn/</filename>
+                </para>
+                <para>
+                    <filename class="directory">/home/sean/projects/windowsesvn/</filename>
+                </para>
+            </informalexample>
+            <para>Managing the two working copies as separate working directories is not always
+                effective. Using the <interfacename>Workspace manager</interfacename>, the working
+                copies can be managed as a single workspace (see <xref linkend="fig-workspaces"/>).</para>
+            <note>
+                <para>Authentication information (User and Password) is stored together with the
+                    workspace details enabling fast and seamless access to repositories.</para>
+            </note>
+            <?pagebreak ?>
+            <figure id="fig-workspaces">
+                <title>Two WC Workspace</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/ws_manager6.png" format="PNG" width="12cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <para>The <interfacename>Workspace manager</interfacename> provides the following options:</para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Workspace list</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The list of works spaces.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Working copy path list</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The list of working copy paths contained in the workspace file set.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">
+                            <guibutton>New</guibutton> button</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the dialog used for creating and editing workspaces file sets.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">
+                            <guibutton>Edit</guibutton> button</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the dialog used for creating and editing workspace file sets.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">
+                            <guibutton>Rename</guibutton> button</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the <interfacename>Rename workspace</interfacename> dialog
+                            used to change the name of the selected workspace.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">
+                            <guibutton>Delete</guibutton> button</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Removes the selected workspace.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">
+                            <guibutton>Load</guibutton> button</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Loads the selected workspace.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <?pagebreak ?>
+            <procedure>
+                <title>Creating a Workspace</title>
+                <step>
+                    <para>From the main menu select &file-workspace;. The
+                            <interfacename>Workspace manager</interfacename> dialog is displayed.</para>
+                    <screenshot condition="fo">
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/ws_manager.png" format="PNG" width="7cm"/>
+                            </imageobject>
+                        </mediaobject>
+                    </screenshot>
+                </step>
+                <step>
+                    <para>
+                        <action>Click</action> the <guibutton>New</guibutton>. The
+                            <interfacename>New workspace</interfacename>dialog is displayed.</para>
+                    <screenshot condition="fo">
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/ws_manager1.png" format="PNG" width="7cm"/>
+                            </imageobject>
+                        </mediaobject>
+                    </screenshot>
+                </step>
+                <step>
+                    <para>Enter a name for the new workspace then <action>click</action>
+                        <guibutton>OK</guibutton>. The <interfacename>New
+                        workspace</interfacename>dialog is displayed.</para>
+                    <screenshot condition="fo">
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/ws_manager1_1.png" format="PNG" width="7cm"/>
+                            </imageobject>
+                        </mediaobject>
+                    </screenshot>
+                </step>
+                <step>
+                    <para>
+                        <action>Click</action> the <guibutton>...</guibutton> button to display the
+                        <interfacename>Open</interfacename> dialog, change path to a working copy
+                        folder and <action>click</action>
+                        <guibutton>OK</guibutton>. The path is displayed in the
+                        <guilabel>Directory</guilabel> field.</para>
+                    <screenshot condition="fo">
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/ws_manager1_2.png" format="PNG" width="7cm"/>
+                            </imageobject>
+                        </mediaobject>
+                    </screenshot>
+                </step>
+                <step>
+                    <para>
+                        <action>Click</action>
+                        <guibutton>Add</guibutton> to include the path in the workspace folder set.</para>
+                    <screenshot condition="fo">
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/ws_manager1_3.png" format="PNG" width="7cm"/>
+                            </imageobject>
+                        </mediaobject>
+                    </screenshot>
+                </step>
+                <step>
+                    <para>
+                        <action>Repeat</action> these steps until all working copy paths that are to
+                        be part of the workspace have been added, then <action>click</action>
+                        <guibutton>OK</guibutton>. The workspace is created with all selected
+                        working copy paths associated to the workspace.</para>
+                    <screenshot condition="fo">
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/ws_manager4.png" format="PNG" width="7cm"/>
+                            </imageobject>
+                        </mediaobject>
+                    </screenshot>
+                </step>
+                <step>
+                    <para>
+                        <action>Click</action> the <guibutton>Load</guibutton> button to open the
+                        workspace in &esvn; as shown in <xref linkend="fig-workspaces"/>.</para>
+                </step>
+            </procedure>
+        </sect1>
+        <sect1 id="esvn-checkout">
+            <title>Checking Out a Working Copy</title>
+            <para>To obtain an initial copy of a <application>subversion</application> repository
+                use the Checkout option (&file-checkout;). The
+                <interfacename>Checkout</interfacename> dialog has the following fields:</para>
+            <figure id="fig_checkout" condition="fo">
+                <title>Checkout</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/checkout.jpg" format="JPEG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The <glossterm>Universal Resource Locater <abbrev>URL</abbrev>
+                            </glossterm> where the remote repository can be found</para>
+                        <formalpara>
+                            <title>For example:</title>
+                            <para>
+                                <userinput>svn://esvn.umputun.com/esvn/trunk</userinput>
+                            </para>
+                        </formalpara>
+                        <caution>
+                            <para>Ensure that no leading or lagging blank spaces are inserted
+                                before/after the URL string. If this happens an error is returned.</para>
+                        </caution>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Username</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The <replaceable>username</replaceable> part of the &svn; server
+                            authentication details.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Password</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The <replaceable>password</replaceable> part of the &svn; server
+                            authentication details.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Local path</emphasis>
+                    </term>
+                    <listitem>
+                        <para>A path to a folder resource on the local system. Use the eclipse
+                            button to navigate to and specify the path.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            <varname>KEYWORDS</varname> are supported: </para>
+                        <variablelist>
+                            <varlistentry>
+                                <term>HEAD</term>
+                                <listitem>
+                                    <para>The latest revision in the repository.</para>
+                                </listitem>
+                            </varlistentry>
+                            <varlistentry>
+                                <term>BASE</term>
+                                <listitem>
+                                    <para>The &quot;pristine&quot; revision of an item in a
+                                        working copy.</para>
+                                </listitem>
+                            </varlistentry>
+                            <varlistentry>
+                                <term>COMMITTED</term>
+                                <listitem>
+                                    <para>The last revision in which an item changed before (or at) BASE.</para>
+                                </listitem>
+                            </varlistentry>
+                            <varlistentry>
+                                <term>PREV</term>
+                                <listitem>
+                                    <para>The revision just before the last revision in which an
+                                        item changed. (Technically, <command>COMMITTED - 1</command>.)</para>
+                                </listitem>
+                            </varlistentry>
+                        </variablelist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Non-recursive</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Performs checkout without recursing into child folders. Only folders
+                            and files located in the root of the path will be copied, not their contents.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-browse">
+            <title>Browsing Remote Repositories</title>
+            <para>Using the <interfacename>Repository Browser</interfacename> it is possible to
+                browse the structure and contents of a remote repository without performing a
+                checkout to the local machine (&file-browse;).</para>
+            <figure id="fig_browse" condition="fo">
+                <title>Browse Repository</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/browse.png" format="PNG" width="12cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <para>To browse a remote repository enter the <varname>URL</varname> and
+                <action>click</action> the <guibutton>Browse</guibutton> button. After a few seconds
+                the tree and file views will be populated with the structure and file name resources
+                stored in the remote repository. The <interfacename>Repository
+                Browser</interfacename> also enables checkout and view operations to be executed
+                without exiting.</para>
+            <tip>
+                <para>A quick method to insert the <varname>URL</varname> string is to select the
+                    root folder of the working copy, select &file-browse;, then
+                    <action>click</action> the <guibutton>Browse</guibutton> button.</para>
+            </tip>
+        </sect1>
+        <?pagebreak ?>
+        <sect1 id="esvn-import">
+            <title>Importing a File System</title>
+            <para>To place a new project (copy an unversioned tree of files) into a &svn;
+                repository for the first time use the Import option (&file-import;). The
+                <interfacename>Import</interfacename> dialog has the following fields:</para>
+            <figure id="fig_import" condition="fo">
+                <title>Import</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/import.png" format="PNG" width="7cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The <glossterm>Universal Resource Locater <abbrev>URL</abbrev>
+                            </glossterm> where the remote repository can be found</para>
+                        <formalpara>
+                            <title>For example:</title>
+                            <para>
+                                <userinput>svn://esvn.umputun.com/esvn/trunk</userinput>
+                            </para>
+                        </formalpara>
+                        <caution>
+                            <para>Ensure that no leading or lagging blank spaces are inserted
+                                before/after the URL string. If this happens an error is returned.</para>
+                        </caution>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Local path</emphasis>
+                    </term>
+                    <listitem>
+                        <para>A path to a folder resource on the local system. Use the eclipse
+                            button to navigate to and specify the path.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Non-recursive</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Performs import without recursing into child folders. Only folders and
+                            files located in the root of the path will be copied, not their contents.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Message</emphasis>
+                    </term>
+                    <listitem>
+                        <para>A field with which to provide a free text message.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <note>
+                <para>It is customary to organize projects by trunk, branches, and tags. However,
+                    not all projects are arranged in this way. While &esvn; can still be used to
+                    manage projects that are not maintained in this structure, certain features of
+                    &esvn; will be depreciated. For example, when displaying a branch or tag
+                    folder &esvn; adds the <inlinemediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/b-16x16.png" format="PNG" scale="100"/>
+                        </imageobject>
+                    </inlinemediaobject> or <inlinemediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/t-16x16.png" format="PNG" scale="100"/>
+                        </imageobject>
+                    </inlinemediaobject>. These will not be displayed if the project structure does
+                    not use the trunk, branches, and tags method. In addition the functionality of
+                    the <interfacename>URL wizard</interfacename> to automatically change paths will
+                    no longer function.</para>
+            </note>
+        </sect1>
+        <?pagebreak ?>
+        <sect1 id="esvn-export">
+            <title>Exporting a Folder System</title>
+            <para>To obtain a clean directory tree of a remote &svn; repository on the local
+                machine use the Export option (&file-export;). The
+                <interfacename>Export</interfacename> dialog has the following fields:</para>
+            <figure id="fig_export" condition="fo">
+                <title>Export</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/export.png" format="PNG" width="7cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The <glossterm>Universal Resource Locater <abbrev>URL</abbrev>
+                            </glossterm> where the remote repository can be found</para>
+                        <formalpara>
+                            <title>For example:</title>
+                            <para>
+                                <userinput>svn://esvn.umputun.com/esvn/trunk</userinput>
+                            </para>
+                        </formalpara>
+                        <caution>
+                            <para>Ensure that no leading or lagging blank spaces are inserted
+                                before/after the URL string. If this happens an error is returned.</para>
+                        </caution>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Local path</emphasis>
+                    </term>
+                    <listitem>
+                        <para>A path to a folder resource on the local system. Use the eclipse
+                            button to navigate to and specify the path.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            KEYWORDS are supported:</para> &varlist-keywords; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-options">
+            <title>Configuring Options</title>
+            <para>To configure preferences for &esvn; use the Options option. The
+                <interfacename>Options</interfacename> dialog provides tabbed forms, as described
+                below, to set global preferences and parameters.</para>
+            <figure id="fig_options_general" condition="fo">
+                <title>Options - General Tab</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/options_general.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist id="esvn-options-general">
+                <title id="esvn-title-options-general">General tab</title>
+                <varlistentry>
+                    <term role="bold">Programs</term>
+                    <listitem>
+                        <para>Specifies default application preferences for the following:</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                    <emphasis>Subversion</emphasis> - Enter the command to execute
+                                    &svn; commands (default: <command>svn</command>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Editor</emphasis> - Enter the command to execute any
+                                    text editor (default: <command>kwrite</command>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Viewer</emphasis> - Enter the command to execute any
+                                    viewer (default: <command>[internal]</command>)</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Diff</emphasis> - Enter the command to execute any
+                                    two-way diff application (default: <command>kdiff3</command>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Diff-3</emphasis> - Enter the command to execute any
+                                    three-way diff application (default: <command>kdiff3</command>).</para>
+                                <para>
+                                    <note>
+                                        <para>A list of <application>diff</application> applications
+                                            that can be used with &esvn; is listed in <xref linkend="appen-tools"/>.</para>
+                                    </note>
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Browser</emphasis> - Enter the name of an installed
+                                    Web Browser.</para>
+                            </listitem>
+                        </itemizedlist>
+                        <tip>
+                            <para>&esvn; provides macros that enable modification of the titles
+                                on diff panes add <command>-fname a1 f1 -fname a2 f2</command> to
+                                the <command>kdiff3</command> command e.g. <command>kdiff3 -fname a1
+                                    f1 -fname a2 f2</command>. Before executing the external diff,
+                                &esvn; will translate <envar>f1</envar> and <envar>f2</envar> to
+                                file names (first and second) and <envar>a1</envar> and
+                                <envar>a2</envar> to file aliases (like &apos;working
+                                copy&apos;, &apos;revision 123&apos;). The modified
+                                string of parameters are then passed to the diff application
+                                together with the any arguments supplied in the
+                                <guilabel>Extensions</guilabel> field provided by the
+                                <interfacename>Diff</interfacename> dialog (see <xref linkend="esvn-diff"/>).</para>
+                        </tip>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Double-click action</term>
+                    <listitem>
+                        <para>Associate one of the following behaviors with
+                            <action>double-click</action> actions performed in the file view.</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                    <emphasis>Cat</emphasis> - displays the contents of the last
+                                    revision in the repository for the selected item in the internal
+                                    &esvn; viewer application (see <xref linkend="esvn-view"/>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Edit</emphasis> - execute and open selected working
+                                    copy resource in the external editor specified by the
+                                    <varname>Editor</varname> field.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Open</emphasis> - execute and open selected working
+                                    copy resource in the external editor specified by the
+                                        <interfacename>File Mapping</interfacename> form</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Show directories is file list</term>
+                    <listitem>
+                        <para>Toggles display of folders in the File View ON/OFF.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">External diff default</term>
+                    <listitem>
+                        <para>When checked uses the external diff application defined in the
+                            &esvn; options, otherwise uses the internal diff viewer.</para>
+                    </listitem>
+                </varlistentry>
+                <!--<varlistentry>
+                    <term role="bold">Hide unknown files</term>
+                    <listitem>
+                        <para>Toggles behavior for display of files with status &quot;-
+                            unknown-&quot; shown in the File View between hidden
+                            (checked)/unhidden (unchecked).</para>
+                    </listitem>
+                </varlistentry>-->
+                <varlistentry>
+                    <term role="bold">Update after commit</term>
+                    <listitem>
+                        <para>Forces an update on directory revision numbers after commit operations.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Show changed paths</term>
+                    <listitem>
+                        <para>Toggles highlight of changed paths ON/OFF.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <?pagebreak ?>
+            <figure id="fig_options_fonts" condition="fo">
+                <title>Options - Fonts Tab</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/options_fonts.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <?pagebreak ?>
+            <variablelist>
+                <title>Fonts tab</title>
+                <varlistentry>
+                    <term role="bold">Default</term>
+                    <listitem>
+                        <para>Specifies the font used as default throughout &esvn;.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">View</term>
+                    <listitem>
+                        <para>Specifies the font used to format content displayed in &esvn;'s
+                            internal Viewer application.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Output</term>
+                    <listitem>
+                        <para>Specifies the font used to format the content of the Output Log pane.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Files/dir list</term>
+                    <listitem>
+                        <para>Specifies the font used to format text properties contained with the
+                            Tree and File View panes.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Quick diff</term>
+                    <listitem>
+                        <para>Specifies the font used to format content displayed in &esvn;'s
+                            internal Diff application.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Command</term>
+                    <listitem>
+                        <para>Specifies the font used in the Command pane.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <figure id="fig_options_fontmapping" condition="fo">
+                <title>Options - File Mapping</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/options_filemapping.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <title>File Mapping tab</title>
+                <note>
+                    <para>For File Mappings to work the <option>Open</option> option must be
+                        selected from the General tab, Double-click options group.</para>
+                </note>
+                <varlistentry>
+                    <term role="bold">Extensions</term>
+                    <listitem>
+                        <para>Lists the file extension associated with the Action. </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Action</term>
+                    <listitem>
+                        <para>List the action associated with the Extension.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">New</term>
+                    <listitem>
+                        <para>Displays the <interfacename>Edit file mapping</interfacename> dialog
+                            used to specify the Extension and Action values for a new file mapping.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Edit</term>
+                    <listitem>
+                        <para>Displays the <interfacename>Edit file mapping</interfacename> dialog
+                            used to edit the Extension and Action values of a selected file mapping.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Delete</term>
+                    <listitem>
+                        <para>Removes the selected file mapping.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <figure id="fig_options_other" condition="fo">
+                <title>Options - Other Tab</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/options_other.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <title>Other tab</title>
+                <varlistentry>
+                    <term>Restrictions</term>
+                    <listitem>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">Disable change
+                                        &quot;svn:value&quot; properties</emphasis> - ???</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">Disable commit to tag</emphasis> - ???</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">Disable symlinks</emphasis> - Disables
+                                    showing of symlinks in File and Folder panels.</para>
+                                <!-- comment from umptumun: Symlinks from one svn-controlled dir to other may act very strange. -->
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Log</term>
+                    <listitem>
+                        <para>Select a logging method:</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">Regular</emphasis> - Only display svn
+                                    related messages (default).</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">Verbose (debug)</emphasis> - Display eSvn
+                                    background messages.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term role="bold">Status refresh</term>
+                    <listitem>
+                        <para>Select a status method to refresh the workspace, options include:</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                    <emphasis>Online</emphasis> - automatically refreshes in sync
+                                    with repository.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Manual</emphasis> - user intervention required (default).</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Auto refresh</emphasis> - automatically refreshes at a
+                                    specified interval (default 30 seconds).</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Authentication</term>
+                    <listitem>
+                        <para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>
+                                        <emphasis role="bold">Username</emphasis> - The
+                                        <replaceable>username</replaceable> part of the &svn;
+                                        server authentication details.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>
+                                        <emphasis role="bold">Password</emphasis> - The
+                                        <replaceable>password</replaceable> part of the &svn;
+                                        server authentication details.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <!--================= START OF VIEW OPERATIONS =================-->
+        <sect1 id="esvn-refreshing">
+            <title>Refresh Operations</title>
+            <para>Three refresh operations are provided:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&view-refreshlocal;</para>
+                </listitem>
+                <listitem>
+                    <para>&view-refreshworkspace;</para>
+                </listitem>
+                <listitem>
+                    <para>&view-refreshonline;</para>
+                </listitem>
+            </itemizedlist>
+            <para>The first two options refresh the &esvn; interface against the workspace
+                directory. The third, refreshes and compares the revision numbers of all local files
+                against those residing in the remote repository. When a local file is superseded by
+                a higher version number than that available in the local copy the file status is
+                changed to the &quot;out-of-date&quot; status and the status icon is changed
+                (see <xref linkend="esvn-file-view" endterm="esvn-title-file-view"/>.</para>
+            <para>The refresh behavior can be set to Online, Periodic or Manual modes using the
+                    <guilabel>Status refresh</guilabel> options (&file-options;). For
+                information about the different modes see <xref linkend="esvn-options-general" endterm="esvn-title-options-general"/>.</para>
+            <para>It is important to remember that when working in Manual mode the status of items
+                will not be correctly displayed until the next manual invocation of Refresh online
+                (&view-refreshonline;). This is not the case when working in Online mode since
+                &esvn; will always keep the status of local items updated against the remote
+                repository whenever the folder selection is changed or a modify operation is performed.</para>
+        </sect1>
+        <!--================= START OF MODIFY OPERATIONS =================-->
+        <sect1 id="esvn-update-local">
+            <title id="title-esvn-update-local">Updating Local Copy</title>
+            <para>To bring changes from the repository into the local working copy use the Update
+                option (&modify-update;). When a file is selected from the File View the update
+                is performed on the selected resource. When a folder is selected in the Tree View
+                the update is perform on all folders and files.</para>
+            <para>During an update results are displayed in the Output log pane. For each updated
+                item a line will start with a character reporting the action taken. These characters
+                have the following meaning:</para>
+            <variablelist>
+                <varlistentry>
+                    <term>A</term>
+                    <listitem>
+                        <para>Added</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>D</term>
+                    <listitem>
+                        <para>Deleted</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>U</term>
+                    <listitem>
+                        <para>Updated</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>C</term>
+                    <listitem>
+                        <para>Conflict</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>G</term>
+                    <listitem>
+                        <para>Merged</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <para>A character in the first column signifies an update to the actual file, while
+                updates to the file's properties are shown in the second column.</para>
+        </sect1>
+        <sect1 id="esvn-update-revision">
+            <title>Updating the Revision</title>
+            <para>To bring a specific version from the repository into your working copy use the
+                Update revision option (&modify-update-revision;). The <interfacename>Update
+                revision</interfacename> dialog provides the following fields:</para>
+            <figure id="fig-update-revision" condition="fo">
+                <title>Update revision</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/update-revision.png" format="PNG" width="7cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            <varname>KEYWORDS</varname> are supported: </para>
+                        &varlist-keywords; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+            </variablelist>
+            <note>
+                <para>If no revision is given, the working copy is brought up-to-date with the
+                    <varname>HEAD</varname> revision.</para>
+            </note>
+        </sect1>
+        <sect1 id="esvn-commit">
+            <title>Committing to the Repository</title>
+            <para>To send changes from your working copy to the remote repository use the Commit
+                option (&modify-commit;). When a file is selected in the File View the commit is
+                performed for the selected resource. It is also possible to select multiple files.
+                When a folder is selected in the Tree View the update is performed on all folders
+                and files in the root of the selected folder.</para>
+            <para>During the commit operation the <interfacename>Commit</interfacename> dialog is
+                displayed. This interface displays the list of files to be committed and a free text
+                message to be added to the repository log (see <xref linkend="esvn-log"/>). The list
+                of files to commit may be pruned by checking and unchecking the check box associated
+                with each file. Alternately the <guibutton>+</guibutton> and
+                <guibutton>-</guibutton> buttons may be used to check and uncheck files selected in
+                the list. The dialog also provide a drop-list that stores the history of comments
+                used in previous commit operations. </para>
+            <figure id="fig-commit" condition="fo">
+                <title>Commit</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/commit.png" format="PNG" width="7cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <para>Following a commit operation the revision number of the resources sent to the
+                repository is incremented and the file status is changed from
+                &quot;modified&quot; to &quot;up-to-date&quot;.</para>
+        </sect1>
+        <sect1 id="esvn-add">
+            <title>Adding to the Repository</title>
+            <para>To put files and directories under version control use the Add option
+                (&modify-add;). The selected item is scheduled for addition to repository in the
+                next commit operation.</para>
+            <para>Following the Add operation the item status is changed from
+                &quot;-unknown-&quot; to &quot;added&quot;. When adding folders to
+                the repository, files contained by the folder are not automatically added to the
+                repository. This called a non recursive. They can be added in a separate Add
+                operation following the addition of their folder. Similarly, files contained in a
+                folder that has not been added to the repository cannot be added. Should you wish to
+                add a folder and its' contents to the repository, use a <xref
+                    linkend="esvn-recursive-add" endterm="esvn-title-recursive-add"/>.</para>
+        </sect1>
+        <sect1 id="esvn-recursive-add">
+            <title id="esvn-title-recursive-add">Recursive Addition</title>
+            <para>To recursively put folders and their contents under revision control use the Add
+                recursive option (&modify-add-recursive;). The selected folder and its' contents
+                are scheduled for addition to repository in the next commit operation.</para>
+        </sect1>
+        <sect1 id="esvn-delete">
+            <title>Deleting</title>
+            <para>To remove files and directories from version control use the Delete option
+                (&modify-delete;). The selected item is scheduled for deletion from the
+                repository in the next commit operation.</para>
+            <para>Files and folders that have not been committed, are immediately removed from the
+                working copy. Paths that are, or contain, unversioned or modified items will not be
+                removed. Following the Delete operation the item status is changed to
+                &quot;removed&quot;. Prior to the next commit operation it is still possible
+                to undo the Delete operation by using the Revert option (see <xref linkend="esvn-revert"/>).</para>
+        </sect1>
+        <sect1 id="esvn-copy-local">
+            <title>Copying Local Files</title>
+            <para>To duplicate an item in the working copy, remembering history, use the Copy
+                (local) option (&modify-copy-local;). Items can be copied from a source in the
+                working copy to a destination in the working copy or they can be copied from the
+                remote repository to the working copy. When copying between local paths, the copied
+                item is copied (added) to the destination and is scheduled to be sent to the
+                repository on the next commit operation. When copying from a remote repository to
+                the working copy a checkout is performed and the item is scheduled to be added to
+                the repository. The <interfacename>Copy</interfacename> dialog provides the
+                following fields: </para>
+            <?pagebreak ?>
+            <figure id="fig-copy-local" condition="fo">
+                <title>Copy (local)</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/copy-local.png" format="PNG" width="8cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Source</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The item path to be duplicated. The path may be a local path or remote <acronym>URL</acronym>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Destination</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The path to where the source will be copied. The path may only specify
+                            a remote <acronym>URL</acronym>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            <varname>KEYWORDS</varname> are supported: </para>
+                        &varlist-keywords; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Message</emphasis>
+                    </term>
+                    <listitem>
+                        <para>A field with which to provide a free text message.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-copy-remote">
+            <title>Copying Remote Files</title>
+            <para>To duplicate an item in the remote repository, remembering history, use the Copy
+                (remote) option (&modify-copy-remote;). Items can be copied from a source in the
+                remote repository to a destination in the remote repository or they can be copied
+                from the working copy to the remote repository. When copying between paths in the
+                repository a complete server-side copy is performed. This is useful when branching
+                and tagging. When a working copy item is copied to a remote repository the
+                duplicated item is immediately committed. The <interfacename>Copy</interfacename>
+                dialog provides the following fields: </para>
+            <!--
+			Uses the same image file as copy-local
+			-->
+            <figure id="fig-copy-remote" condition="fo">
+                <title>Copy (remote)</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/copy-local.png" format="PNG" width="8cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Source</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The item path to be duplicated. The path may be a local path or remote
+                            <acronym>URL</acronym>. Use the <guibutton>U</guibutton> button to
+                            display the <interfacename>URL wizard</interfacename>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Destination</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The path to where the source will be copied. The path may only specify
+                            a local path. Use the <guibutton>U</guibutton> button to display the
+                                <interfacename>URL wizard</interfacename>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            <varname>KEYWORDS</varname> are supported: </para>
+                        &varlist-keywords; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Message</emphasis>
+                    </term>
+                    <listitem>
+                        <para>A field with which to provide a free text message.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-move">
+            <title>Moving Items</title>
+            <para>To move and/or rename an item in working copy or repository use the Move option
+                (&modify-move;). The selected item is duplicated in the destination and then
+                deleted from the source location. Items can be moved from working copy-to- working
+                copy or from repository-to-repository. When moving between local copies the file
+                schedule for addition (with history), in the new location. When copying between
+                remote repositories a complete server-side rename is done. The
+                <interfacename>Move</interfacename> dialog provides the following fields:</para>
+            <?pagebreak ?>
+            <figure id="fig-move" condition="fo">
+                <title>Move</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/move.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Source</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The item path to be copied and then deleted. The path may be a local
+                            path remote <acronym>URL</acronym>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Destination</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The path to where the source will be copied. The path may only specify
+                            a local path when the source is from a local path. The path may only
+                            specify a URL when the source is from a URL.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            <varname>KEYWORDS</varname> are supported: </para>
+                        &varlist-keywords; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Message</emphasis>
+                    </term>
+                    <listitem>
+                        <para>A field with which to provide a free text message.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-merge">
+            <title>Merging</title>
+            <para>To apply the differences between two sources use the Merge option
+                (&modify-merge;). The <interfacename>Merge</interfacename> dialog provides two modes:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <emphasis>Mode 1</emphasis> - the difference between two revisions can be
+                        merged to a third working copy (File) or to a remote repository (URL). The
+                        first and second revision sources can reside either on a working copy (2
+                        Files) or a remote repository (2 URLs). The merged copy is output to a
+                        working copy (File) or remote repository (URL). If revision is omitted the
+                        default is HEAD.</para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis>Mode 2</emphasis> - the difference between two remote repository
+                        (URL) versions can be merged into one. The output is merged to the URL
+                        unless a working copy path is specified.</para>
+                </listitem>
+            </itemizedlist>
+            <para>In all instances the URL/File path at revision is specified using the syntax <command>[<replaceable>URL/File</replaceable>]@[<replaceable>REVISION</replaceable>]</command>
+            </para>
+            <para>For example: <command>svn://esvn.umputun.com/esvn/trunk/ChangeLog@PREV</command>
+            </para>
+            <para>If the path is omitted for mode 1 or 2, a default value of &apos;.&apos;
+                is assumed, unless the sources have identical basenames that match a file within
+                &apos;.&apos;: in which case, the differences will be applied to that file.
+                The following is therefore true when the <varname>URL/File</varname> path is a
+                omitted (where N = Revision 1, M = Revision 2, WC = Working Copy, URL = Remote Repository):</para>
+            <itemizedlist>
+                <listitem>
+                    <para>If N = WC &amp; M = WC | WC</para>
+                </listitem>
+                <listitem>
+                    <para>If N = WC &amp; M = URL | WC</para>
+                </listitem>
+                <listitem>
+                    <para>If N = URL &amp; M = WC | WC</para>
+                </listitem>
+                <listitem>
+                    <para>If N = URL &amp; M = URL | URL</para>
+                </listitem>
+            </itemizedlist>
+            <para>The <interfacename>Merge</interfacename> dialog provides the following field for
+                mode 1 and mode 2 respectively:</para>
+            <figure id="fig-merge" condition="fo">
+                <title>Merge</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/merge.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <title>Mode 1</title>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision 1</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The source for first revision. Can be local path (File) or remote
+                            repository (URL). &varlist-keywords;</para>
+                        <para>Use the <guibutton>R</guibutton> to select a revision using the
+                            <interfacename>Log</interfacename> dialog. Use <guibutton>H</guibutton>
+                            or <guibutton>P</guibutton> to select <envar>HEAD</envar> or
+                            <envar>PREV</envar> respectively.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision 2</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The source for second revision. Can be local path (File) or remote
+                            repository (URL). &varlist-keywords;</para>
+                        <para>Use the <guibutton>R</guibutton> to select a revision using the
+                            <interfacename>Log</interfacename> dialog. Use <guibutton>H</guibutton>
+                            or <guibutton>P</guibutton> to select <envar>HEAD</envar> or
+                            <envar>PREV</envar> respectively.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL/File</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The destination to the differences between revision 1 and 2 will be
+                            merged. Can be working copy (File) or remote repository (URL).</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist>
+                <title>Mode 2</title>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL 1</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The URL source for the first revision. Use <guibutton>U</guibutton> to
+                            display the <interfacename>URL wizard</interfacename>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL 2</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The URL source for the second revision. Use <guibutton>U</guibutton>
+                            to display the <interfacename>URL wizard</interfacename>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">WCPATH</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Path to working copy where output will be made as apposed to the
+                            default which is to a remote repository. Use <guibutton>...</guibutton>
+                            to display the common <interfacename>Open</interfacename> dialog used to
+                            change and specify the local path.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Non-recursive</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Operate on single directory only.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Dry-run</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Try operation but make no changes.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-switch">
+            <title>Switching a Working Copy</title>
+            <para>To update the working copy to a different URL use the Switch option
+                (&modify-switch;). This option updates your working copy to mirror a new
+                URL—usually a URL which shares a common ancestor with your working copy, although
+                not necessarily. This is the &svn; way to move a working copy to a new branch.</para>
+            <para>After &quot;switching&quot; to the branch, your working copy is no
+                different than what you would get from doing a fresh checkout of the directory. It
+                is usually more efficient to use this command, because often branches only differ by
+                a small degree. The server sends only the minimal set of changes necessary to make
+                your working copy reflect the branch directory. The
+                <interfacename>Switch</interfacename> dialog provides the following fields:</para>
+            <figure id="fig-switch" condition="fo">
+                <title>Switch</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/switch.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>URL</term>
+                    <listitem>
+                        <para>The URL against which the working copy will be updated.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            <varname>KEYWORDS</varname> are supported: </para>
+                        &varlist-keywords; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Tag</term>
+                    <listitem>
+                        <para>Use to specify the folder name in the tag folder of the repository
+                            against which to update the working copy.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Branch</term>
+                    <listitem>
+                        <para>Use to specify the folder name in the branch folder of the repository
+                            against which to update the working copy.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Trunk</term>
+                    <listitem>
+                        <para>Use to specify the folder name in the trunk folder of the repository
+                            against which to update the working copy.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <guibutton>Change URL</guibutton>
+                    </term>
+                    <listitem>
+                        <para>Changes the path of a selected item in the <guilabel>URL</guilabel>
+                            field to point to the <guilabel>Tag</guilabel>,
+                            <guilabel>Branch</guilabel>, or <guilabel>Trunk</guilabel> folder name
+                            in the repository.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Non-recursive</term>
+                    <listitem>
+                        <para>Operate on single directory only.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-revert">
+            <title>Reverting</title>
+            <para>To restore a pristine working copy of a file use the Revert option
+                (&modify-revert;). This will undo all local edits made since the last commit
+                operation. This subcommand does not require network access, and resolves any
+                conflicted states. It operates on files only and does not restore removed directories.</para>
+            <para>To revert all the contents of a folder use the Revert recursive option
+                (&modify-revert-recursive;). </para>
+            <warning>
+                <para>Before executing the operation &esvn; prompts for confirmation since once
+                    a working copy has been reverted local edits are lost and there is no way to
+                    recover them other than retyping.</para>
+            </warning>
+        </sect1>
+        <sect1 id="esvn-cleanup">
+            <title>Cleaning up</title>
+            <para>When &svn; modifies your working copy (or any information within the <filename
+                class="directory">.svn</filename>), it tries to do so as safely as possible. Before
+                changing anything, it writes its intentions to a log file, executes the commands in
+                the log file, then removes the log file (this is similar in design to a journaled
+                file system). If a &svn; operation is interrupted (if the process is killed, or
+                if the machine crashes, for example), the log files remain on disk. By re-executing
+                the log files, &svn; can complete the previously started operation, and your
+                working copy can get itself back into a consistent state.</para>
+            <para> In &esvn; use the Cleanup option to recursively clean up the working copy,
+                removing locks, resuming unfinished operations, etc. The operation is performed on
+                the item selected in the Folder or the File View</para>
+        </sect1>
+        <sect1 id="esvn-resolve">
+            <title>Resolving Conflicts</title>
+            <para>Remember to use this option after resolving a &apos;conflict&apos; state
+                (see <xref linkend="esvn-diff-3"/>).</para>
+        </sect1>
+        <sect1 id="esvn-edit">
+            <title>Editing</title>
+            <para>To edit a local copy of a file use the Edit option (&modify-edit;). The
+                selected file is opened in the default editor specified in the
+                <guilabel>Editor</guilabel> option. To define the default editor, select
+                &file-options; <menuchoice>
+                    <guibutton>General</guibutton>
+                    <guimenu>Programs</guimenu>
+                    <guimenuitem>Editor</guimenuitem>
+                </menuchoice>.</para>
+            <tip>
+                <para>
+                    <action>Double-click</action> the file to open it in the default editor
+                    specified in the <guilabel>Editor</guilabel> field of the
+                    <interfacename>Options</interfacename> dialog.</para>
+            </tip>
+        </sect1>
+        <?pagebreak ?>
+        <!--================= START OF QUERY OPERATIONS =================-->
+        <sect1 id="esvn-log">
+            <title>Log</title>
+            <para>To show the log messages for a set of revision(s) and/or file(s) use the Log
+                option (&query-log;). When the operation is executed the result is displayed in
+                the <interfacename>Log</interfacename> dialog. Select a record to display log
+                information. When the option <option>Show changed paths</option> is checked in the
+                <interfacename>Options</interfacename> dialog the displayed information will show
+                both the message and information about path changes in the repository. Log
+                information can be extensive, use the filters to filter information by message and
+                author strings.</para>
+            <para>In addition to listing and displaying the log entries associated with an item the
+                <interfacename>Log</interfacename> dialog also enables <xref linkend="esvn-view"
+                endterm="title-esvn-view"/>, <xref linkend="esvn-update-local"
+                endterm="title-esvn-update-local"/>, and <xref linkend="esvn-diff"
+                endterm="title-esvn-diff"/> operations between the selected revision and the working copy.</para>
+            <figure id="fig-log" condition="fo">
+                <title>Log</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/log.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Log history</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The log history. Each record displays revision, date and author
+                            information of log entry.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Log information</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the message and path information associated with the selected
+                            log entry.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Filters</emphasis>
+                    </term>
+                    <listitem>
+                        <para>
+                            <variablelist>
+                                <varlistentry>
+                                    <term>
+                                        <emphasis role="bold">Messages</emphasis>
+                                    </term>
+                                    <listitem>
+                                        <para>Enter a string equal to part of a message to filter by
+                                            message. <action>Click</action> the
+                                            <guibutton>Clear</guibutton> button to clean the filter.</para>
+                                    </listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                    <term>
+                                        <emphasis role="bold">Author</emphasis>
+                                    </term>
+                                    <listitem>
+                                        <para>Enter a string equal to part of an author to filter by
+                                            author. <action>Click</action> the
+                                            <guibutton>Clear</guibutton> button to clean the filter.</para>
+                                    </listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                    <term>
+                                        <emphasis role="bold">Stop on copy</emphasis>
+                                    </term>
+                                    <listitem>
+                                        <para>
+                                            <action>Check</action> this option to display all log
+                                            entries commencing after the last copy operation. This
+                                            option is useful for identifying the first revision
+                                            belonging to a branch, mostly for the merge operation.</para>
+                                    </listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                    <term>
+                                        <emphasis role="bold">Apply</emphasis>
+                                    </term>
+                                    <listitem>
+                                        <para>Applies the filter to the Log history.</para>
+                                    </listitem>
+                                </varlistentry>
+                            </variablelist>
+                        </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">View</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the selected patch in the internal viewer.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Update</emphasis>
+                    </term>
+                    <listitem>
+                        <para>If possible, merges the difference associated with the selected log
+                            entry to the working copy file in the reversed order. Otherwise switches
+                            the working copy status to conflict.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Diff</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the difference for the selected revision between the
+                            repository and current working copy. In order to see difference between
+                            two revisions use Diff dialog. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <?pagebreak ?>
+        <sect1 id="esvn-info">
+            <title>Info</title>
+            <para>To display information about a file or directory use the Info option
+                (&query-info;). Information about the selected item, displayed in the
+                <interfacename>Info</interfacename> dialog includes:</para>
+            <figure id="fig-info" condition="fo">
+                <title>Log</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/info.png" format="PNG" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Path</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The path of the selected item.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Name</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The name of the selected item.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The fully qualified domain name and path to the selected item.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Repository UUID</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The Universally Unique Identifier, a unique 128-bit number that
+                            uniquely identifies the selected item in the repository.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The current revision number of the selected item.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Node Kind</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The node kind. Depending on type of item selected values may be:</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>normal (file)</para>
+                            </listitem>
+                            <listitem>
+                                <para>directory (dir)</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Schedule</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The next operation scheduled to be performed on the file. Depending on
+                            actions performed values may be:</para>
+                        <!-- add more here -->
+                        <itemizedlist>
+                            <listitem>
+                                <para>normal</para>
+                            </listitem>
+                            <listitem>
+                                <para>add</para>
+                            </listitem>
+                            <listitem>
+                                <para>delete</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Last Changed Author</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The &svn; user account that last updated and committed the
+                            selected item.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Last Changed Rev</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The last revision number containing a change.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Last Changed Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The date and time (local time) on which the last change was made.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Text Last Updated</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The date and time (local time) at which the file contents were updated.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Properties Last Updated</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The date and time (local time) on which the properties of the item
+                            where updated.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Checksum</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The checksum is used to detect if the data has been altered during
+                            transmission or when being stored and retrieved.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-status">
+            <title>Status</title>
+            <para>To print the status of working copy files and directories in the Output log pane
+                use the Status option (&query-status;).</para>
+            <para>The first five columns in the output are each one character wide:</para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">First column</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Says if item was added, deleted, or otherwise changed, values include:</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&apos; &apos; - no modifications</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>A</computeroutput>&apos; - Added</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>C</computeroutput>&apos; - Conflicted</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>D</computeroutput>&apos; - Deleted</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>G</computeroutput>&apos; - Merged</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>I</computeroutput>&apos; - Ignored</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>M</computeroutput>&apos; - Modified</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>R</computeroutput>&apos; - Replaced</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>X</computeroutput>&apos; - item
+                                    is unversioned, but is used by an externals definition</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>?</computeroutput>&apos; - item
+                                    is not under version control</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>!</computeroutput>&apos; - item
+                                    is missing (removed by non-svn command) or incomplete</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>~</computeroutput>&apos; -
+                                    versioned item obstructed by some item of a different kind</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Second column</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Modifications of a file's or directory's properties</para>
+                        <itemizedlist>
+                            <para>&apos; &apos; - no modifications</para>
+                            <listitem>
+                                <para>&apos;<computeroutput>C</computeroutput>&apos; - Conflicted</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>M</computeroutput>&apos; - Modified</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Third column</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Whether the working copy directory is locked.</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&apos; &apos; - not locked</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>L</computeroutput>&apos; - locked</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Fourth column</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Scheduled commit will contain addition-with-history.</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&apos; &apos; - no history scheduled with commit</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>+</computeroutput>&apos; -
+                                    history scheduled with commit</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Fifth column</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Whether the item is switched relative to its parent.</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&apos; &apos; - normal</para>
+                            </listitem>
+                            <listitem>
+                                <para>&apos;<computeroutput>S</computeroutput>&apos; - switched</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <para>The out-of-date information appears in the eighth column (with <computeroutput>-u</computeroutput>):</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&apos;<computeroutput>*</computeroutput>&apos; - a newer revision
+                        exists on the server.</para>
+                </listitem>
+                <listitem>
+                    <para>&apos; &apos; - the working copy is up to date.</para>
+                </listitem>
+            </itemizedlist>
+            <para>Remaining fields are variable width and delimited by spaces:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>The working revision (with <computeroutput>-u</computeroutput> or <computeroutput>-v</computeroutput>)</para>
+                </listitem>
+                <listitem>
+                    <para>The last committed revision and last committed author (with <computeroutput>-v</computeroutput>)</para>
+                </listitem>
+            </itemizedlist>
+            <para>The working copy path is always the final field, so it can include spaces.</para>
+        </sect1>
+        <sect1 id="esvn-properties">
+            <title>Properties</title>
+            <para>Text</para>
+        </sect1>
+        <sect1 id="esvn-diff">
+            <title id="title-esvn-diff">Diff</title>
+            <para>To view the difference between the select working copy file and a revision,in the
+                repository, or between any of two revisions use the Diff option (&query-diff;).
+                The Diff option also enables difference checking between files resiting in the
+                repository. The <interfacename>Diff</interfacename> dialog provides the following options:</para>
+            <figure id="fig-diff">
+                <title>Diff</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata format="PNG" fileref="images/diff.png" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Revision</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision number.
+                            Use the <guibutton>R</guibutton> to display the Log information and
+                            select a revision number or use <varname>KEYWORDS</varname>: </para>
+                        &varlist-keywords; <para>Use the <guibutton>H</guibutton>,
+                            <guibutton>P</guibutton>, or <guibutton>B</guibutton> button to specify
+                            the <envar>HEAD</envar>, <envar>PREV</envar> or <envar>BASE</envar>
+                            keywords respectively.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Date</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Select the radio button and enter a value equal to a revision date or
+                            time. Specify date or time using any of the following syntax:</para>
+                        &itemlist-dates; </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">External diff</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Uses the diff application specified in the <guilabel>Diff</guilabel>
+                            field of the <interfacename>Options</interfacename> dialog (see <xref
+                            linkend="esvn-options"/>). The diff application has to support executing
+                            with two file names in the command line</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Non-recursive</emphasis>
+                    </term>
+                    <listitem>
+                        <para>When performing diff operation on a folder the operation is only
+                            performed on the selected folder and not an y sub folders.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Notice ancestry</emphasis>
+                    </term>
+                    <listitem>
+                        <para>???</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Extension</emphasis>
+                    </term>
+                    <listitem>
+                        <para>String of parameters what will be sent as-is to the diff application</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL/File 1</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The path to the first folder or file located in the repository. Use
+                            the <guibutton>U</guibutton> button to display the <interfacename>URL
+                            Wizard</interfacename> which can be used to specify the path.</para>
+                        <informalfigure condition="fo">
+                            <screenshot>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/diff-url-wiz.png" format="PNG" width="7cm"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </screenshot>
+                        </informalfigure>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">URL/File 2</emphasis>
+                    </term>
+                    <listitem>
+                        <para>The path to the second folder or file located in the repository. Use
+                            the <guibutton>U</guibutton> button to display the <interfacename>URL
+                            Wizard</interfacename> which can be used to specify the path.</para>
+                        <informalfigure condition="fo">
+                            <screenshot>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/diff-url-wiz1.png" format="PNG" width="7cm"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </screenshot>
+                        </informalfigure>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <?pagebreak ?>
+        <sect1 id="esvn-quick-diff">
+            <title>Quick Diff</title>
+            <para>To quickly view the difference between the selected working copy file with the
+                repository use the Quick diff option (&query-quick-diff;). When working in
+                Manual mode the operation is performed on the repository <envar>HEAD</envar>
+                revision. When working in Online mode the operation is performed against the
+                <envar>PREV</envar> revision for files with status &quot;up-to-date&quot;,
+                otherwise for <envar>HEAD</envar> revision. The difference is displayed in the
+                    <interfacename>Quick diff</interfacename> dialog.</para>
+            <figure id="fig-quick-diff">
+                <title>Quick diff</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata format="PNG" fileref="images/quick-diff.png" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+        </sect1>
+        <sect1 id="esvn-diff-3">
+            <title>Diff-3 (conflict)</title>
+            <para>When performing an update or a merge operation &svn; will merge the
+                differences from files in the repository to the working copy. During this operation
+                the following may occur:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Unchanged working copy files will be updated and set to
+                        &apos;up-to-date&apos; status.</para>
+                </listitem>
+                <listitem>
+                    <para>Changed working copy files with changes that do not overlap with changes
+                        coming from the repository are merged and set to
+                        &apos;up-to-date&apos; status.</para>
+                </listitem>
+                <listitem>
+                    <para>Changed working copy files with changes that do overlap with changes
+                        coming from the repository are set to the &apos;conflict&apos; status.</para>
+                </listitem>
+            </itemizedlist>
+            <para>The first two cases result in an &apos;up-to-date&apos; status. There is
+                therefore no reason for concern. However the third case results in a
+                &apos;conflict&apos; status that means the changes from the server
+                overlapped with those in the working copy and must be manually resolved by choosing
+                between them.</para>
+            <para>When a file is in the &apos;conflict&apos; status &esvn; the file is
+                marked with the &apos;conflict&apos; icon, 3 different files are created and
+                conflicted markers are added:</para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <filename>[filename].mine</filename>
+                    </term>
+                    <listitem>
+                        <para>This is the file that existed in working copy before the update
+                            operation. This file does not contain conflict markers it is your local
+                            changes and nothing else.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <filename>[filename].r[OLDREV]</filename>
+                    </term>
+                    <listitem>
+                        <para>This is the file that was the <envar>BASE</envar> revision before the
+                            update operation. That is, the file checked out before editing.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <filename>[filename].r[NEWREV]</filename>
+                    </term>
+                    <listitem>
+                        <para>This is the file that &esvn; just received from the repository as
+                            a result of the update operation. This file corresponds to the
+                            <envar>HEAD</envar> revision of the repository.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <para>To resolve this situation you can edit the file manually in order to resolve all
+                conflicts (marked with &lt;&lt;&lt;&lt; and
+                &gt;&gt;&gt;&gt;) or use <option>Diff 3 (conflict)</option> option
+                (&query-diff-3;). This option passes the three files to the external 3-way diff
+                application specified in the <interfacename>Options</interfacename> dialog. Use this
+                application to view the differences between the files and merge them to your working file.</para>
+            <para>In some cases it is not th keeping the changes made in
+                <filename>[filename].mine</filename>. In this case you may also:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Copy one of the temporary files on top of your working file.</para>
+                </listitem>
+                <listitem>
+                    <para>Use the Revert option (&modify-revert;) option to throw away all of
+                        your local changes in favor of the changes in
+                        <filename>[filename].r[NEWREV]</filename> (<envar>HEAD</envar>).</para>
+                </listitem>
+            </itemizedlist>
+            <para>When this is done, remember to use the resolved option (&modify-resolved;) to
+                inform &svn; that the conflict in fixed. This will remove the temporary files (
+                <filename>[filename].r[OLDREV]</filename> and
+                <filename>[filename].r[NEWREV]</filename>) from the working copy and enable
+                &esvn; to perform a commit operation. Before this is done, &esvn; will not
+                allow commit operations on the working copy.</para>
+        </sect1>
+        <sect1 id="esvn-blame">
+            <title>Blame</title>
+            <para>To show author and revision information in-line for the specified files or URLs
+                use the Blame option (&query-blame;). This operation can take awhile on large
+                files since each line of text is annotated at the beginning with the author
+                (username) and the revision number for the last change to that line.</para>
+            <figure id="fig-blame" condition="fo">
+                <title>Blame</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata format="PNG" fileref="images/blame.png" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+        </sect1>
+        <?pagebreak ?>
+        <sect1 id="esvn-showchanged">
+            <title id="esvn-title-showchanged">Show changed items</title>
+            <para>To display and list the status of working copy files and directories use the
+                &query-showchanged; option. All items with a status other than
+                &quot;up-to-date&quot; are displayed in the <interfacename>Changed
+                items</interfacename> dialog which, provides the following options.</para>
+            <figure id="fig-changed-items" condition="fo">
+                <title>Blame</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata format="JPEG" fileref="images/changed-items.jpg" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Changed items list</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays a list of items that have changed. Each record provides the
+                            following information:</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                    <emphasis>Name</emphasis> - the full path and name of the
+                                    changed item.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Status</emphasis> - the status of the item.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis>Modified</emphasis>- the date on which the items was changed.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Diff</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the difference between the selected item in working copy and
+                            the repository HEAD.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">View</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the repository HEAD copy of selected item in the internal
+                            <interface>View</interface> application.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Log</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Displays the log history associated with the selected item using the
+                            <interfacename>Log</interfacename> dialog.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Update</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Performs an update operation on the selected item.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">Refresh</emphasis>
+                    </term>
+                    <listitem>
+                        <para>Refreshes the changed items list.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </sect1>
+        <sect1 id="esvn-view">
+            <title id="title-esvn-view">View (cat)</title>
+            <para>To output the content of HEAD revision of specified files use the View (cat)
+                option (&query-view-cat;).</para>
+            <figure id="fig-view-cat" condition="fo">
+                <title>View (cat)</title>
+                <screenshot>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata format="PNG" fileref="images/view-cat.png" width="10cm"/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+            </figure>
+        </sect1>
+    </chapter> &appen-tools; &appen-building; &appen-acknowledge;</book>

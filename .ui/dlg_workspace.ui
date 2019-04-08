@@ -1,0 +1,270 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_workspace</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_workspace</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>598</width>
+            <height>416</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Workspace manager</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QSplitter" row="0" column="0">
+            <property name="name">
+                <cstring>splitter4</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>The list of works spaces.</string>
+            </property>
+            <widget class="QListView">
+                <column>
+                    <property name="text">
+                        <string>Name</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Directories</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>lv_wslist</cstring>
+                </property>
+                <property name="minimumSize">
+                    <size>
+                        <width>0</width>
+                        <height>250</height>
+                    </size>
+                </property>
+                <property name="lineWidth">
+                    <number>1</number>
+                </property>
+                <property name="resizePolicy">
+                    <enum>AutoOne</enum>
+                </property>
+                <property name="allColumnsShowFocus">
+                    <bool>true</bool>
+                </property>
+                <property name="showSortIndicator">
+                    <bool>true</bool>
+                </property>
+                <property name="resizeMode">
+                    <enum>LastColumn</enum>
+                </property>
+                <property name="whatsThis" stdset="0">
+                    <string>The list of works spaces.</string>
+                </property>
+            </widget>
+            <widget class="QTextBrowser">
+                <property name="name">
+                    <cstring>tx_full</cstring>
+                </property>
+                <property name="lineWidth">
+                    <number>1</number>
+                </property>
+                <property name="whatsThis" stdset="0">
+                    <string>The list of working copy paths contained in the workspace file set.</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>The list of works spaces.</string>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_add</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;New</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+N</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_edit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Edit</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+E</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_rename</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Rename</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+R</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bt_delete</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Delete</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+D</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Load</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+L</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>Horizontal Spacing2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>48</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>The list of works spaces.</string>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Close</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>bt_add</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>bt_add_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>lv_wslist</sender>
+        <signal>selectionChanged(QListViewItem*)</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>lv_wslist_selectionChanged(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>bt_delete</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>bt_delete_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_edit</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>bt_edit_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_rename</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>bt_rename_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>lv_wslist</sender>
+        <signal>doubleClicked(QListViewItem*)</signal>
+        <receiver>dlg_workspace</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">dlg_workspace.ui.h</include>
+</includes>
+<slots>
+    <slot>bt_add_clicked()</slot>
+    <slot>lv_wslist_selectionChanged( QListViewItem * item )</slot>
+    <slot>bt_delete_clicked()</slot>
+    <slot>bt_edit_clicked()</slot>
+    <slot>bt_rename_clicked()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

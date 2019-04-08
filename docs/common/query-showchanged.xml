@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<shortcut>
+		<keycombo>
+			<keysym>Ctrl+S</keysym>
+		</keycombo>
+	</shortcut>
+	<guimenu>Query</guimenu>
+	<guimenuitem>Show changed items ...</guimenuitem>
+</menuchoice>

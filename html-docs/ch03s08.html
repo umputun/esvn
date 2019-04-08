@@ -1,0 +1,100 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Refresh Operations</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s07.html" title="Configuring Options">
+      <link rel="next" href="ch03s09.html" title="Updating Local Copy">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Refresh Operations</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s07.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s09.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-refreshing"></a>Refresh Operations
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>Three refresh operations are provided:</p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>
+                     <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Refresh local</span> (<span><b class="shortcut"><span><b class="keycap">F5</b></span></b></span>)
+                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Refresh workspace</span> (<span><b class="shortcut"><span class="keysym">Shift+F5</span></b></span>)
+                     
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Refresh online</span> (<span><b class="shortcut"><span class="keysym">Shift+F5</span></b></span>)
+                     
+                  </p>
+               </li>
+            </ul>
+         </div>
+         <p>The first two options refresh the <span><b class="application">eSvn</b></span> interface against the workspace directory.
+            The third, refreshes and compares the revision numbers of all local files against those
+                    residing in the remote repository. When a local file is superseded by a higher version
+                    number than that available in the local copy the file status is changed to the
+                    "out-of-date" status and the status icon is changed (see <a href="ch02s02.html#esvn-file-view">File View</a>.
+         </p>
+         <p>The refresh behavior can be set to Online, Periodic or Manual modes using the
+                      <i class="guilabel">Status refresh</i> options (
+            <span class="guimenu">
+               		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Options</span>
+            ). For information about
+                    the different modes see <a href="ch03s07.html#esvn-options-general">General tab</a>.
+         </p>
+         <p>It is important to remember that when working in Manual mode the status of items will
+                    not be correctly displayed until the next manual invocation of Refresh online
+                    (
+            <span class="guimenu">View</span>-&gt;<span class="guimenuitem">Refresh online</span> (<span><b class="shortcut"><span class="keysym">Shift+F5</span></b></span>)
+            ). This is not the case when working in Online mode since
+                    <span><b class="application">eSvn</b></span> will always keep the status of local items updated against the remote repository
+                    whenever the folder selection is changed or a modify operation is performed.
+         </p>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s07.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s09.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Configuring Options&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Updating Local Copy</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_commit</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_commit</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>538</width>
+            <height>363</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Commit</string>
+    </property>
+    <property name="icon">
+        <pixmap>commit_16x16.xpm</pixmap>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <property name="modal">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout23</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>gr_files</cstring>
+                    </property>
+                    <property name="title">
+                        <string>&amp;Commit following files:</string>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QListBox" row="0" column="0">
+                            <property name="name">
+                                <cstring>files_to_commit</cstring>
+                            </property>
+                            <property name="columnMode">
+                                <enum>FitToWidth</enum>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>&lt;h1&gt;List of Files to Commit&lt;/h1&gt;
+
+Here you check files You'd like to be committed. "Select All" and "Deselect All"
+buttons help to deal with big number of files</string>
+                            </property>
+                        </widget>
+                        <widget class="QLayoutWidget" row="0" column="1">
+                            <property name="name">
+                                <cstring>layout3</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>bt_select_all</cstring>
+                                    </property>
+                                    <property name="maximumSize">
+                                        <size>
+                                            <width>32</width>
+                                            <height>32</height>
+                                        </size>
+                                    </property>
+                                    <property name="paletteForegroundColor">
+                                        <color>
+                                            <red>85</red>
+                                            <green>170</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <pointsize>11</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>+</string>
+                                    </property>
+                                    <property name="accel">
+                                        <string></string>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Select all</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>bt_deselect_all</cstring>
+                                    </property>
+                                    <property name="maximumSize">
+                                        <size>
+                                            <width>32</width>
+                                            <height>32</height>
+                                        </size>
+                                    </property>
+                                    <property name="paletteForegroundColor">
+                                        <color>
+                                            <red>170</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="font">
+                                        <font>
+                                            <pointsize>16</pointsize>
+                                            <bold>1</bold>
+                                        </font>
+                                    </property>
+                                    <property name="text">
+                                        <string>-</string>
+                                    </property>
+                                    <property name="accel">
+                                        <string></string>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Deselect all</string>
+                                    </property>
+                                </widget>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer3</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Vertical</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>20</width>
+                                            <height>40</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </vbox>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>msgEdit</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                </widget>
+                <widget class="QComboBox">
+                    <property name="name">
+                        <cstring>cb_commit_hist</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout45</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>bt_clear</cstring>
+                            </property>
+                            <property name="text">
+                                <string>C&amp;lear</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+L</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer26</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonOk</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;OK</string>
+                            </property>
+                            <property name="accel">
+                                <string>Ctrl+Return</string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                            <property name="default">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>buttonCancel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Cancel</string>
+                            </property>
+                            <property name="accel">
+                                <string></string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_commit</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_commit</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>bt_clear</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_commit</receiver>
+        <slot>bt_clear_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_commit</receiver>
+        <slot>saveCommitMessages()</slot>
+    </connection>
+    <connection>
+        <sender>cb_commit_hist</sender>
+        <signal>highlighted(const QString&amp;)</signal>
+        <receiver>msgEdit</receiver>
+        <slot>setText(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>bt_deselect_all</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_commit</receiver>
+        <slot>deselectAll()</slot>
+    </connection>
+    <connection>
+        <sender>bt_select_all</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_commit</receiver>
+        <slot>selectAll()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>msgEdit</tabstop>
+    <tabstop>buttonOk</tabstop>
+    <tabstop>buttonCancel</tabstop>
+</tabstops>
+<includes>
+    <include location="global" impldecl="in implementation">qsettings.h</include>
+    <include location="global" impldecl="in implementation">qlistbox.h</include>
+    <include location="local" impldecl="in implementation">dlg_commit.ui.h</include>
+</includes>
+<slots>
+    <slot>bt_clear_clicked()</slot>
+    <slot>loadCommitMessages()</slot>
+    <slot>saveCommitMessages()</slot>
+    <slot>setCommitPath( const QString &amp; path )</slot>
+    <slot specifier="pure virtual">selectAll()</slot>
+    <slot specifier="pure virtual">deselectAll()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="11" margin="11"/>
+</UI>

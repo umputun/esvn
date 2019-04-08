@@ -1,0 +1,84 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Reverting</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s19.html" title="Switching a Working Copy">
+      <link rel="next" href="ch03s21.html" title="Cleaning up">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Reverting</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s19.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s21.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-revert"></a>Reverting
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To restore a pristine working copy of a file use the Revert option
+                    (
+            <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Revert</span> (<span><b class="shortcut"><span class="keysym">Alt+R</span></b></span>)
+            ). This will undo all local edits made since the last commit operation.
+            This subcommand does not require network access, and resolves any conflicted states. It
+                    operates on files only and does not restore removed directories.
+         </p>
+         <p>To revert all the contents of a folder use the Revert recursive option
+                    (
+            <span class="guimenu">Modify</span>-&gt;<span class="guimenuitem">Revert recursive</span> (<span><b class="shortcut"><span class="keysym">Ctrl+R</span></b></span>)
+            ). 
+         </p>
+         <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Warning">
+               <tr>
+                  <td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="common/admon/warning.png"></td>
+                  <th align="left"></th>
+               </tr>
+               <tr>
+                  <td colspan="2" align="left" valign="top">
+                     <p>Before executing the operation <span><b class="application">eSvn</b></span> prompts for confirmation since once a
+                                  working copy has been reverted local edits are lost and there is no way to recover them
+                                  other than retyping.
+                     </p>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s19.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s21.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Switching a Working Copy&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Cleaning up</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

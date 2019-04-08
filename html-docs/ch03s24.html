@@ -1,0 +1,155 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Log</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s23.html" title="Editing">
+      <link rel="next" href="ch03s25.html" title="Info">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Log</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s23.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s25.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-log"></a>Log
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To show the log messages for a set of revision(s) and/or file(s) use the Log option
+                    (
+            <span class="guimenu">Query</span>-&gt;<span class="guimenuitem">Log</span> (<span><b class="shortcut"><span class="keysym">Alt+L</span></b></span>)
+            ). When the operation is executed the result is displayed in the
+                    <tt class="interfacename">Log</tt> dialog. Select a record to display log information. When
+                    the option <tt class="option">Show changed paths</tt> is checked in the
+                    <tt class="interfacename">Options</tt> dialog the displayed information will show both the
+                    message and information about path changes in the repository. Log information can be
+                    extensive, use the filters to filter information by message and author strings.
+         </p>
+         <p>In addition to listing and displaying the log entries associated with an item the
+                    <tt class="interfacename">Log</tt> dialog also enables <a href="ch03s33.html">View (cat)</a>, <a href="ch03s09.html">Updating Local Copy</a>, and <a href="ch03s28.html">Diff</a> operations between the selected revision and the working copy.
+         </p>
+         <div class="variablelist">
+            <dl>
+               <dt><span class="term">
+                                 <span class="bold"><b>Log history</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The log history. Each record displays revision, date and author information of log entry.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Log information</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Displays the message and path information associated with the selected log entry.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Filters</b></span>
+                               </span></dt>
+               <dd>
+                  <p>
+                                   
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">
+                                                  <span class="bold"><b>Messages</b></span>
+                                                </span></dt>
+                        <dd>
+                           <p>Enter a string equal to part of a message to filter by message.
+                                                    <span class="action">Click</span> the <span><b class="guibutton">Clear</b></span> button to clean the filter.
+                           </p>
+                        </dd>
+                        <dt><span class="term">
+                                                  <span class="bold"><b>Author</b></span>
+                                                </span></dt>
+                        <dd>
+                           <p>Enter a string equal to part of an author to filter by author.
+                                                    <span class="action">Click</span> the <span><b class="guibutton">Clear</b></span> button to clean the filter.
+                           </p>
+                        </dd>
+                        <dt><span class="term">
+                                                  <span class="bold"><b>Stop on copy</b></span>
+                                                </span></dt>
+                        <dd>
+                           <p>
+                                                    <span class="action">Check</span> this option to display all log entries commencing after
+                                                    the last copy operation. This option is useful for identifying the first
+                                                    revision belonging to a branch, mostly for the merge operation.
+                           </p>
+                        </dd>
+                        <dt><span class="term">
+                                                  <span class="bold"><b>Apply</b></span>
+                                                </span></dt>
+                        <dd>
+                           <p>Applies the filter to the Log history.</p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <p>
+                                 
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>View</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Displays the selected patch in the internal viewer.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Update</b></span>
+                               </span></dt>
+               <dd>
+                  <p>If possible, merges the difference associated with the selected log entry to the
+                                   working copy file in the reversed order. Otherwise switches the working copy status to conflict.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Diff</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Displays the difference for the selected revision between the repository and
+                                   current working copy. In order to see difference between two revisions use Diff
+                                   dialog. 
+                  </p>
+               </dd>
+            </dl>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s23.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s25.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Editing&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Info</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

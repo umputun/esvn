@@ -1,0 +1,375 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Configuring Options</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03s06.html" title="Exporting a Folder System">
+      <link rel="next" href="ch03s08.html" title="Refresh Operations">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Configuring Options</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03s06.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s08.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-options"></a>Configuring Options
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>To configure preferences for <span><b class="application">eSvn</b></span> use the Options option. The
+                    <tt class="interfacename">Options</tt> dialog provides tabbed forms, as described below, to
+                    set global preferences and parameters.
+         </p>
+         <div class="variablelist"><a name="esvn-options-general"></a><p class="title"><b>General tab</b></p>
+            <dl>
+               <dt><span class="term">Programs</span></dt>
+               <dd>
+                  <p>Specifies default application preferences for the following:</p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Subversion</em></span> - Enter the command to execute <span><b class="application">subversion</b></span> commands
+                                                (default: <span><b class="command">svn</b></span>).
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Editor</em></span> - Enter the command to execute any text editor
+                                                (default: <span><b class="command">kwrite</b></span>).
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Viewer</em></span> - Enter the command to execute any viewer (default: <span><b class="command">[internal]</b></span>)
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Diff</em></span> - Enter the command to execute any two-way diff
+                                                application (default: <span><b class="command">kdiff3</b></span>).
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Diff-3</em></span> - Enter the command to execute any three-way diff
+                                                application (default: <span><b class="command">kdiff3</b></span>).
+                           </p>
+                           <p>
+                                                
+                           </p>
+                           <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Note">
+                                 <tr>
+                                    <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="common/admon/note.png"></td>
+                                    <th align="left"></th>
+                                 </tr>
+                                 <tr>
+                                    <td colspan="2" align="left" valign="top">
+                                       <p>A list of <span><b class="application">diff</b></span> applications that can be used
+                                                                with <span><b class="application">eSvn</b></span> is listed in <a href="apa.html" title="Appendix&nbsp;A.&nbsp;Tools">Appendix&nbsp;A</a>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <p>
+                                              
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Browser</em></span> - Enter the name of an installed Web Browser.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                     <table border="0" summary="Tip">
+                        <tr>
+                           <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="common/admon/tip.png"></td>
+                           <th align="left"></th>
+                        </tr>
+                        <tr>
+                           <td colspan="2" align="left" valign="top">
+                              <p><span><b class="application">eSvn</b></span> provides macros that enable modification of the titles on diff panes
+                                                 add <span><b class="command">-fname a1 f1 -fname a2 f2</b></span> to the <span><b class="command">kdiff3</b></span>
+                                                 command e.g. <span><b class="command">kdiff3 -fname a1 f1 -fname a2 f2</b></span>. Before executing
+                                                 the external diff, <span><b class="application">eSvn</b></span> will translate <tt class="envar">f1</tt> and <tt class="envar">f2</tt>
+                                                 to file names (first and second) and <tt class="envar">a1</tt> and <tt class="envar">a2</tt> to file
+                                                 aliases (like 'working copy', 'revision 123').
+                                                 The modified string of parameters are then passed to the diff application together
+                                                 with the any arguments supplied in the <i class="guilabel">Extensions</i> field
+                                                 provided by the <tt class="interfacename">Diff</tt> dialog (see <a href="ch03s28.html" title="Diff">the section called &#8220;Diff&#8221;</a>).
+                              </p>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </dd>
+               <dt><span class="term">Double-click action</span></dt>
+               <dd>
+                  <p>Associate one of the following behaviors with <span class="action">double-click</span>
+                                   actions performed in the file view.
+                  </p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Cat</em></span> - displays the contents of the last revision in the
+                                                repository for the selected item in the internal <span><b class="application">eSvn</b></span> viewer application
+                                                (see <a href="ch03s33.html" title="View (cat)">the section called &#8220;View (cat)&#8221;</a>).
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Edit</em></span> - execute and open selected working copy resource in the
+                                                external editor specified by the <tt class="varname">Editor</tt> field.
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Open</em></span> - execute and open selected working copy resource in the
+                                                external editor specified by the <tt class="interfacename">File Mapping</tt> form
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">Show directories is file list</span></dt>
+               <dd>
+                  <p>Toggles display of folders in the File View ON/OFF.</p>
+               </dd>
+               <dt><span class="term">External diff default</span></dt>
+               <dd>
+                  <p>When checked uses the external diff application defined in the <span><b class="application">eSvn</b></span> options,
+                                   otherwise uses the internal diff viewer.
+                  </p>
+               </dd>
+               <dt><span class="term">Hide unknown files</span></dt>
+               <dd>
+                  <p>Toggles behavior for display of files with status "- unknown-"
+                                   shown in the File View between hidden (checked)/unhidden (unchecked).
+                  </p>
+               </dd>
+               <dt><span class="term">Update after commit</span></dt>
+               <dd>
+                  <p>Forces an update on directory revision numbers after commit operations.</p>
+               </dd>
+               <dt><span class="term">Show changed paths</span></dt>
+               <dd>
+                  <p>Toggles highlight of changed paths ON/OFF.</p>
+               </dd>
+            </dl>
+         </div>
+         <div class="variablelist">
+            <p class="title"><b>Fonts tab</b></p>
+            <dl>
+               <dt><span class="term">Default</span></dt>
+               <dd>
+                  <p>Specifies the font used as default throughout <span><b class="application">eSvn</b></span>.
+                  </p>
+               </dd>
+               <dt><span class="term">View</span></dt>
+               <dd>
+                  <p>Specifies the font used to format content displayed in <span><b class="application">eSvn</b></span>'s internal
+                                   Viewer application.
+                  </p>
+               </dd>
+               <dt><span class="term">Output</span></dt>
+               <dd>
+                  <p>Specifies the font used to format the content of the Output Log pane.</p>
+               </dd>
+               <dt><span class="term">Files/dir list</span></dt>
+               <dd>
+                  <p>Specifies the font used to format text properties contained with the Tree and File
+                                   View panes.
+                  </p>
+               </dd>
+               <dt><span class="term">Quick diff</span></dt>
+               <dd>
+                  <p>Specifies the font used to format content displayed in <span><b class="application">eSvn</b></span>'s internal Diff application.
+                  </p>
+               </dd>
+               <dt><span class="term">Command</span></dt>
+               <dd>
+                  <p>Specifies the font used in the Command pane.</p>
+               </dd>
+            </dl>
+         </div>
+         <div class="variablelist">
+            <p class="title"><b>File Mapping tab</b></p>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Note">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="common/admon/note.png"></td>
+                     <th align="left"></th>
+                  </tr>
+                  <tr>
+                     <td colspan="2" align="left" valign="top">
+                        <p>For File Mappings to work the <tt class="option">Open</tt> option must be selected from the
+                                       General tab, Double-click options group.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <dl>
+               <dt><span class="term">Extensions</span></dt>
+               <dd>
+                  <p>Lists the file extension associated with the Action. </p>
+               </dd>
+               <dt><span class="term">Action</span></dt>
+               <dd>
+                  <p>List the action associated with the Extension.</p>
+               </dd>
+               <dt><span class="term">New</span></dt>
+               <dd>
+                  <p>Displays the <tt class="interfacename">Edit file mapping</tt> dialog used to
+                                   specify the Extension and Action values for a new file mapping.
+                  </p>
+               </dd>
+               <dt><span class="term">Edit</span></dt>
+               <dd>
+                  <p>Displays the <tt class="interfacename">Edit file mapping</tt> dialog used to edit
+                                   the Extension and Action values of a selected file mapping.
+                  </p>
+               </dd>
+               <dt><span class="term">Delete</span></dt>
+               <dd>
+                  <p>Removes the selected file mapping.</p>
+               </dd>
+            </dl>
+         </div>
+         <div class="variablelist">
+            <p class="title"><b>Other tab</b></p>
+            <dl>
+               <dt><span class="term">Restrictions</span></dt>
+               <dd>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>
+                                                <span class="bold"><b>Disable change "svn:value"
+                                                      properties</b></span> - ???
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="bold"><b>Disable commit to tag</b></span> - ???
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="bold"><b>Disable symlinks</b></span> - Disables showing of symlinks
+                                                in File and Folder panels.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">Log</span></dt>
+               <dd>
+                  <p>Select a logging method:</p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p><span class="bold"><b>Regular</b></span> - Only display svn related messages (default).
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold"><b>Verbose (debug)</b></span> - Display eSvn background messages.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">Status refresh</span></dt>
+               <dd>
+                  <p>Select a status method to refresh the workspace, options include:</p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Online</em></span> - automatically refreshes in sync with repository.
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Manual</em></span> - user intervention required (default).
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                <span class="emphasis"><em>Auto refresh</em></span> - automatically refreshes at a specified
+                                                interval (default 30 seconds).
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </dd>
+               <dt><span class="term">Authentication</span></dt>
+               <dd>
+                  <p>
+                                   
+                  </p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>
+                                                  <span class="bold"><b>Username</b></span> - The
+                                                  <i class="replaceable"><tt>username</tt></i> part of the <span><b class="application">subversion</b></span> server authentication details.
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                                                  <span class="bold"><b>Password</b></span> - The
+                                                  <i class="replaceable"><tt>password</tt></i> part of the <span><b class="application">subversion</b></span> server authentication details.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <p>
+                                 
+                  </p>
+               </dd>
+            </dl>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03s06.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s08.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Exporting a Folder System&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Refresh Operations</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

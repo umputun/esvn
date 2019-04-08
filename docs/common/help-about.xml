@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<guimenu>
+		<accel>H</accel>elp</guimenu>
+	<guimenuitem>
+		<accel>A</accel>bout</guimenuitem>
+</menuchoice>

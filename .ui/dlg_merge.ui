@@ -1,0 +1,630 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>dlg_merge</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dlg_merge</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>484</width>
+            <height>295</height>
+        </rect>
+    </property>
+    <property name="font">
+        <font>
+        </font>
+    </property>
+    <property name="caption">
+        <string>Merge</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>false</bool>
+    </property>
+    <property name="modal">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="resizeMode">
+            <enum>Fixed</enum>
+        </property>
+        <widget class="QLayoutWidget" row="3" column="0">
+            <property name="name">
+                <cstring>Layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>Horizontal Spacing2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;OK</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QGroupBox" row="0" column="0">
+            <property name="name">
+                <cstring>groupBox2</cstring>
+            </property>
+            <property name="title">
+                <string>Mode 1</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="1" column="0">
+                    <property name="name">
+                        <cstring>layout29</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel2_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>URL/File</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>le_file</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_dirs</cstring>
+                            </property>
+                            <property name="text">
+                                <string>...</string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_uw2</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>127</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>U</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout30</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>rb_revision</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Revision 1</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>le_rev1</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_rev_wizard</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>127</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>R</string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_rev_head</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>170</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>H</string>
+                            </property>
+                            <property name="textLabel">
+                                <string>HEAD Revision</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>HEAD Revision</string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_rev_prev</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>170</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>P</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Previos Revision</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel3</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Revision 2</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>le_rev2</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_rev_wizard_2</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>127</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>R</string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_rev_head_2</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>170</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>H</string>
+                            </property>
+                            <property name="textLabel">
+                                <string>HEAD Revision</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>HEAD Revision</string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton">
+                            <property name="name">
+                                <cstring>bt_rev_prev_2</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>170</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>P</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Previos Revision</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0">
+            <property name="name">
+                <cstring>layout37</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>ch_nonrecursive</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Non-recursive</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>ch_dryrun</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Dry-run</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QGroupBox" row="1" column="0">
+            <property name="name">
+                <cstring>groupBox4</cstring>
+            </property>
+            <property name="title">
+                <string>Mode 2</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="1">
+                    <property name="name">
+                        <cstring>layout72</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLineEdit" row="0" column="0">
+                            <property name="name">
+                                <cstring>le_url1</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignAuto</set>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit" row="2" column="0">
+                            <property name="name">
+                                <cstring>le_wcpath</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignAuto</set>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit" row="1" column="0">
+                            <property name="name">
+                                <cstring>le_url2</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignAuto</set>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton" row="0" column="1">
+                            <property name="name">
+                                <cstring>bt_url1</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>127</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>U</string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton" row="1" column="1">
+                            <property name="name">
+                                <cstring>bt_url2</cstring>
+                            </property>
+                            <property name="paletteForegroundColor">
+                                <color>
+                                    <red>0</red>
+                                    <green>0</green>
+                                    <blue>127</blue>
+                                </color>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>U</string>
+                            </property>
+                        </widget>
+                        <widget class="QToolButton" row="2" column="1">
+                            <property name="name">
+                                <cstring>bt_wcpath</cstring>
+                            </property>
+                            <property name="text">
+                                <string>...</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout76</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>rb_url</cstring>
+                            </property>
+                            <property name="text">
+                                <string>URL 1</string>
+                            </property>
+                            <property name="checked">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>URL 2</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel2_3</cstring>
+                            </property>
+                            <property name="text">
+                                <string>WCPATH</string>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>rb_url</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>rb_url_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>rb_revision</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>rb_revision_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>bt_rev_wizard</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_rev_wizard_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_rev_wizard_2</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_rev_wizard_2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_rev_head</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_rev_head_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_rev_prev</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_rev_prev_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_rev_prev_2</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_rev_prev_2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_rev_head_2</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_rev_head_2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_uw2</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_uw2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_dirs</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_dirs_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_wcpath</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_wcpath_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_url1</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_url1_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bt_url2</sender>
+        <signal>clicked()</signal>
+        <receiver>dlg_merge</receiver>
+        <slot>bt_url2_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">dlg_merge.ui.h</include>
+</includes>
+<slots>
+    <slot>rb_url_toggled( bool state )</slot>
+    <slot>rb_revision_toggled( bool state )</slot>
+    <slot>bt_rev_wizard_clicked()</slot>
+    <slot>bt_rev_wizard_2_clicked()</slot>
+    <slot>bt_rev_head_clicked()</slot>
+    <slot>bt_rev_prev_clicked()</slot>
+    <slot>bt_rev_prev_2_clicked()</slot>
+    <slot>bt_rev_head_2_clicked()</slot>
+    <slot>bt_uw2_clicked()</slot>
+    <slot>bt_dirs_clicked()</slot>
+    <slot>bt_wcpath_clicked()</slot>
+    <slot>bt_url1_clicked()</slot>
+    <slot>bt_url2_clicked()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

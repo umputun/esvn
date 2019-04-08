@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuchoice>
+	<shortcut>
+		<keycombo>
+			<keysym>Ctrl+W</keysym>
+		</keycombo>
+	</shortcut>
+	<guimenu>
+		<accel>F</accel>ile</guimenu>
+	<guimenuitem>Workspace ...</guimenuitem>
+</menuchoice>

@@ -1,0 +1,209 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Managing Workspaces</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="previous" href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">
+      <link rel="next" href="ch03s03.html" title="Checking Out a Working Copy">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Managing Workspaces</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch03.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">Chapter&nbsp;3.&nbsp;Using eSvn</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s03.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="sect1" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a name="esvn-workspace"></a>Managing Workspaces
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <p>The <tt class="interfacename">Workspace manager</tt>, enables multiple directories to me managed as a single
+                    file set (see <a href="ch03s02.html#fig-workspaces" title="Figure&nbsp;3.1.&nbsp;Two WC Workspace">Figure&nbsp;3.1</a>).
+         </p>
+         <div class="informalexample">
+            <p>For example you may have a working copy of your projects' <tt class="envar">trunk</tt> and a
+                         working copy of a <tt class="envar">branch</tt> residing in two different paths on your local
+                         machine like this:
+            </p>
+            <p>
+                         <b class="filename"><tt>/home/sean/projects/esvn/</tt></b>
+                       
+            </p>
+            <p>
+                         <b class="filename"><tt>/home/sean/projects/windowsesvn/</tt></b>
+                       
+            </p>
+         </div>
+         <p>Managing the two working copies as separate working directories is not always effective.
+                    Using the <tt class="interfacename">Workspace manager</tt>, the working copies can be
+                    managed as a single workspace (see <a href="ch03s02.html#fig-workspaces" title="Figure&nbsp;3.1.&nbsp;Two WC Workspace">Figure&nbsp;3.1</a>).
+         </p>
+         <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+               <tr>
+                  <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="common/admon/note.png"></td>
+                  <th align="left"></th>
+               </tr>
+               <tr>
+                  <td colspan="2" align="left" valign="top">
+                     <p>Authentication information (User and Password) is stored together with the workspace
+                                  details enabling fast and seamless access to repositories.
+                     </p>
+                  </td>
+               </tr>
+            </table>
+         </div>
+         <div class="figure"><a name="fig-workspaces"></a><p class="title"><b>Figure&nbsp;3.1.&nbsp;Two WC Workspace</b></p>
+            <div class="screenshot">
+               <div class="mediaobject">
+                  <table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="425">
+                     <tr>
+                        <td><img src="images/ws_manager6.png" width="425" alt="Two WC Workspace"></td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <p>The <tt class="interfacename">Workspace manager</tt> provides the following options:
+         </p>
+         <div class="variablelist">
+            <dl>
+               <dt><span class="term">
+                                 <span class="bold"><b>Workspace list</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The list of works spaces.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>Working copy path list</b></span>
+                               </span></dt>
+               <dd>
+                  <p>The list of working copy paths contained in the workspace file set.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>
+                                         <span><b class="guibutton">New</b></span> button</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Displays the dialog used for creating and editing workspaces file sets.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>
+                                         <span><b class="guibutton">Edit</b></span> button</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Displays the dialog used for creating and editing workspace file sets.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>
+                                         <span><b class="guibutton">Rename</b></span> button</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Displays the <tt class="interfacename">Rename workspace</tt> dialog used to change
+                                   the name of the selected workspace.
+                  </p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>
+                                         <span><b class="guibutton">Delete</b></span> button</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Removes the selected workspace.</p>
+               </dd>
+               <dt><span class="term">
+                                 <span class="bold"><b>
+                                         <span><b class="guibutton">Load</b></span> button</b></span>
+                               </span></dt>
+               <dd>
+                  <p>Loads the selected workspace.</p>
+               </dd>
+            </dl>
+         </div>
+         <div class="procedure">
+            <p class="title"><b>Procedure&nbsp;3.2.&nbsp;Creating a Workspace</b></p>
+            <ol type="1">
+               <li>
+                  <p>From the main menu select 
+                     <span class="guimenu">
+                        		<span class="accel">F</span>ile</span>-&gt;<span class="guimenuitem">Workspace ...</span> (<span><b class="shortcut"><span class="keysym">Ctrl+W</span></b></span>)
+                     . The <tt class="interfacename">Workspace
+                                    manager</tt> dialog is displayed.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <span class="action">Click</span> the <span><b class="guibutton">New</b></span>. The <tt class="interfacename">New
+                                    workspace</tt>dialog is displayed.
+                  </p>
+               </li>
+               <li>
+                  <p>Enter a name for the new workspace then <span class="action">click</span>
+                                 <span><b class="guibutton">OK</b></span>. The <tt class="interfacename">New workspace</tt>dialog is displayed.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <span class="action">Click</span> the <span><b class="guibutton">...</b></span> button to display the
+                                 <tt class="interfacename">Open</tt> dialog, change path to a working copy folder and <span class="action">click</span>
+                                 <span><b class="guibutton">OK</b></span>. The path is displayed in the <i class="guilabel">Directory</i> field.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <span class="action">Click</span>
+                                 <span><b class="guibutton">Add</b></span> to include the path in the workspace folder set.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <span class="action">Repeat</span> these steps until all working copy paths that are to be part of
+                                 the workspace have been added, then <span class="action">click</span>
+                                 <span><b class="guibutton">OK</b></span>. The workspace is created with all selected working copy paths
+                                 associated to the workspace.
+                  </p>
+               </li>
+               <li>
+                  <p>
+                                 <span class="action">Click</span> the <span><b class="guibutton">Load</b></span> button to open the workspace in
+                                 <span><b class="application">eSvn</b></span> as shown in <a href="ch03s02.html#fig-workspaces" title="Figure&nbsp;3.1.&nbsp;Two WC Workspace">Figure&nbsp;3.1</a>.
+                  </p>
+               </li>
+            </ol>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch03.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s03.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Chapter&nbsp;3.&nbsp;Using eSvn&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Checking Out a Working Copy</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

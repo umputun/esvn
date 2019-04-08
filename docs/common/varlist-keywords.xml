@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variablelist>
+	<varlistentry>
+		<term>HEAD</term>
+		<listitem>
+			<para>The latest revision in the repository.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>BASE</term>
+		<listitem>
+			<para>The &quot;pristine&quot; revision of an item in a working copy.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>COMMITTED</term>
+		<listitem>
+			<para>The last revision in which an item changed before (or at) BASE.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>PREV</term>
+		<listitem>
+			<para>The revision just before the last revision in which an item changed. (Technically,
+					<command>COMMITTED - 1</command>.)</para>
+		</listitem>
+	</varlistentry>
+</variablelist>

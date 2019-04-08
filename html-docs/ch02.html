@@ -1,0 +1,172 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Chapter&nbsp;2.&nbsp;Getting Started</title>
+      <link rel="stylesheet" href="corpstyle.css" type="text/css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.65.1">
+      <link rel="home" href="index.html" title="The eSvn User Manual">
+      <link rel="up" href="index.html" title="The eSvn User Manual">
+      <link rel="previous" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Overview">
+      <link rel="next" href="ch02s02.html" title="Main Interface">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Chapter&nbsp;2.&nbsp;Getting Started</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch01.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s02.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="chapter" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="esvn-gettingstarted"></a>Chapter&nbsp;2.&nbsp;Getting Started
+                  </h2>
+               </div>
+            </div>
+            <div></div>
+         </div>
+         <div class="toc">
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="ch02.html#esvn-starting">Starting eSvn</a></span></dt>
+               <dt><span class="sect1"><a href="ch02s02.html">Main Interface</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="ch02s02.html#esvn-main-menus">Main Menus</a></span></dt>
+                     <dt><span class="sect2"><a href="ch02s02.html#esvn-toolbar">Toolbar</a></span></dt>
+                     <dt><span class="sect2"><a href="ch02s02.html#esvn-tree-view">Tree View</a></span></dt>
+                     <dt><span class="sect2"><a href="ch02s02.html#esvn-file-view">File View</a></span></dt>
+                     <dt><span class="sect2"><a href="ch02s02.html#esvn-log-view">Log View</a></span></dt>
+                     <dt><span class="sect2"><a href="ch02s02.html#esvn-command-prompt">Command Prompt</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="ch02s03.html">Exiting eSvn</a></span></dt>
+            </dl>
+         </div>
+         <p>This chapter provides an overview of the <span><b class="application">eSvn</b></span> interface, how it works, where to find
+                  things and what they mean. For users that have knowledge of
+                  <span><b class="application">subversion</b></span> and other revision control front end applications the
+                  interface is intuitive and easy to understand. This chapter should be enough for such users to
+                  have an understanding of <span><b class="application">eSvn</b></span> and begin working immediately.
+         </p>
+         <p>Users that are new to <span><b class="application">subversion</b></span> or revision control front end
+                  applications will also find the <span><b class="application">eSvn</b></span> interface to be intuitive and easy to use, but will
+                  need to have an understanding of how <span><b class="application">subversion</b></span> works and how to
+                  use it in order to understand the purpose and usage of the various <span><b class="application">eSvn</b></span> features and
+                  functions. To assist in such cases, this chapter provides links to relevant sections within
+                  the main part of the book (see <a href="ch03.html" title="Chapter&nbsp;3.&nbsp;Using eSvn">Chapter&nbsp;3</a>).
+         </p>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="esvn-starting"></a>Starting <span><b class="application">eSvn</b></span></h2>
+                  </div>
+               </div>
+               <div></div>
+            </div>
+            <p><span><b class="application">eSvn</b></span> is normally installed in <b class="filename"><tt>/usr/bin/</tt></b>
+                       which should be in the system path. To start <span><b class="application">eSvn</b></span> open a shell session and type
+                       <span><b class="command"><span><b class="application">eSvn</b></span></b></span>. This should start <span><b class="application">eSvn</b></span>.
+            </p>
+            <p>Alternatively, <span><b class="application">eSvn</b></span> is added to the
+                       <span><b class="application">GNOME</b></span>/<span><b class="application">KDE</b></span> desktop menu. Select 
+               <span class="guimenu">Development</span>-&gt;<span class="guimenuitem">More Programs</span>-&gt;<span class="guimenuitem">eSvn</span>
+               .
+            </p>
+            <p>On first start <span><b class="application">eSvn</b></span> will display the <tt class="interfacename">Welcome to
+                          <span><b class="application">eSvn</b></span></tt> dialog (see <a href="ch02.html#fig-startup" title="Figure&nbsp;2.1.&nbsp;The First Time Startup Dialog">Figure&nbsp;2.1</a>). This dialog enables
+                       three actions:
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">
+                                    <span class="bold"><b>Open an existing working directory</b></span>
+                                  </span></dt>
+                  <dd>
+                     <p>If you already have a folder system under <span><b class="application">subversion</b></span> control, <span><b class="application">eSvn</b></span> can open
+                                      the working copy directly. Select this option to display the
+                                      <tt class="interfacename">Open</tt> dialog used to change path to a working copy. See
+                                        <a href="ch03.html#esvn-open-workspace" title="Opening a Working Directory">the section called &#8220;Opening a Working Directory&#8221;</a>).
+                     </p>
+                  </dd>
+                  <dt><span class="term">
+                                    <span class="bold"><b>Checkout a working copy</b></span>
+                                  </span></dt>
+                  <dd>
+                     <p>If you have no <span><b class="application">subversion</b></span> working copies in your file system or wish to checkout a
+                                      working copy for the first time select this option to display the
+                                      <tt class="interfacename">checkout</tt> dialog. For more information on performing a
+                                      checkout see <a href="ch03s03.html" title="Checking Out a Working Copy">the section called &#8220;Checking Out a Working Copy&#8221;</a>.
+                     </p>
+                  </dd>
+                  <dt><span class="term">
+                                    <span class="bold"><b>Import project to server</b></span>
+                                  </span></dt>
+                  <dd>
+                     <p>If you have a project in your local file system that is not under <span><b class="application">subversion</b></span>
+                                      control and wish to place it into a <span><b class="application">subversion</b></span> server for others to access and revision
+                                      control, then select this option to display the <tt class="interfacename">Import</tt>
+                                      dialog. For more information on importing projects to <span><b class="application">subversion</b></span> servers see <a href="ch03s05.html" title="Importing a File System">the section called &#8220;Importing a File System&#8221;</a>.
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+            <div class="figure"><a name="fig-startup"></a><p class="title"><b>Figure&nbsp;2.1.&nbsp;The First Time Startup Dialog</b></p>
+               <div class="screenshot">
+                  <div class="mediaobject">
+                     <table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="283">
+                        <tr>
+                           <td><img src="images/startup.png" width="283" alt="The First Time Startup Dialog"></td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="common/admon/tip.png"></td>
+                     <th align="left"></th>
+                  </tr>
+                  <tr>
+                     <td colspan="2" align="left" valign="top">
+                        <p>
+                                     <span class="action">Delete</span> the <b class="filename"><tt>~/.qt3/esvn</tt></b> directory
+                                     to erase all configuration and preference settings. The <tt class="interfacename">Welcome to
+                                        <span><b class="application">eSvn</b></span></tt> dialog will again displayed be on first startup.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch01.html"><img src="common/navig/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center"><a accesskey="u" href="index.html"><img src="common/navig/up.gif" alt="Up"></a></td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s02.html"><img src="common/navig/next.gif" alt="Next"></a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Chapter&nbsp;1.&nbsp;Overview&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="common/navig/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Main Interface</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
